@@ -1,0 +1,40 @@
+// Spacing
+$directions: 'Top', 'Right', 'Bottom', 'Left';
+
+@for $i from 0 through 5 {
+    @for $j from 1 through length($directions) {
+        @if $i == 1 {
+            .ut-margin {
+                margin: #{$i * 1rem} !important;
+            }
+
+            .ut-margin#{nth($directions, $j)} {
+                margin-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
+            }
+
+            .ut-padding {
+                padding: #{$i * 1rem} !important;
+            }
+
+            .ut-padding#{nth($directions, $j)} {
+                padding-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
+            }
+        } @else {
+            .ut-margin--#{$i} {
+                margin: #{$i * 1rem};
+            }
+
+            .ut-margin#{nth($directions, $j)}--#{$i} {
+                margin-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
+            }
+
+            .ut-padding--#{$i} {
+                padding: #{$i * 1rem} !important;
+            }
+            
+            .ut-padding#{nth($directions, $j)}--#{$i} {
+                padding-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
+            }
+        }
+    }
+}
