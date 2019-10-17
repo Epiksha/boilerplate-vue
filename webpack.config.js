@@ -62,7 +62,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: join(__dirname, 'dist/index.html'),
-            template: join(__dirname, 'src', 'template.html'),
+            template: join(__dirname, 'src/misc/template.html'),
             inject: true,
         }),
     ]
