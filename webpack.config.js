@@ -1,4 +1,5 @@
 const { join } = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -64,6 +65,6 @@ module.exports = {
             filename: join(__dirname, 'dist/index.html'),
             template: join(__dirname, 'src/misc/template.html'),
             inject: true,
-        }),
+        })
     ]
 }
