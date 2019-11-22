@@ -1,3 +1,13 @@
+import Nav from '../Nav/Nav.vue';
+
 export default {
-    name: 'Sidebar'
+    name: 'Sidebar',
+
+    props: [
+        'navOpen'
+    ],
+
+    components: {
+        Nav
+    }
 }

@@ -1,6 +1,7 @@
 <template>
     <div id="app-layout">
-        <Header />
+        <Header @navToggle="navOpen = !navOpen" />
+        <Sidebar :navOpen="navOpen" />
 
         <router-view />
         

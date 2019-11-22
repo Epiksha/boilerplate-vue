@@ -1,6 +1,8 @@
 <template>
-    <aside class="sidebar">
-        <h2 class="sidebar__text">Sidebar</h2>
+    <aside class="sidebar" :class="{'active': navOpen}">
+        <div class="ut-padding--2">
+            <Nav />
+        </div>
     </aside>
 </template>
 

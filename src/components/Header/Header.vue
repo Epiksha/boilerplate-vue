@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <button type="button" class="header__menu">
+        <button type="button" class="header__menu" @click="$emit('navToggle')">
             <MenuIcon />
         </button>
 
