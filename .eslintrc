@@ -3,7 +3,7 @@
         "eslint:recommended",
         "plugin:vue/recommended",
         "eslint-config-airbnb-base"
-    ],
+	],
 	"parserOptions": {
 		"ecmaVersion": 6,
 		"sourceType": "module"
@@ -12,7 +12,6 @@
 		"es6": true,
 		"browser": true,
 		"node": true,
-		"mocha": true,
 		"jest": true
 	},
 	"rules": {
