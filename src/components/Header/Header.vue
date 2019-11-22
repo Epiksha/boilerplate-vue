@@ -3,6 +3,7 @@
         <button
             type="button"
             class="header__menu"
+            :class="{'active': navOpen}"
             @click="$emit('navToggle')"
         >
             <MenuIcon />

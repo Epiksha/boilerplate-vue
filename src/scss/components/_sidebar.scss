@@ -17,6 +17,14 @@
     &.active {
         transform: translateX(0);
     }
+
+    @include breakpoint($bp-sm) {
+        width: 40vw;
+    }
+
+    @include breakpoint($bp-lg) {
+        width: 20vw;
+    }
 }
 
 .sidebar .nav {

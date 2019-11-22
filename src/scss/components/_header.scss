@@ -28,6 +28,9 @@
         &:hover > svg {
             fill: $color2;
         }
+        &.active > svg {
+            fill: $color2;
+        }
     }
 
     &__title {

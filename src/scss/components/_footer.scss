@@ -11,10 +11,6 @@
     background-color: darken($color3, 10%);
     color: $color0;
 
-    @include breakpoint($bp-lg) {
-        height: 6rem;
-    }
-
     &__text {
         display: table-cell;
         vertical-align: middle;
