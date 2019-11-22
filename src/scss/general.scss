@@ -5,9 +5,12 @@
 @import 'variables';
 @import 'mixins';
 @import 'defaults';
-@import 'layout';
 @import 'typography';
 @import 'utilities';
 
 // Component Imports
-@import './components/example'
+@import './components/header';
+@import './components/footer';
+@import './components/nav';
+
+@import './components/home';

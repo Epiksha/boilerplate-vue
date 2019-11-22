@@ -1,10 +1,10 @@
 <template>
     <div id="app-layout">
-        <VHeader />
-        <img src="../../assets/images/vue.png" />
+        <Header />
+
         <router-view />
         
-        <VFooter />
+        <Footer />
     </div>
 </template>
 

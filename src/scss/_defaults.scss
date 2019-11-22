@@ -1,8 +1,15 @@
 body {
     font-size: 62.5%;
+    text-align: center;
 }
 
-body, li, ul, h1, h2, h3, h4, h5, p, a {
+main {
+    height: 100%;
+    
+    padding-bottom: $spacing * 5;
+}
+
+body, li, ul, h1, h2, h3, h4, h5, p, a, button {
     margin: 0;
     padding: 0;
 }
@@ -10,4 +17,9 @@ body, li, ul, h1, h2, h3, h4, h5, p, a {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
 }

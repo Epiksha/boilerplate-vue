@@ -1,0 +1,50 @@
+.header {
+    display: table;
+
+    position: relative;
+
+    height: 4rem;
+    width: 100%;
+
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 2px transparentize($color1, 0.9);
+    
+    text-align: center;
+
+    &__menu {
+        position: absolute;
+        top: 50%;
+        left: $spacing * 2;
+        transform: translateY(-50%);
+
+        height: 36px;
+
+        fill: $color3;
+
+        cursor: pointer;
+
+        &:hover > svg {
+            fill: $color2;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & > h1 {
+            color: $color3;
+
+            &:hover {
+                color: $color2;
+            }
+        }
+    }
+
+    &__text {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}

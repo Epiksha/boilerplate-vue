@@ -1,61 +1,58 @@
 {
     "name": "simple-vue-boilerplate",
     "version": "1.0.0",
-    "description": "",
+    "author": "Calvin Tiley",
+    "description": "A boilerplate for Vue with Webpack, Babel and Sass.",
     "main": "index.js",
-    "scripts": {
-        "start": "npm run dev",
-        "dev": "webpack-dev-server",
-        "build": "webpack",
-        "test": "jest"
-    },
-    "jest": {
-        "moduleFileExtensions": [
-            "js",
-            "json",
-            "vue"
-        ],
-        "transform": {
-            "^.+\\.js$": "babel-jest",
-            "^.+\\.vue$": "vue-jest"
-        },
-        "collectCoverage": true,
-        "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**"]
-    },
-    "author": "",
     "license": "ISC",
+    "keywords": [
+        "Vue",
+        "Boilerplate",
+        "Sass",
+        "Webpack",
+        "Babel",
+        "Jest",
+        "ESLint"
+    ],
+    "scripts": {
+        "start": "webpack-dev-server --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js",
+        "build-dev": "webpack --config webpack.dev.js",
+        "setup": "npm install",
+        "test": "jest",
+        "test:unit": "jest unit",
+        "test:integration": "jest integration"
+    },
     "devDependencies": {
         "@babel/cli": "^7.6.4",
         "@babel/core": "^7.6.4",
+        "@babel/polyfill": "^7.7.0",
         "@babel/preset-env": "^7.6.3",
-        "@vue/test-utils": "^1.0.0-beta.29",
-        "babel-eslint": "^10.0.3",
-        "babel-jest": "^24.9.0",
         "babel-loader": "^8.0.6",
+        "babel-minify-webpack-plugin": "^0.3.1",
         "breakpoint-sass": "^2.7.1",
+        "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^3.2.0",
-        "eslint": "^6.5.1",
-        "eslint-config-prettier": "^6.4.0",
-        "eslint-loader": "^3.0.2",
-        "eslint-plugin-prettier": "^3.1.1",
-        "eslint-plugin-vue": "^5.2.3",
         "file-loader": "^4.2.0",
+        "html-loader": "^0.5.5",
         "html-webpack-plugin": "^3.2.0",
-        "jest": "^24.9.0",
+        "mini-css-extract-plugin": "^0.8.0",
         "node-sass": "^4.12.0",
-        "prettier": "^1.18.2",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
         "sass-loader": "^8.0.0",
-        "uglifyjs-webpack-plugin": "^2.2.0",
+        "style-loader": "^1.0.0",
         "url-loader": "^2.2.0",
-        "vue-jest": "^3.0.5",
         "vue-loader": "^15.7.1",
         "vue-style-loader": "^4.1.2",
+        "vue-svg-loader": "^0.15.0",
         "vue-template-compiler": "^2.6.10",
         "webpack": "^4.41.2",
         "webpack-cli": "^3.3.9",
-        "webpack-dev-server": "^3.8.2"
+        "webpack-dev-server": "^3.8.2",
+        "webpack-merge": "^4.2.2"
     },
     "dependencies": {
+        "axios": "^0.19.0",
         "vue": "^2.6.10",
         "vue-router": "^3.1.3"
     }

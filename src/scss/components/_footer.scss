@@ -1,0 +1,22 @@
+.footer {
+    display: table;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 4rem;
+    width: 100vw;
+    
+    background-color: $color3;
+    color: $color0;
+
+    @include breakpoint($bp-lg) {
+        height: 6rem;
+    }
+
+    &__text {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}

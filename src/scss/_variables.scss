@@ -1,10 +1,15 @@
 // Colors
 $color0: #fff;
 $color1: #000;
+$color2: #42b883;
+$color3: #35495e;
 
 // Breakpoints
-$bp-sm: 0px;
+$bp-xs: 0px;
 $bp-sm: 600px;
 $bp-md: 960px;
 $bp-lg: 1280px;
 $bp-xl: 1920px;
+
+// Misc
+$spacing: 1rem;
