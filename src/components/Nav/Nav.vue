@@ -6,7 +6,9 @@
             :to="link.url"
             :exact="link.exact"
             class="nav__link"
-        >{{ link.text }}</router-link>
+        >
+            {{ link.text }}
+        </router-link>
     </nav>
 </template>
 

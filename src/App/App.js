@@ -8,12 +8,12 @@ export default {
     components: {
         Header,
         Footer,
-        Sidebar
+        Sidebar,
     },
 
     data() {
         return {
-            navOpen: false
-        }
-    }
-}
+            navOpen: false,
+        };
+    },
+};

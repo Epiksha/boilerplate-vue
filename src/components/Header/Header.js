@@ -7,6 +7,6 @@ export default {
 
     components: {
         Nav,
-        MenuIcon
-    }
-}
+        MenuIcon,
+    },
+};

@@ -1,6 +1,8 @@
 <template>
     <footer class="footer">
-        <h2 class="footer__text">Footer</h2>
+        <h2 class="footer__text">
+            Footer
+        </h2>
     </footer>
 </template>
 

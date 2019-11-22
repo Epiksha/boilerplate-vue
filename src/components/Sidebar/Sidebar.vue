@@ -1,5 +1,8 @@
 <template>
-    <aside class="sidebar" :class="{'active': navOpen}">
+    <aside
+        class="sidebar"
+        :class="{'active': navOpen}"
+    >
         <div class="ut-padding--2">
             <Nav />
         </div>

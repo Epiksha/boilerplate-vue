@@ -4,10 +4,10 @@ export default {
     name: 'Sidebar',
 
     props: [
-        'navOpen'
+        'navOpen',
     ],
 
     components: {
-        Nav
-    }
-}
+        Nav,
+    },
+};

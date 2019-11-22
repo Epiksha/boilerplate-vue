@@ -7,13 +7,13 @@ export default {
                 {
                     url: '/',
                     text: 'Home',
-                    exact: true
+                    exact: true,
                 },
                 {
                     url: '/contact',
-                    text: 'Contact'
-                }
-            ]
-        }
-    }
-}
+                    text: 'Contact',
+                },
+            ],
+        };
+    },
+};
