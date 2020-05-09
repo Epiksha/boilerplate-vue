@@ -1,14 +1,13 @@
 <template>
-    <div id="app-layout">
-        <Header
-            :nav-open="navOpen"
-            @navToggle="navOpen = !navOpen"
-        />
-        <Sidebar :nav-open="navOpen" />
-
-        <router-view />
+    <div
+        id="app"
+        class="ut-bg-0"
+    >
+        <VHeader />
         
-        <Footer />
+        <router-view />
+
+        <VFooter />
     </div>
 </template>
 

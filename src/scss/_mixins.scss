@@ -1,9 +1,42 @@
-@mixin addFont ($name, $file, $weight, $style, $extension) {
+// Add new font files
+@mixin fonter($name, $file, $weight, $style, $extension) {
     @font-face {
         font-family: "#{$name}";
         font-weight: $weight;
         font-style: $style;
 
         src: url("../assets/fonts/#{$file}.#{$extension}");
+    }
+}
+
+// Create breakpoints for tablet and desktop
+@mixin breakpointer() {
+    &--tablet {
+        @media (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    &--desktop {
+        @media (min-width: $desktop) {
+            @content;
+        }
+    }
+}
+
+// Create utility with breakpoints
+@mixin utilizer($className, $property, $value, $hover: "") {
+    .ut-#{$className} {
+        #{$property}: $value;
+
+        @if $hover != "" {
+            &--hover {
+                #{$property}: $value;
+            }
+        }
+
+        @include breakpointer() {
+            #{$property}: $value;
+        }
     }
 }

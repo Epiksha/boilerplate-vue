@@ -1,104 +1,93 @@
-$directions: 'Top', 'Right', 'Bottom', 'Left';
+// DISPLAY & ALIGNMENT
+@include utilizer(block, display, block);
+@include utilizer(inline-block, display, inline-block);
+@include utilizer(flex, display, flex);
 
-// Misc
-.container {
-    height: 100% !important;
+@include utilizer(textAlignCenter, text-align, center);
+@include utilizer(vertAlignMiddle, vertical-align, middle);
 
-    padding: $spacing !important;
+// POSITION
+@include utilizer(relative, position, relative);
+@include utilizer(absolute, position, absolute);
 
-    box-sizing: border-box;
+.ut-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    @include breakpoint($bp-md) {
-        padding: #{$spacing * 2} !important;
+    @include breakpointer() {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-y {
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include breakpointer() {
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
     
-    @include breakpoint($bp-lg) {
-        padding:  0 #{$spacing * 4} !important;
+    &-x {
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include breakpointer() {
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
 
-.ut-fullHeight {
-    height: 100% !important;
-}
+// BOX MODEL
+$propTypes: margin, padding;
+$directions: top, right, bottom, left;
 
-.ut-fullWidth {
-    width: 100% !important;
-}
+@each $propType in $propTypes {
+    @include utilizer($propType, $propType, $spacing);
 
-.ut-textAlignCenter {
-    text-align: center;
-}
+    @each $dir in $directions {
+        $capitalizedDir: to-upper-case(str-slice($dir, 1, 1)) + str-slice($dir, 2, str-length($dir));
+    
+        @for $j from 1 through 5 {
+            $formattedClass: #{$propType + $capitalizedDir}-#{str-slice(quote($j - 0.5), 1, 1) + \. + str-slice(quote($j - 0.5), str-length(quote($j - 0.5)))};
+    
+            @include utilizer($formattedClass, #{$propType}-#{$dir}, $spacing * ($j - 0.5));
 
-// Typography
-.ut-bold {
-    font-weight: bold !important;
-}
-
-// Spacing
-@for $i from 0 through 5 {
-    @for $j from 1 through length($directions) {
-        @if $i == 1 {
-            .ut-margin {
-                margin: #{$i * 1rem} !important;
-            }
-
-            .ut-margin#{nth($directions, $j)} {
-                margin-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
-            }
-
-            .ut-marginVert {
-                margin-top: #{$i * 1rem};
-                margin-bottom: #{$i * 1rem};
-            }
-            
-            .ut-marginHorz {
-                margin-left: #{$i * 1rem};
-                margin-right: #{$i * 1rem};
-            }
-
-            .ut-padding {
-                padding: #{$i * 1rem} !important;
-            }
-
-            .ut-padding#{nth($directions, $j)} {
-                padding-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
-            }
-
-            .ut-paddingVert {
-                padding-top: #{$i * 1rem};
-                padding-bottom: #{$i * 1rem};
-            }
-            
-            .ut-paddingHorz {
-                padding-left: #{$i * 1rem};
-                padding-right: #{$i * 1rem};
-            }
-        } @else {
-            .ut-margin--#{$i} {
-                margin: #{$i * 1rem};
-            }
-
-            .ut-margin#{nth($directions, $j)}--#{$i} {
-                margin-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
-            }
-
-            .ut-padding--#{$i} {
-                padding: #{$i * 1rem} !important;
-            }
-
-            .ut-padding#{nth($directions, $j)}--#{$i} {
-                padding-#{unquote(to-lower-case((nth($directions, $j))))}: #{$i * 1rem} !important;
-            }
-            
-            .ut-paddingVert--#{$i} {
-                padding-top: #{$i * 1rem};
-                padding-bottom: #{$i * 1rem};
-            }
-            
-            .ut-paddingHorz--#{$i} {
-                padding-left: #{$i * 1rem};
-                padding-right: #{$i * 1rem};
+            @if $j == 1 {
+                @include utilizer(#{$propType + $capitalizedDir}, #{$propType}-#{$dir}, $spacing);
+            } @else {
+                @include utilizer(#{$propType + $capitalizedDir}-#{$j}, #{$propType}-#{$dir}, $spacing * $j);
             }
         }
     }
 }
+
+// BACKGROUNDS && COLOURS
+@include utilizer(bg-0, background-color, $backgroundColor0);
+@include utilizer(bg-1, background-color, $backgroundColor1);
+@include utilizer(bg-2, background-color, $backgroundColor2);
+@include utilizer(bg-3, background-color, $backgroundColor3);
+
+@include utilizer(highlight-0, color, $color0);
+@include utilizer(highlight-1, color, $color1);
+@include utilizer(highlight-2, color, $color2);
+@include utilizer(highlight-3, color, $color3);
+
+// TYPOGRAPHY
+$fontSizeLabels: 'xs', 'sm', 'md', 'lg', 'xl';
+$fontSizes: $fontSize-xs, $fontSize-sm, $fontSize-md, $fontSize-lg, $fontSize-xl;
+
+@for $i from 1 through length($fontSizes) {
+    @include utilizer(size-#{nth($fontSizeLabels, $i)}, font-size, nth($fontSizes, $i));
+}
+
+@include utilizer(weight-lighter, font-weight, lighter);
+@include utilizer(weight-regular, font-weight, regular);
+@include utilizer(weight-bold, font-weight, bold);
+
+// MISCELLANEOUS
+@include utilizer(pointer, cursor, pointer);

@@ -1,37 +1,38 @@
-@include addFont('Roboto', 'Roboto-Regular', normal, normal, 'ttf');
-@include addFont('Roboto', 'Roboto-Italic', normal, italic, 'ttf');
-@include addFont('Roboto', 'Roboto-Bold', bold, normal, 'ttf');
-@include addFont('Roboto', 'Roboto-BoldItalic', bold, italic, 'ttf');
-@include addFont('Roboto', 'Roboto-Light', lighten, normal, 'ttf');
-@include addFont('Roboto', 'Roboto-LightItalic', lighten, italic, 'ttf');
+@include fonter('Roboto', 'Roboto-Regular', normal, normal, 'ttf');
+@include fonter('Roboto', 'Roboto-Italic', normal, italic, 'ttf');
+@include fonter('Roboto', 'Roboto-Bold', bold, normal, 'ttf');
+@include fonter('Roboto', 'Roboto-BoldItalic', bold, italic, 'ttf');
+@include fonter('Roboto', 'Roboto-Light', lighten, normal, 'ttf');
+@include fonter('Roboto', 'Roboto-LightItalic', lighten, italic, 'ttf');
+
+html {
+    font-size: $defaultSize;
+}
 
 body {
-    font-family: 'Roboto';
+    font-family: $fontFamily1;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: $fontSize-xxl;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: $fontSize-xl;
 }
+
 h3 {
-    font-size: 1.25rem;
+    font-size: $fontSize-lg;
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: $fontSize-md;
 }
 
 h5 {
-    font-size: 0.75rem;
+    font-size: $fontSize-sm;
 }
 
 h6 {
-    font-size: 0.5rem;
-}
-
-a, p {
-    font-size: 0.75rem;
+    font-size: $fontSize-xs;
 }

@@ -1,18 +1,6 @@
-// Package Imports
-@import "breakpoint-sass";
-
 // General Imports
 @import 'variables';
 @import 'mixins';
-@import 'defaults';
 @import 'typography';
 @import 'utilities';
-
-// Component Imports
-@import './components/home';
-
-@import './components/header';
-@import './components/footer';
-@import './components/nav';
-@import './components/sidebar';
-@import './components/example';
+@import 'defaults';

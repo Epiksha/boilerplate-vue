@@ -1,15 +1,28 @@
-// Colors
+// BOX MODEL
+$spacing: 1rem;
+
+// BACKGROUNDS & COLOURS
 $color0: #fff;
 $color1: #000;
 $color2: #42b883;
 $color3: #35495e;
 
-// Breakpoints
-$bp-xs: 0px;
-$bp-sm: 600px;
-$bp-md: 960px;
-$bp-lg: 1280px;
-$bp-xl: 1920px;
+$backgroundColor0: $color0;
+$backgroundColor1: $color1;
+$backgroundColor2: $color2;
+$backgroundColor3: $color3;
 
-// Misc
-$spacing: 1rem;
+// TYPOGRAPHY
+$defaultSize: 10px;
+$fontFamily1: 'Roboto';
+
+$fontSize-xs: $defaultSize * 0.8;
+$fontSize-sm: $defaultSize;
+$fontSize-md: $defaultSize * 1.2;
+$fontSize-lg: $defaultSize * 1.4;
+$fontSize-xl: $defaultSize * 1.8;
+$fontSize-xxl: $defaultSize * 2.4;
+
+// BREAKPOINTS
+$tablet: 57.6rem;
+$desktop: 99.2rem;
