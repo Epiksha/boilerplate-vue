@@ -1,93 +1,21 @@
-// DISPLAY & ALIGNMENT
-@include utilizer(block, display, block);
-@include utilizer(inline-block, display, inline-block);
-@include utilizer(flex, display, flex);
+$classes: (
+    centerX: (
+        left: 50%,
+        transform: translateX(-50%)
+    ),
+    centerY: (
+        top: 50%,
+        transform: translateY(-50%)
+    ),
+    margin: (
+        margin: $spacing
+    )
+);
 
-@include utilizer(textAlignCenter, text-align, center);
-@include utilizer(vertAlignMiddle, vertical-align, middle);
-
-// POSITION
-@include utilizer(relative, position, relative);
-@include utilizer(absolute, position, absolute);
-
-.ut-center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    @include breakpointer() {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    &-y {
-        top: 50%;
-        transform: translateY(-50%);
-
-        @include breakpointer() {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-    
-    &-x {
-        left: 50%;
-        transform: translateX(-50%);
-
-        @include breakpointer() {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-}
-
-// BOX MODEL
-$propTypes: margin, padding;
-$directions: top, right, bottom, left;
-
-@each $propType in $propTypes {
-    @include utilizer($propType, $propType, $spacing);
-
-    @each $dir in $directions {
-        $capitalizedDir: to-upper-case(str-slice($dir, 1, 1)) + str-slice($dir, 2, str-length($dir));
-    
-        @for $j from 1 through 5 {
-            $formattedClass: #{$propType + $capitalizedDir}-#{str-slice(quote($j - 0.5), 1, 1) + \. + str-slice(quote($j - 0.5), str-length(quote($j - 0.5)))};
-    
-            @include utilizer($formattedClass, #{$propType}-#{$dir}, $spacing * ($j - 0.5));
-
-            @if $j == 1 {
-                @include utilizer(#{$propType + $capitalizedDir}, #{$propType}-#{$dir}, $spacing);
-            } @else {
-                @include utilizer(#{$propType + $capitalizedDir}-#{$j}, #{$propType}-#{$dir}, $spacing * $j);
-            }
-        }
-    }
-}
-
-// BACKGROUNDS && COLOURS
-@include utilizer(bg-0, background-color, $backgroundColor0);
-@include utilizer(bg-1, background-color, $backgroundColor1);
-@include utilizer(bg-2, background-color, $backgroundColor2);
-@include utilizer(bg-3, background-color, $backgroundColor3);
-
-@include utilizer(highlight-0, color, $color0);
-@include utilizer(highlight-1, color, $color1);
-@include utilizer(highlight-2, color, $color2);
-@include utilizer(highlight-3, color, $color3);
-
-// TYPOGRAPHY
-$fontSizeLabels: 'xs', 'sm', 'md', 'lg', 'xl';
-$fontSizes: $fontSize-xs, $fontSize-sm, $fontSize-md, $fontSize-lg, $fontSize-xl;
-
-@for $i from 1 through length($fontSizes) {
-    @include utilizer(size-#{nth($fontSizeLabels, $i)}, font-size, nth($fontSizes, $i));
-}
-
-@include utilizer(weight-lighter, font-weight, lighter);
-@include utilizer(weight-regular, font-weight, regular);
-@include utilizer(weight-bold, font-weight, bold);
-
-// MISCELLANEOUS
-@include utilizer(pointer, cursor, pointer);
+$classConfig: (
+    margin: (
+        directions: true,
+        breakpoints: true,
+        levels: true
+    )
+);

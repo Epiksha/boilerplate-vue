@@ -1,6 +1,5 @@
 <template>
     <main>
-        <h1>Body</h1>
         <h2>Body</h2>
         <h3>Body</h3>
         <h4>Body</h4>

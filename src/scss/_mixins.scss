@@ -10,33 +10,108 @@
 }
 
 // Create breakpoints for tablet and desktop
-@mixin breakpointer() {
-    &--tablet {
+@mixin breakpointer($classLabel, $property, $value) {
+    .ut-#{$classLabel}--tablet {
         @media (min-width: $tablet) {
-            @content;
+            #{$property}: $value;
         }
     }
 
-    &--desktop {
+    .ut-#{$classLabel}--desktop {
         @media (min-width: $desktop) {
-            @content;
-        }
-    }
-}
-
-// Create utility with breakpoints
-@mixin utilizer($className, $property, $value, $hover: "") {
-    .ut-#{$className} {
-        #{$property}: $value;
-
-        @if $hover != "" {
-            &--hover {
-                #{$property}: $value;
-            }
-        }
-
-        @include breakpointer() {
             #{$property}: $value;
         }
     }
 }
+
+// Add multiplication modifiers in increments from 0.5 to 5
+@mixin leveler($classLabel, $property, $value, $breakpoints: false) {
+    @for $i from 1 through 5 {
+        @if $i == 1 {
+            .ut-#{$classLabel}-0\.5 {
+                #{$property}: $value - 0.5;
+            }
+
+            @if $breakpoints != false {
+                @include breakpointer(#{$classLabel}-0\.5, $property, $value);
+            }
+        } @else {
+            .ut-#{$classLabel}-#{$i} {
+                #{$property}: $value * $i;
+            }
+
+            .ut-#{$classLabel}-#{str-slice(quote($i - .5), 1, 1)}\.5 {
+                #{$property}: ($value * $i) - 0.5;
+            }
+
+            @if $breakpoints != false {
+                @include breakpointer(#{$classLabel}-#{$i}, $property, $value * $i);
+                @include breakpointer(#{$classLabel}-#{str-slice(quote($i - .5), 1, 1)}\.5, $property, ($value * $i) - 0.5);
+            }
+        }
+    }
+}
+
+// Add direction modifiers
+@mixin directioner($classLabel, $property, $value, $levels: false, $breakpoints: false) {
+    $directions: top, right, bottom, left;
+
+    @each $direction in $directions {
+        .ut-#{$classLabel + str-capitalize($direction)} {
+            #{$property}-#{$direction}: $value;
+        }
+
+        @if $levels != false {
+            @include leveler($classLabel + str-capitalize($direction), #{$property}-#{$direction}, $value, $breakpoints);
+        }
+
+        @if $breakpoints != false {
+            @include breakpointer(#{$classLabel + str-capitalize($direction)}, #{$property}-#{$direction}, $value);
+        }
+    }
+}
+
+// Dynamically build utilities
+@mixin utilizer($classes) {
+    @each $key-1, $val-1 in $classes {
+        @each $key-2, $val-2 in $val-1 {
+            // Set Config
+            $directions: false;
+            $breakpoints: false;
+            $levels: false;
+
+            @each $key-3, $val-3 in $classConfig {
+                @if $key-1 == $key-3 {
+                    @each $key-4, $val-4 in $val-3 { 
+                        @if $key-4 == directions {
+                            $directions: $val-4;
+                        } @else if $key-4 == breakpoints {
+                            $breakpoints: $val-4;
+                        } @else if $key-4 == levels {
+                            $levels: $val-4;
+                        }
+                    }
+                }
+            }
+
+            // Class Generation
+            .ut-#{$key-1} {
+                #{$key-2}: $val-2;
+            }
+
+            @if $levels != false {
+                @include leveler($key-1, $key-2, $val-2);
+            }
+
+            @if $directions != false {
+                @include directioner($key-1, $key-2, $val-2, $levels, $breakpoints);
+            }
+            
+            @if $breakpoints != false {
+                @include breakpointer($key-1, $key-2, $val-2);
+            }
+        }
+    }
+}
+
+@include utilizer($classes);
