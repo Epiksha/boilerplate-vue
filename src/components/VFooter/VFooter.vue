@@ -1,6 +1,8 @@
 <template>
-    <footer class="ut-bg-3 ut-highlight-0">
-        <span>Footer</span>
+    <footer class="footer ut-bg-3 ut-highlight-0">
+        <div class="container ut-textAlignCenter ut-padding-2">
+            <h2>Footer</h2>
+        </div>
     </footer>
 </template>
 

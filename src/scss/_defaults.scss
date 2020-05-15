@@ -1,14 +1,28 @@
-body {
-    margin: 0;
+* {
+    box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, input {
+body {
+    margin: 0;
+    background-color: $color3;
+}
+
+main {
+    background-color: $color0;
+}
+
+h1, h2, h3, h4, h5, h6, p, input {
     margin: 0;
     padding: 0;
 }
 
-ul {
-    list-style: none;
+ol, ul {
+    padding-left: $spacing * 1.5;
+}
+
+a {
+    font-size: $fontSize-xs;
+    text-decoration: none;
 }
 
 button {
@@ -16,4 +30,22 @@ button {
     border: none;
 
     background: none;
+    outline: none;
+}
+
+fieldset {
+    padding: $spacing * 2;
+    border: solid 1px $color1;
+    border-radius: 1.5rem;
+}
+
+legend {
+    font-size: $fontSize-sm;
+    font-weight: bold;
+}
+
+input {
+    padding: $spacing * 0.75 $spacing;
+    border: solid 0.1rem $color1;
+    border-radius: 1rem;
 }

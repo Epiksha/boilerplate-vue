@@ -36,3 +36,8 @@ h5 {
 h6 {
     font-size: $fontSize-xs;
 }
+
+p, span, li {
+    font-size: $fontSize-sm;
+    line-height: 1.5;
+}

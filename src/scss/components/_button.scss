@@ -1,0 +1,38 @@
+.button {
+    width: 10rem;
+    padding: $spacing;
+    border-radius: 0 1rem 1rem 1rem;
+
+    background-color: $color2;
+    color: $color0;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    &:hover {
+        animation: animate-borders 2.5s forwards infinite;
+    }
+
+    &:active {
+        animation-play-state: paused;
+    }
+
+    &--alt {
+        background-color: $color3;
+    }
+
+    &--invert {
+        border: solid 1px $color2;
+        
+        background-color: transparent;
+        color: $color2;
+        
+        &--alt {
+            border: solid 1px $color3;
+    
+            background-color: transparent;
+            color: $color3;
+        }
+    }
+}

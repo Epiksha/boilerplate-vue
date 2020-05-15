@@ -24,6 +24,20 @@
     }
 }
 
+@mixin breakpointer-static() {
+    &--tablet {
+        @media (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    &--desktop {
+        @media (min-width: $desktop) {
+            @content;
+        }
+    }
+}
+
 // Add multiplication modifiers in increments from 0.5 to 5
 @mixin leveler($classLabel, $property, $value, $breakpoints: false) {
     @for $i from 1 through 5 {
@@ -100,7 +114,7 @@
             }
 
             @if $levels != false {
-                @include leveler($key-1, $key-2, $val-2);
+                @include leveler($key-1, $key-2, $val-2, $breakpoints);
             }
 
             @if $directions != false {

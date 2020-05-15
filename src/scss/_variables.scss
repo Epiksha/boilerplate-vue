@@ -6,18 +6,22 @@ $color0: #fff;
 $color1: #000;
 $color2: #42b883;
 $color3: #35495e;
+$color4: #999;
+$color5: #ddd;
+
+$colors: $color0, $color1, $color2, $color3, $color4, $color5;
 
 // TYPOGRAPHY
 $defaultSize: 10px;
 $fontFamily1: 'Roboto';
 
-$fontSize-xs: $defaultSize * 0.8;
-$fontSize-sm: $defaultSize;
-$fontSize-md: $defaultSize * 1.2;
-$fontSize-lg: $defaultSize * 1.4;
-$fontSize-xl: $defaultSize * 1.8;
+$fontSize-xs: $defaultSize * 1.2;
+$fontSize-sm: $defaultSize * 1.4;
+$fontSize-md: $defaultSize * 1.6;
+$fontSize-lg: $defaultSize * 1.8;
+$fontSize-xl: $defaultSize * 2;
 $fontSize-xxl: $defaultSize * 2.4;
 
 // BREAKPOINTS
-$tablet: 57.6rem;
-$desktop: 99.2rem;
+$tablet: 576px;
+$desktop: 992px;

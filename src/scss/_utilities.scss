@@ -1,19 +1,113 @@
+// Static Utilities
+@for $i from 1 through length($colors) {
+    .ut-bg-#{$i - 1} {
+        background-color: nth($colors, $i);
+    }
+
+    .ut-highlight-#{$i - 1} {
+        color: nth($colors, $i);
+
+        &-hover:hover {
+            color: nth($colors, $i);
+        }
+    }
+}
+
+// Dynamic Utilities
 $classes: (
+    // DISPLAY & ALIGNMENT
+    block: (
+        display: block
+    ),
+
+    inlineBlock: (
+        display: inline-block
+    ),
+
+    textAlignCenter: (
+        text-align: center
+    ),
+    
+    textAlignLeft: (
+        text-align: left
+    ),
+    
+    textAlignRight: (
+        text-align: right
+    ),
+
+    vertAlignMiddle: (
+        vertical-align: middle
+    ),
+
+    // POSITIONING
     centerX: (
         left: 50%,
         transform: translateX(-50%)
     ),
+
     centerY: (
         top: 50%,
         transform: translateY(-50%)
     ),
+
+    // BOX MODEL
+    fullWidth: (
+        width: 100%
+    ),
+    
+    fullHeight: (
+        height: 100%
+    ),
+
     margin: (
         margin: $spacing
+    ),
+    
+    padding: (
+        padding: $spacing
+    ),
+
+    // TYPOGRAPHY
+    bold: (
+        font-weight: bold
     )
 );
 
 $classConfig: (
+    // DISPLAY & ALIGNMENT
+    block: (
+        breakpoints: true
+    ),
+    
+    inlineBlock: (
+        breakpoints: true
+    ),
+
+    textAlignCenter: (
+        breakpoints: true
+    ),
+    
+    textAlignLeft: (
+        breakpoints: true
+    ),
+    
+    textAlignRight: (
+        breakpoints: true
+    ),
+    
+    vertAlignMiddle: (
+        breakpoints: true
+    ),
+
+    // BOX MODEL
     margin: (
+        directions: true,
+        breakpoints: true,
+        levels: true
+    ),
+
+    padding: (
         directions: true,
         breakpoints: true,
         levels: true
