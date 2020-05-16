@@ -41,6 +41,14 @@ $classes: (
     ),
 
     // POSITIONING
+    relative: (
+        position: relative
+    ),
+    
+    absolute: (
+        position: absolute
+    ),
+
     centerX: (
         left: 50%,
         transform: translateX(-50%)
@@ -97,6 +105,14 @@ $classConfig: (
     ),
     
     vertAlignMiddle: (
+        breakpoints: true
+    ),
+    
+    relative: (
+        breakpoints: true
+    ),
+    
+    absolute: (
         breakpoints: true
     ),
 

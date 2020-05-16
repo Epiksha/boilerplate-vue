@@ -20,6 +20,10 @@ ol, ul {
     padding-left: $spacing * 1.5;
 }
 
+ul {
+    margin: 0;
+}
+
 a {
     font-size: $fontSize-xs;
     text-decoration: none;
@@ -35,17 +39,68 @@ button {
 
 fieldset {
     padding: $spacing * 2;
-    border: solid 1px $color1;
+    border: solid 1px $color4;
     border-radius: 1.5rem;
 }
 
 legend {
+    color: $color3;
+
     font-size: $fontSize-sm;
     font-weight: bold;
 }
 
 input {
-    padding: $spacing * 0.75 $spacing;
-    border: solid 0.1rem $color1;
-    border-radius: 1rem;
+    &[type="radio"],
+    &[type="checkbox"] {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            height: 100%;
+            width: 100%;
+            border: solid 1px $color2;
+
+            background-color: $color0;
+        }
+        
+        &:checked:after {
+            content: '';
+            display: block;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            height: 75%;
+            width: 75%;
+
+            background-color: $color3;
+        }
+    }
+
+    &[type="radio"],
+    &[type="radio"]:before,
+    &[type="radio"]:after {
+        border-radius: 50%;
+    }
+
+    &[type="text"],
+    &[type="email"],
+    &[type="number"],
+    &[type="password"] {
+        padding: $spacing * 0.75 $spacing;
+        border: solid 0.1rem $color2;
+        border-radius: 1rem;
+
+        color: $color3;
+    }
 }

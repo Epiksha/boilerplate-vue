@@ -8,3 +8,5 @@ new Vue({
     render: (createEl) => createEl(App),
     router,
 }).$mount('#root');
+
+document.querySelector('.nojs').classList.remove('nojs');

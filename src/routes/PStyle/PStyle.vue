@@ -19,6 +19,14 @@
         </section>
 
         <section class="ut-marginTop-2">
+            <h3>Paragraph</h3>
+
+            <div class="ut-marginTop">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi.</p>
+            </div>
+        </section>
+
+        <section class="ut-marginTop-2">
             <h3>Lists</h3>
 
             <ul class="ut-marginTop">
@@ -51,14 +59,6 @@
         </section>
 
         <section class="ut-marginTop-2">
-            <h3>Paragraph</h3>
-
-            <div class="ut-marginTop">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi.</p>
-            </div>
-        </section>
-
-        <section class="ut-marginTop-2">
             <h3>Inputs</h3>
 
             <div class="ut-marginTop">
@@ -71,27 +71,28 @@
                         <input
                             id="radio-1"
                             type="radio"
-                            name="radio-1"
+                            name="radio"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                            checked="checked"
                         >
 
                         <input
                             id="radio-2"
                             type="radio"
-                            name="radio-2"
+                            name="radio"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
                         >
 
                         <input
                             id="radio-3"
                             type="radio"
-                            name="radio-3"
+                            name="radio"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
                         >
                     </div>
                 </div>
                 
-                <div class="ut-marginTop">
+                <div class="ut-marginTop-2">
                     <h5 class="ut-inlineBlock ut-vertAlignMiddle">
                         Checkboxes:
                     </h5>
@@ -100,35 +101,70 @@
                         <input
                             id="check-1"
                             type="checkbox"
-                            name="check-1"
+                            name="check"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                            checked="checked"
                         >
 
                         <input
                             id="check-2"
                             type="checkbox"
-                            name="check-2"
+                            name="check"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
                         >
 
                         <input
                             id="check-3"
                             type="checkbox"
-                            name="check-3"
+                            name="check"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
                         >
                     </div>
                 </div>
 
-                <fieldset class="ut-marginTop">
+                <fieldset class="ut-marginTop-2">
                     <legend>Input Types</legend>
 
                     <input
-                        id="date"
-                        name="date"
+                        id="username"
+                        name="username"
+                        type="text"
+                        placeholder="Username"
+                        class="ut-fullWidth"
+                    >
+                    
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        class="ut-fullWidth ut-marginTop"
+                    >
+
+                    <input
+                        id="email"
+                        name="email"
                         type="email"
                         placeholder="Email"
+                        class="ut-fullWidth ut-marginTop"
                     >
+                    
+                    <input
+                        id="number"
+                        name="date"
+                        type="number"
+                        placeholder="Number"
+                        class="ut-fullWidth ut-marginTop"
+                    >
+
+                    <div class="ut-marginTop-2">
+                        <h6>Select Box</h6>
+
+                        <VSelect
+                            :select-data="selectData"
+                            class="ut-marginTop"
+                        />
+                    </div>
                 </fieldset>
             </div>
         </section>
@@ -152,6 +188,14 @@
                 <button class="button button--invert--alt ut-inlineBlock ut-marginLeft">
                     Submit
                 </button>
+            </div>
+        </section>
+
+        <section class="ut-marginTop-2">
+            <h3>Cards</h3>
+
+            <div class="ut-marginTop-2">
+                <VCard />
             </div>
         </section>
     </main>

@@ -11,6 +11,8 @@
     cursor: pointer;
 
     &:hover {
+        color: $color3;
+
         animation: animate-borders 2.5s forwards infinite;
     }
 
@@ -20,6 +22,10 @@
 
     &--alt {
         background-color: $color3;
+
+        &:hover {
+            color: $color2;
+        }
     }
 
     &--invert {
@@ -27,12 +33,37 @@
         
         background-color: transparent;
         color: $color2;
+
+        &:hover {
+            color: $color3;
+        }
         
         &--alt {
             border: solid 1px $color3;
     
             background-color: transparent;
             color: $color3;
+
+            &:hover {
+                color: $color2;
+            }
+        }
+    }
+
+    &--tag {
+        height: 2.5rem;
+        padding: 0;
+        border: solid 1px $color2;
+        border-top-left-radius: 1rem;
+
+        background-color: transparent;
+        color: $color2;
+
+        animation: none;
+
+        &:hover, &:active {
+            border: solid 1px $color3;
+            animation: none;
         }
     }
 }

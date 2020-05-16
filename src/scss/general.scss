@@ -6,9 +6,12 @@
 @import 'typography';
 @import 'defaults';
 @import 'animations';
+@import 'transitions';
 
 // Component Imports
 @import './components/grid';
 @import './components/button';
 @import './components/header';
 @import './components/footer';
+@import './components/card';
+@import './components/select';

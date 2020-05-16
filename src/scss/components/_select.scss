@@ -1,0 +1,26 @@
+.select {
+    width: 20rem;
+
+    &__box {
+        border: solid 1px $color2;
+
+        &__dropdown {
+            overflow: hidden;
+            max-height: 20rem;
+            padding-left: 0;
+
+            list-style: none;
+
+            .active & {
+                overflow-y: scroll;
+            }
+
+            &__option {
+                display: block;
+
+                width: 100%;
+            }
+        }
+    
+    }
+}
