@@ -1,6 +1,8 @@
 <template>
-    <main class="ut-block--tablet">
-        <h2>Home</h2>
+    <main class="lg:ml-4--children">
+        <h2>
+            Home
+        </h2>
     </main>
 </template>
 

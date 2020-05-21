@@ -3,35 +3,3 @@
     max-width: 120rem;
     margin: auto;
 }
-
-.grid {
-    display: block;
-    
-    width: 100%;
-}
-
-@for $i from 1 through 10 {
-    @for $j from 1 through 10 {
-        @if $i != $j {
-            .grid__#{$j}\/#{$i} {
-                display: inline-block;
-
-                width: 100% / ($i / $j) - 1;
-
-                @include breakpointer-static() {
-                    display: inline-block;
-
-                    width: 100% / ($i / $j) - 1;
-                }
-            }
-        } @else if $i == 1 {
-            .grid__full {
-                display: block;
-    
-                @include breakpointer-static() {
-                    display: block !important;
-                }
-            }
-        }
-    }
-}
