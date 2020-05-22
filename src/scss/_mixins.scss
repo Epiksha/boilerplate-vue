@@ -1,10 +1,322 @@
-// Add new font files
-@mixin fonter($name, $file, $weight, $style, $extension) {
-    @font-face {
-        font-family: "#{$name}";
-        font-weight: $weight;
-        font-style: $style;
+// Add direction modifiers
+@mixin directioner($label, $property, $value, $increments: false, $negativeIncrements: true, $breakpoints: false, $divers: false) {
+    $directions: top, right, bottom, left;
 
-        src: url("../assets/fonts/#{$file}.#{$extension}");
+    @each $direction in $directions {
+        $newLabel: #{$label + firstChar($direction)};
+        $newProp: #{$property}-#{$direction};
+
+        .#{$newLabel} {
+            #{$newProp}: $value;
+        }
+
+        @if $increments != false {
+            @include incrementer($increments, $negativeIncrements, $newLabel, $newProp, $value, $breakpoints, $divers);
+        }
+
+        @if $breakpoints != false {
+            @include breakpointer($newLabel, $newProp, $value, $divers);
+        }
+        
+        @if $divers != false {
+            @include diver($newLabel, $newProp, $value);
+        }
+    }
+}
+
+// Add multiplication modifiers in increments
+@mixin incrementer($increments, $negativeIncrements, $label, $property, $value, $breakpoints: false, $divers: false) {
+    // Map
+    @if type-of($increments) == map {
+        $factor: false;
+        $max: false;
+        $min: false;
+
+        @each $incrementProperty, $incrementValue in $increments {
+            @if $incrementProperty == factor {
+                $factor: $incrementValue;
+            } @else if $incrementProperty == max {
+                $max: $incrementValue;
+            } @else if $incrementProperty == min {
+                $min: $incrementValue;
+            }
+        }
+
+        $zeroLabel: #{$label}-0;
+
+        .#{$zeroLabel} {
+            #{$property}: 0;
+        }
+
+        @if $breakpoints != false {
+            @include breakpointer($zeroLabel, $property, 0, $divers);
+        }
+
+        @if $divers != false {
+            @include diver($zeroLabel, $property, 0);
+        }
+
+        $iterableFactor: $min;
+
+        @while $iterableFactor <= $max {
+            @if $iterableFactor == 1 {
+                $iterableFactor: $iterableFactor + $factor;
+            } @else if isDecimal($iterableFactor) {
+                $newLabel: #{$label}-#{firstChar($iterableFactor)}\.5;
+                $newVal: $value * $iterableFactor;
+                
+                .#{$newLabel} {
+                    #{$property}: $newVal;
+                }
+
+                @if $breakpoints != false {
+                    @include breakpointer($newLabel, $property, $newVal, $divers);
+                }
+
+                @if $divers != false {
+                    @include diver($newLabel, $property, $newVal);
+                }
+
+                $iterableFactor: $iterableFactor + $factor;
+            } @else {
+                $newLabel: #{$label}-#{$iterableFactor};
+                $newVal: $value * $iterableFactor;
+
+                .#{$newLabel} {
+                    #{$property}: $newVal;
+                }
+
+                @if $breakpoints != false {
+                    @include breakpointer($newLabel, $property, $newVal, $divers);
+                }
+
+                @if $divers != false {
+                    @include diver($newLabel, $property, $newVal);
+                }
+
+                $iterableFactor: $iterableFactor + $factor;
+            }
+        }
+    // List
+    } @else if type-of($increments) == list {
+        // -0 modifier
+        $zeroLabel: #{$label}-0;
+
+        .#{$zeroLabel} {
+            #{$property}: 0;
+        }
+
+        @if $breakpoints != false {
+            @include breakpointer($zeroLabel, $property, 0, $divers);
+        }
+
+        @if $divers != false {
+            @include diver($zeroLabel, $property, 0);
+        }
+
+        // Increments
+        @each $increment in $increments {
+            $newVal: $value * $increment;
+
+            @if $increment > 0 {
+                @if isDecimal($increment) {
+                    $newLabel: #{$label}-#{firstChar($increment)}\.5;
+    
+                    .#{$newLabel} {
+                        #{$property}: $newVal;
+                    }
+    
+                    @if $breakpoints != false {
+                        @include breakpointer($newLabel, $property, $newVal, $divers);
+                    }
+    
+                    @if $divers != false {
+                        @include diver($newLabel, $property, $newVal);
+                    }
+                } @else if $increment > 1 {
+                    $newLabel: #{$label}-#{$increment};
+    
+                    .#{$newLabel} {
+                        #{$property}: $newVal;
+                    }
+    
+                    @if $breakpoints != false {
+                        @include breakpointer($newLabel, $property, $newVal, $divers);
+                    }
+    
+                    @if $divers != false {
+                        @include diver($newLabel, $property, $newVal);
+                    }
+                }
+            // Negative Increments
+            } @else {
+                @if isDecimal($increment) {
+                    $newLabel: -#{$label}-#{secondChar($increment)}\.5;
+                    $newVal: $value * $increment;
+                    
+                    .#{$newLabel} {
+                        #{$property}: $newVal;
+                    }
+    
+                    @if $breakpoints != false {
+                        @include breakpointer($newLabel, $property, $newVal, $divers);
+                    }
+    
+                    @if $divers != false {
+                        @include diver($newLabel, $property, $newVal);
+                    }
+                } @else if $increment > 1 {
+                    $newLabel: -#{$label}-#{$increment};
+    
+                    .#{$newLabel} {
+                        #{$property}: $newVal;
+                    }
+    
+                    @if $breakpoints != false {
+                        @include breakpointer($newLabel, $property, $newVal, $divers);
+                    }
+    
+                    @if $divers != false {
+                        @include diver($newLabel, $property, $newVal);
+                    }
+                }
+            }
+        }
+    } @else {
+        @for $i from 1 through 6 {
+            @if $i == 1 {
+                $newLabel: #{$label}-0\.5;
+
+                .#{$newLabel} {
+                    #{$property}: $value - 0.5;
+                }
+    
+                @if $breakpoints != false {
+                    @include breakpointer($newLabel, $property, $value, $divers);
+                }
+                
+                @if $divers != false {
+                    @include diver($newLabel, $property, $value);
+                }
+            } @else {
+                // Integer
+                $integerLabel: #{$label}-#{$i};
+                $integerVal: $value * $i;
+
+                .#{$integerLabel} {
+                    #{$property}: $value * $i;
+                }
+
+                // Decimal
+                $decimalLabel: #{$label}-#{firstChar($i - .5)}\.5;
+                $decimalVal: ($value * $i) - 0.5;
+
+                .#{$decimalLabel} {
+                    #{$property}: ($value * $i) - 0.5;
+                }
+
+                // Tie-Ins
+                @if $breakpoints != false {
+                    @include breakpointer($integerLabel, $property, $integerVal, $divers);
+                    @include breakpointer($decimalLabel, $property, $decimalVal, $divers);
+                }
+
+                @if $divers != false {
+                    @include diver($integerLabel, $property, $integerVal);
+                    @include diver($decimalLabel, $property, $decimalVal);
+                }
+            }
+        }
+    }
+}
+
+// Dynamically create breakpoints
+@mixin breakpointer($label, $property, $value, $divers: false) {
+    $breakpoints: (
+        sm: 575px,
+        md: 767px,
+        lg: 1199px
+    ) !default;
+
+    @if variable-exists(extraBreakpoints) {
+        $breakpoints: join($breakpoints, $extraBreakpoints);
+    }
+
+    @each $breakpointLabel, $breakpointValue in $breakpoints {
+        $newLabel: #{$breakpointLabel}\:#{$label};
+
+        .#{$newLabel} {
+            @media (max-width: $breakpointValue) {
+                #{$property}: $value;
+            }
+        }
+
+        @if $divers != false {
+            .#{$newLabel}-dive > * {
+                @media (max-width: $breakpointValue) {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
+}
+
+// Add class styling to children
+@mixin diver($label, $property, $value) {
+    .#{$label}-dive > * {
+        #{$property}: $value;
+    }
+}
+
+// Builds out utilities
+@if variable-exists(utilities) {
+    @each $label, $utilityObject in $utilities {
+        @each $property, $value in $utilityObject {
+            // Set Config
+            $directions: false;
+            $breakpoints: false;
+            $increments: false;
+            $negativeIncrements: true;
+            $diver: false;
+    
+            @each $configLabel, $configObject in $utilityConfig {
+                @if $configLabel == $label {
+                    @each $configProperty, $configValue in $configObject { 
+                        @if $configProperty == directions {
+                            $directions: $configValue;
+                        } @else if $configProperty == breakpoints {
+                            $breakpoints: $configValue;
+                        } @else if $configProperty == increments {
+                            $increments: $configValue;
+                        } @else if $configProperty == negativeIncrements {
+                            $negativeIncrements: $configValue;
+                        } @else if $configProperty == diver {
+                            $diver: $configValue;
+                        }
+                    }
+                }
+            }
+
+            // Utility Generation
+            .ut-#{$label} {
+                #{$property}: $value;
+            }
+    
+            @if $increments != false {
+                @include incrementer($increments, $negativeIncrements, $label, $property, $value, $breakpoints, $diver);
+            }
+    
+            @if $directions != false {
+                @include directioner($label, $property, $value, $increments, $negativeIncrements, $breakpoints, $diver);
+            }
+            
+            @if $breakpoints != false {
+                @include breakpointer($label, $property, $value, $diver);
+            }
+            
+            @if $diver != false {
+                @include diver($label, $property, $value);
+            }
+        }
     }
 }

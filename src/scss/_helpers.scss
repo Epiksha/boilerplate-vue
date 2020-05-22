@@ -12,6 +12,16 @@
     @return to-upper-case(str-slice($str, 1, 1)) + str-slice($str, 2);
 }
 
-@function str-first($str) {
-    @return str-slice($str, 1, 1);
+// NUMBERS
+@function isDecimal($num) {
+    @return round($num) != $num;
+}
+
+// Miscellaneous
+@function firstChar($str) {
+    @return str-slice(quote($str), 1, 1);
+}
+
+@function secondChar($str) {
+    @return str-slice(quote($str), 2, 2);
 }

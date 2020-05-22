@@ -1,6 +1,6 @@
 <template>
-    <main class="lg:ml-4--children">
-        <h2>
+    <main class="-ml-3.5">
+        <h2 class="-p-2 -m-2.5">
             Home
         </h2>
     </main>
