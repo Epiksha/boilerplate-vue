@@ -1,7 +1,6 @@
 // General Imports
 @import 'variables';
 @import 'utilities';
-@import 'helpers';
 @import 'mixins';
 @import 'typography';
 @import 'defaults';
@@ -16,4 +15,4 @@
 @import './components/card';
 @import './components/select';
 
-@import 'node_modules/sass-utilizer/sass-utilizer.scss';
+@import 'sass-utilizer';

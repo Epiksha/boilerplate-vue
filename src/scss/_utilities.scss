@@ -1,4 +1,21 @@
 $utilities: (
+    // POSITIONING
+    top: (
+        top: $spacing
+    ),
+
+    right: (
+        right: $spacing
+    ),
+    
+    bottom: (
+        bottom: $spacing
+    ),
+    
+    left: (
+        left: $spacing
+    ),
+
     // BOX MODEL
     m: (
         margin: $spacing
@@ -14,17 +31,16 @@ $utilityConfig: (
     m: (
         directions: true,
         breakpoints: true,
-        increments: (
-            factor: 0.5,
-            max: 6
-        ),
-        diver: true
+        increments: true,
+        negatives: false,
+        dives: true
     ),
-
+    
     p: (
         directions: true,
         breakpoints: true,
-        increments: (0.5, 1, 1.5, 2),
-        diver: true
+        increments: true,
+        negatives: false,
+        dives: true
     )
 );
