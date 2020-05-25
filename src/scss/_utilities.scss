@@ -1,27 +1,15 @@
 $utilities: (
-    // BOX MODEL
     m: (
         margin: $spacing
-    ),
-    
-    p: (
-        padding: $spacing
     )
 );
 
 $utilityConfig: (
-    // BOX MODEL
     m: (
         directions: true,
         breakpoints: true,
-        increments: (-2, -2.5, 0.5, 1, 1.5, 2),
-        diver: true
-    ),
-
-    p: (
-        directions: true,
-        breakpoints: true,
-        increments: (0.5, 1, 1.5, 2),
-        diver: true
+        increments: true,
+        states: (hover, focus, visited, active),
+        dives: true
     )
 );

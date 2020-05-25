@@ -1,6 +1,6 @@
 <template>
-    <main class="-ml-3.5">
-        <h2 class="-p-2 -m-2.5">
+    <main class="lg:-m-4.25">
+        <h2 class="hover:mb-4">
             Home
         </h2>
     </main>
