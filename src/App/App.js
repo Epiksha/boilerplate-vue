@@ -1,11 +1,11 @@
-import VHeader from '../components/VHeader/VHeader.vue';
-import VFooter from '../components/VFooter/VFooter.vue';
+import Header from '../components/layout/Header/Header.vue';
+import Footer from '../components/layout/Footer/Footer.vue';
 
 export default {
     name: 'App',
 
     components: {
-        VHeader,
-        VFooter,
+        Header,
+        Footer,
     },
 };

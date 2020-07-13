@@ -1,4 +1,5 @@
 const { VueLoaderPlugin } = require('vue-loader');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     entry: [
@@ -7,18 +8,12 @@ module.exports = {
     ],
 
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new SpriteLoaderPlugin()
     ],
 
     module: {
         rules: [
-            {
-                test: /\.svg/,
-                use: [
-                    'babel-loader',
-                    'vue-svg-loader'
-                ]
-            },
             {
                 test: /\.js/,
                 use: [
@@ -40,6 +35,13 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    'svg-sprite-loader',
+                    'svgo-loader'
+                ]
             },
             {
                 test: /\.(woff|ttf|eot|jpe?g|png)$/,

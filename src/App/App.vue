@@ -1,13 +1,10 @@
 <template>
-    <div
-        id="app"
-        class="ut-bg-0"
-    >
-        <VHeader />
+    <div id="app">
+        <Header />
         
         <router-view />
 
-        <VFooter />
+        <Footer />
     </div>
 </template>
 

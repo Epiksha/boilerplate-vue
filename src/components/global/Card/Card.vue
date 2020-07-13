@@ -26,4 +26,4 @@
     </article>
 </template>
 
-<script src="./VCard.js" />
+<script src="./Card.js" />

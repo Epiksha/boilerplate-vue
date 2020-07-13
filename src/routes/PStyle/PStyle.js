@@ -1,40 +1,17 @@
-import VHeader from '../../components/VHeader/VHeader.vue';
-import VCard from '../../components/VCard/VCard.vue';
-import VSelect from '../../components/VSelect/VSelect.vue';
+import Header from '../../components/layout/Header/Header.vue';
+import Card from '../../components/global/Card/Card.vue';
 
 export default {
     name: 'PStyle',
 
     data() {
         return {
-            selectData: {
-                id: 'select-1',
-                label: 'Make your choice:',
-                first: '--',
-                options: [
-                    {
-                        name: 'First',
-                    },
-                    {
-                        name: 'Second',
-                    },
-                    {
-                        name: 'Third',
-                    },
-                    {
-                        name: 'Four',
-                    },
-                    {
-                        name: 'Fifth',
-                    },
-                ],
-            },
+           
         };
     },
 
     components: {
-        VHeader,
-        VCard,
-        VSelect,
+        Header,
+        Card,
     },
 };

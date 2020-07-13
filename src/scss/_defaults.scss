@@ -1,106 +1,22 @@
+// Display & Alignment
+
+// Positioning
+
+// Box Model
 * {
     box-sizing: border-box;
 }
 
-body {
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
-    background-color: $color3;
 }
 
 main {
-    background-color: $color0;
+    margin-top: 5rem;
 }
 
-h1, h2, h3, h4, h5, h6, p, input {
-    margin: 0;
-    padding: 0;
-}
+// Backgrounds & Colors
 
-ol, ul {
-    padding-left: $spacing * 1.5;
-}
+// Typography
 
-ul {
-    margin: 0;
-}
-
-a {
-    font-size: $fontSize-xs;
-    text-decoration: none;
-}
-
-button {
-    padding: 0;
-    border: none;
-
-    background: none;
-    outline: none;
-}
-
-fieldset {
-    padding: $spacing * 2;
-    border: solid 1px $color4;
-    border-radius: 1.5rem;
-}
-
-legend {
-    color: $color3;
-
-    font-size: $fontSize-sm;
-    font-weight: bold;
-}
-
-input {
-    &[type="radio"],
-    &[type="checkbox"] {
-        position: relative;
-
-        &:before {
-            content: '';
-            display: block;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            height: 100%;
-            width: 100%;
-            border: solid 1px $color2;
-
-            background-color: $color0;
-        }
-        
-        &:checked:after {
-            content: '';
-            display: block;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            height: 75%;
-            width: 75%;
-
-            background-color: $color3;
-        }
-    }
-
-    &[type="radio"],
-    &[type="radio"]:before,
-    &[type="radio"]:after {
-        border-radius: 50%;
-    }
-
-    &[type="text"],
-    &[type="email"],
-    &[type="number"],
-    &[type="password"] {
-        padding: $spacing * 0.75 $spacing;
-        border: solid 0.1rem $color2;
-        border-radius: 1rem;
-
-        color: $color3;
-    }
-}
+// Misc

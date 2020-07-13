@@ -10,32 +10,59 @@ html {
 }
 
 body {
+    color: $color2;
+
     font-family: $fontFamily1;
 }
 
 h1 {
-    font-size: $fontSize-xxl;
+    color: $color2;
+    font-size: $fontSize-xl;
+    font-family: $fontFamily1;
+    font-weight: bold;
+    line-height: 1;
 }
 
 h2 {
+    color: $color2;
     font-size: $fontSize-xl;
+    font-family: $fontFamily1;
+    font-weight: bold;
+    line-height: 1;
 }
 
 h3 {
+    color: $color2;
     font-size: $fontSize-lg;
+    font-family: $fontFamily1;
+    font-weight: bold;
+    line-height: 1;
 }
 
 h4 {
+    color: $color2;
     font-size: $fontSize-md;
+    font-family: $fontFamily1;
+    font-weight: bold;
+    line-height: 1;
 }
 
 h5 {
+    color: $color2;
     font-size: $fontSize-sm;
+    font-family: $fontFamily1;
+    font-weight: bold;
+    line-height: 1;
 }
 
 h6 {
+    color: $color2;
     font-size: $fontSize-xs;
+    font-family: $fontFamily1;
+    font-weight: bold;
+    line-height: 1;
 }
+
 
 p, span, li {
     font-size: $fontSize-sm;

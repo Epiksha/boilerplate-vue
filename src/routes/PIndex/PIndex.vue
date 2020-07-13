@@ -1,5 +1,5 @@
 <template>
-    <main class="lg:ml-4--children">
+    <main>
         <h2>
             Home
         </h2>

@@ -8,11 +8,15 @@
 @import 'transitions';
 
 // Component Imports
-@import './components/grid';
-@import './components/button';
 @import './components/header';
 @import './components/footer';
+@import './components/logo';
+@import './components/icon';
+@import './components/button';
 @import './components/card';
-@import './components/select';
 
 @import 'sass-utilizer';
+
+main {
+    min-height: 60rem;
+}

@@ -1,6 +1,30 @@
 .header {
-    height: 7.5rem;
-    padding: $spacing;
+    box-sizing: content-box;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-    color: $color0;
+    height: 5rem;
+    width: 100%;
+    border-bottom: solid 1px $color4;
+
+    background-color: $color0;
+
+    line-height: 5rem;
+
+    &__nav {
+        
+        ul {
+            padding-left: 0;
+       
+            a {
+                color: $color3;
+    
+                font-size: $fontSize-sm;
+                font-weight: bold;
+                text-decoration: none;
+            }
+        }
+
+    }
 }

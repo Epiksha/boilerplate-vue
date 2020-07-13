@@ -156,15 +156,6 @@
                         placeholder="Number"
                         class="ut-fullWidth ut-marginTop"
                     >
-
-                    <div class="ut-marginTop-2">
-                        <h6>Select Box</h6>
-
-                        <VSelect
-                            :select-data="selectData"
-                            class="ut-marginTop"
-                        />
-                    </div>
                 </fieldset>
             </div>
         </section>
@@ -195,7 +186,7 @@
             <h3>Cards</h3>
 
             <div class="ut-marginTop-2">
-                <VCard />
+                <Card />
             </div>
         </section>
     </main>

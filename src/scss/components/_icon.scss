@@ -1,0 +1,25 @@
+.icon {
+    display: inline-block;
+    vertical-align: top;
+
+    position: relative;
+
+    width: $iconSize1;
+    min-width: $iconSize1;
+    padding-bottom: $iconSize1;
+
+    &.active svg {
+        fill: $iconFill1--active;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        fill: $iconFill1;
+    }
+}

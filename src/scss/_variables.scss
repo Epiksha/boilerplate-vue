@@ -1,15 +1,18 @@
 // BOX MODEL
 $spacing: 1rem;
 
+$iconSize1: 3.6rem;
+$iconSize2: 4.5rem;
+
 // BACKGROUNDS & COLOURS
 $color0: #fff;
 $color1: #000;
-$color2: #42b883;
-$color3: #35495e;
-$color4: #999;
-$color5: #ddd;
+$color2: #04021a;
+$color3: #045a56;
+$color4: #efefef;
 
-$colors: $color0, $color1, $color2, $color3, $color4, $color5;
+$iconFill1: $color3;
+$iconFill1--active: $color2;
 
 // TYPOGRAPHY
 $defaultSize: 10px;
@@ -19,5 +22,5 @@ $fontSize-xs: $defaultSize * 1.2;
 $fontSize-sm: $defaultSize * 1.4;
 $fontSize-md: $defaultSize * 1.6;
 $fontSize-lg: $defaultSize * 1.8;
-$fontSize-xl: $defaultSize * 2;
-$fontSize-xxl: $defaultSize * 2.4;
+$fontSize-xl: $defaultSize * 2.4;
+$fontSize-xxl: $defaultSize * 3.2;
