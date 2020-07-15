@@ -1,7 +1,7 @@
 <template>
     <article class="card ut-padding-2">
         <header class="card__header">
-            <h4>Card Header</h4>
+            <h3>Card Header</h3>
         </header>
 
         <div class="card__body ut-marginTop">
@@ -10,7 +10,7 @@
 
         <footer class="card__footer">
             <div class="card__footer__tags ut-marginTop ut">
-                <h5>Card Tags</h5>
+                <span>Card Tags</span>
 
                 <button class="button button--tag ut-marginTop">
                     Tag

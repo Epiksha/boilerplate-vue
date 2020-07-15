@@ -1,8 +1,5 @@
 <template>
-    <header
-        class="header"
-        role="banner"
-    >
+    <header class="header">
         <div class="pl-2 pr-2 h-100">
             <div
                 class="
@@ -26,17 +23,19 @@
                             inline-block
                         "
                         name="icon-logo"
+                        role="presentation"
                     />
 
-                    <h1
+                    <span
                         class="
+                            header__logo__title
                             inline-block
                             align-middle
                             ml
                         "
                     >
-                        Simplerif
-                    </h1>
+                        Simpler
+                    </span>
                 </router-link>
             </div><!-- 
                 Remove white space to fit inline blocks on one line
@@ -48,6 +47,7 @@
                     text-right
                     w-50
                 "
+                aria-label="Main Navigation"
             >
                 <ul>
                     <router-link

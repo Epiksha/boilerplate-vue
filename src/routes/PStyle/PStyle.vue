@@ -1,101 +1,172 @@
 <template>
-    <main class="container ut-padding-2">
+    <main class="container p-4">
+        <h1>Styleguide</h1>
+
         <section>
-            <h3>Headers</h3>
+            <h2>Menu Example</h2>
 
-            <div class="ut-marginTop">
-                <h1>h1</h1>
+            <nav
+                class="
+                    dropdown
+                    mt
+                "
+            >
+                <ul>
+                    <li
+                        role="button"
+                        aria-haspopup="true"
+                        aria-controls="subnav"
+                        aria-owns="subnav"
+                        tabindex="0"
+                        @click="subnav = !subnav"
+                    >
+                        List Item 1
+                    </li>
 
-                <h2>h2</h2>
+                    <li
+                        role="button"
+                        tabindex="0"
+                    >
+                        List Item 2
+                    </li>
 
-                <h3>h3</h3>
+                    <li
+                        role="button"
+                        tabindex="0"
+                    >
+                        List Item 3
+                    </li>
 
-                <h4>h4</h4>
+                    <li
+                        role="button"
+                        tabindex="0     "
+                    >
+                        List Item 4
+                    </li>
+                </ul>
+            </nav>
 
-                <h5>h5</h5>
+            <nav
+                v-if="subnav"
+                id="subnav"
+                class="
+                    dropdown
+                    mt
+                    ml
+                "
+                aria-label="Example Sub Nav"
+            >
+                <ul>
+                    <li role="button">
+                        List Item 1
+                    </li>
 
-                <h6>h6</h6>
-            </div>
+                    <li role="button">
+                        List Item 2
+                    </li>
+
+                    <li role="button">
+                        List Item 3
+                    </li>
+
+                    <li role="button">
+                        List Item 4
+                    </li>
+                </ul>
+            </nav>
         </section>
 
-        <section class="ut-marginTop-2">
-            <h3>Paragraph</h3>
+        <section class="mt-2">
+            <h2>Paragraph</h2>
 
-            <div class="ut-marginTop">
+            <div class="mt">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi.</p>
             </div>
         </section>
 
-        <section class="ut-marginTop-2">
-            <h3>Lists</h3>
+        <section class="mt-2">
+            <h2>Lists</h2>
 
-            <ul class="ut-marginTop">
-                <li class="ut-marginTop">
+            <ul class="mt">
+                <li class="mt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quo doloribus quia? Sit, nisi. Deleniti similique autem quos odit possimus libero velit eligendi! Quaerat, fuga quod laborum placeat excepturi alias!
                 </li>
 
-                <li class="ut-marginTop">
+                <li class="mt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quo doloribus quia? Sit, nisi. Deleniti similique autem quos odit possimus libero velit eligendi! Quaerat, fuga quod laborum placeat excepturi alias!
                 </li>
 
-                <li class="ut-marginTop">
+                <li class="mt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quo doloribus quia? Sit, nisi. Deleniti similique autem quos odit possimus libero velit eligendi! Quaerat, fuga quod laborum placeat excepturi alias!
                 </li>
             </ul>
             
-            <ol class="ut-marginTop-2">
-                <li class="ut-marginTop">
+            <ol class="mt-2">
+                <li class="mt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quo doloribus quia? Sit, nisi. Deleniti similique autem quos odit possimus libero velit eligendi! Quaerat, fuga quod laborum placeat excepturi alias!
                 </li>
 
-                <li class="ut-marginTop">
+                <li class="mt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quo doloribus quia? Sit, nisi. Deleniti similique autem quos odit possimus libero velit eligendi! Quaerat, fuga quod laborum placeat excepturi alias!
                 </li>
 
-                <li class="ut-marginTop">
+                <li class="mt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quo doloribus quia? Sit, nisi. Deleniti similique autem quos odit possimus libero velit eligendi! Quaerat, fuga quod laborum placeat excepturi alias!
                 </li>
             </ol>
         </section>
 
-        <section class="ut-marginTop-2">
-            <h3>Inputs</h3>
+        <section class="mt-2">
+            <h5>Inputs</h5>
 
-            <div class="ut-marginTop">
+            <div class="mt">
                 <div>
-                    <h5 class="ut-inlineBlock ut-vertAlignMiddle">
-                        Radio:
-                    </h5>
-
-                    <div class="ut-inlineBlock ut-vertAlignMiddle ut-marginLeft">
-                        <input
-                            id="radio-1"
-                            type="radio"
-                            name="radio"
-                            class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
-                            checked="checked"
+                    <form class="ut-inlineBlock ut-vertAlignMiddle ut-marginLeft">
+                        <legend id="radioHeader">
+                            Radio Buttons
+                        </legend>
+                        
+                        <fieldset
+                            role="radiogroup"
+                            aria-labelledby="radioHeader"
                         >
+                            <input
+                                id="radio-1"
+                                type="radio"
+                                name="radio"
+                                class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                                checked="checked"
+                                aria-label="Radio Button 1"
+                            >
 
-                        <input
-                            id="radio-2"
-                            type="radio"
-                            name="radio"
-                            class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
-                        >
+                            <input
+                                id="radio-2"
+                                type="radio"
+                                name="radio"
+                                class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                            >
 
-                        <input
-                            id="radio-3"
-                            type="radio"
-                            name="radio"
-                            class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
-                        >
-                    </div>
+                            <input
+                                id="radio-3"
+                                type="radio"
+                                name="radio"
+                                class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                                aria-label="Radio Button 3"
+                            >
+                        </fieldset>
+                    </form>
                 </div>
                 
-                <div class="ut-marginTop-2">
-                    <h5 class="ut-inlineBlock ut-vertAlignMiddle">
+                <div class="mt-2">
+                    <h3
+                        id="checkboxHeader"
+                        class="
+                            ut-inlineBlock
+                            ut-vertAlignMiddle
+                        "
+                    >
                         Checkboxes:
-                    </h5>
+                    </h3>
 
                     <div class="ut-inlineBlock ut-vertAlignMiddle ut-marginLeft">
                         <input
@@ -104,6 +175,7 @@
                             name="check"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
                             checked="checked"
+                            aria-labelledby="checkboxHeader"
                         >
 
                         <input
@@ -111,6 +183,7 @@
                             type="checkbox"
                             name="check"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                            aria-labelledby="checkboxHeader"
                         >
 
                         <input
@@ -118,11 +191,12 @@
                             type="checkbox"
                             name="check"
                             class="ut-marginLeft-0.5 ut-marginRight-0.5 ut-vertAlignMiddle"
+                            aria-labelledby="checkboxHeader"
                         >
                     </div>
                 </div>
 
-                <fieldset class="ut-marginTop-2">
+                <fieldset class="mt-2">
                     <legend>Input Types</legend>
 
                     <input
@@ -131,6 +205,7 @@
                         type="text"
                         placeholder="Username"
                         class="ut-fullWidth"
+                        aria-label="Username Input"
                     >
                     
                     <input
@@ -138,7 +213,8 @@
                         name="password"
                         type="password"
                         placeholder="Password"
-                        class="ut-fullWidth ut-marginTop"
+                        class="ut-fullWidth mt"
+                        aria-label="Password Input"
                     >
 
                     <input
@@ -146,24 +222,26 @@
                         name="email"
                         type="email"
                         placeholder="Email"
-                        class="ut-fullWidth ut-marginTop"
+                        class="ut-fullWidth mt"
+                        aria-label="Email Input"
                     >
                     
                     <input
                         id="number"
-                        name="date"
+                        name="number"
                         type="number"
                         placeholder="Number"
-                        class="ut-fullWidth ut-marginTop"
+                        class="ut-fullWidth mt"
+                        aria-label="Number Input"
                     >
                 </fieldset>
             </div>
         </section>
         
-        <section class="ut-marginTop-2">
-            <h3>Buttons</h3>
+        <section class="mt-2">
+            <h2>Buttons</h2>
 
-            <div class="ut-marginTop">
+            <div class="mt">
                 <button class="button ut-inlineBlock ut-marginRight">
                     Submit
                 </button>
@@ -182,10 +260,10 @@
             </div>
         </section>
 
-        <section class="ut-marginTop-2">
-            <h3>Cards</h3>
+        <section class="mt-2">
+            <h2>Cards</h2>
 
-            <div class="ut-marginTop-2">
+            <div class="mt-2">
                 <Card />
             </div>
         </section>
