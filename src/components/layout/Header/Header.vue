@@ -8,6 +8,27 @@
                     w-50
                 "
             >
+                <button
+                    id="menubutton"
+                    class="
+                        button
+                        button--menu
+                        inline-block
+                        align-middle
+                    "
+                    aria-haspopup="true"
+                    aria-controls="sidebar"
+                    :aria-expanded="isSidebarOpen ? true : false"
+                    aria-label="Menu Button"
+                    @click="toggleSidebar"
+                >
+                    <div />
+
+                    <div class="mt-0.5" />
+
+                    <div class="mt-0.5" />
+                </button>
+
                 <router-link
                     class="
                         header__logo
@@ -16,16 +37,6 @@
                     "
                     to="/"
                 >
-                    <Icon
-                        class="
-                            logo
-                            logo--header
-                            inline-block
-                        "
-                        name="icon-logo"
-                        role="presentation"
-                    />
-
                     <span
                         class="
                             header__logo__title

@@ -1,0 +1,55 @@
+.button {
+    padding: 0;
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &:focus,
+    &:active,
+    &:visited {
+        background-color: transparent;
+    }
+
+    &:focus,
+    &:active {
+        outline: solid 0.1rem $color2;
+    }
+
+    &--menu {
+        height: 100%;
+        width: 2.5rem;
+        
+        & > div {
+            height: 0.3rem;
+
+            background-color: $color1;
+        }
+
+        &:hover > div {
+            background-color: $color2;
+        }
+    }
+
+    &--close {
+        position: absolute;
+        top: $spacing * 1.5;
+        right: $spacing * 1.5;
+
+        &:hover .icon svg {
+            fill: $color3;
+        }
+
+        .icon {
+            width: 2.4rem;
+            min-width: 2.4rem;
+            padding-bottom: 2.4rem;
+            
+            svg {
+                fill: $color2;
+            }
+        }
+    }
+}

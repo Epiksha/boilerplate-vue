@@ -1,5 +1,5 @@
 export default {
-    name: 'Header',
+    name: 'Sidebar',
 
     data() {
         return {
@@ -9,8 +9,8 @@ export default {
                     text: 'Home',
                 },
                 {
-                    url: '/styleguide',
-                    text: 'Style Guide',
+                    url: 'styleguide',
+                    text: 'Styleguide',
                 },
             ],
         };

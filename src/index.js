@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App/App.vue';
+import store from './js/store';
 import router from './js/router';
 
 import Card from './components/global/Card/Card.vue';
@@ -19,6 +20,7 @@ Vue.component('Icon', Icon);
 new Vue({
     render: (createEl) => createEl(App),
     router,
+    store,
 }).$mount('#root');
 
 // Remove nojs class if JS is active

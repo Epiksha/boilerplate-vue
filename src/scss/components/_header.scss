@@ -13,26 +13,30 @@
     line-height: 5rem;
 
     &__nav {
-        
         ul {
             padding-left: 0;
        
             a {
-                color: $color3;
+                color: $color2;
     
                 font-size: $fontSize-sm;
                 font-weight: bold;
                 text-decoration: none;
             }
         }
-
     }
 
-    &__logo__title {
-        color: $color2;
-
-        font-size: 2.4rem;
-        font-weight: bold;
-        text-transform: uppercase;
+    &__logo {
+        &__title {
+            color: $color2;
+    
+            font-size: 2.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            
+            &:hover {
+                color: $color3;
+            }
+        }
     }
 }

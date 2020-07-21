@@ -1,8 +1,8 @@
 <template>
     <main>
-        <h2>
+        <h1>
             Home
-        </h2>
+        </h1>
     </main>
 </template>
 

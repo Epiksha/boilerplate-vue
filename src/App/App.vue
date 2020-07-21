@@ -1,6 +1,11 @@
 <template>
-    <div id="app">
+    <div
+        id="app"
+        class="relative"
+    >
         <Header />
+
+        <Sidebar />
         
         <router-view />
 
