@@ -319,7 +319,7 @@
             </div>
         </section>
 
-        <section class="container pt-2 pr-4 pb-2 pl-4">
+        <section class="container pt-2 pr-4 pb-2 pl-4 text-center">
             <h2 class="mb-2">
                 Video
             </h2>

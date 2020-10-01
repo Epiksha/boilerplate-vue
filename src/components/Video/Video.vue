@@ -2,9 +2,11 @@
     <div class="video">
         <video
             ref="video"
-            :controls="controls"
+            controls="false"
             class="h-100 w-100"
             @timeupdate="updateTime"
+            @click.prevent="togglePlay"
+            @ended="paused = true"
         >
             <source
                 v-for="(source, i) in sources"
@@ -33,7 +35,11 @@
             </button>
 
             <div class="video__progress">
-                <div class="video__progress__track">
+                <div
+                    ref="progress"
+                    class="video__progress__track"
+                    @click="updateProgress"
+                >
                     <div
                         class="video__progress__current"
                         :style="{width: `${progress}%`}"
@@ -55,10 +61,18 @@
                 />
             </button>
             
-            <button
-                class="button button--volume ml mr-2"
-                @click="fullscreen"
-            >
+            <button class="button button--volume ml mr-2">
+                <div
+                    ref="volume"
+                    class="video__volume"
+                    @click.prevent="updateVolume"
+                >
+                    <div
+                        class="video__volume__level"
+                        :style="{'height': `${volume * 100}%`}"
+                    />
+                </div>
+
                 <Icon
                     name="icon-volume"
                     class="icon--volume"

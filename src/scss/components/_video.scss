@@ -2,6 +2,8 @@
     position: relative;
     
     overflow: hidden;
+    max-width: 110rem;
+    margin: auto;
 
     &:hover .video__controls {
         transform: translateY(0);
@@ -76,6 +78,27 @@
             color: $color0;
 
             font-weight: bold;
+        }
+    }
+
+    &__volume {
+        position: absolute;
+        top: 0;
+        transform: translateY(-110%);
+
+        overflow: hidden;
+        height: 12rem;
+        width: 100%;
+        border: solid 0.2rem $color0;
+        border-radius: 1rem;
+        
+        background-color: transparentize($color5, 0.4);
+
+        &__level {
+            height: 0;
+            width: 100%;
+
+            background-color: $color3;
         }
     }
 }

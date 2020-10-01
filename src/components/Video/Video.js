@@ -15,6 +15,7 @@ export default {
             progress: 0,
             formattedTime: '00:00',
             paused: true,
+            volume: 1,
         };
     },
 
@@ -41,8 +42,31 @@ export default {
     },
 
     methods: {
-        updateTime(e) {
-            this.currentTime = e.target.currentTime;
+        updateTime(event) {
+            this.currentTime = event.target.currentTime;
+        },
+
+        updateProgress(event) {
+            const { duration } = this.$refs.video;
+            const { left, width } = this.$refs.progress.getBoundingClientRect();
+            const x = event.pageX - left;
+
+            const newProgress = (x.toFixed(2) / width.toFixed(2)) * duration.toFixed(2);
+
+            this.currentTime = newProgress;
+            this.$refs.video.currentTime = newProgress;
+        },
+
+        updateVolume(event) {
+            const el = event.currentTarget;
+            this.$nextTick();
+            const { offsetTop } = el;
+            const { height } = el.getBoundingClientRect();
+            const y = event.pageY + (offsetTop + height);
+
+            const percentage = (height.toFixed(2) / y.toFixed(2));
+
+            this.volume = percentage;
         },
 
         togglePlay() {
