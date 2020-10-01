@@ -1,11 +1,27 @@
 $utilities: (
     // DISPLAY & ALIGNMENT
+    block: (
+        display: block
+    ),
+
     inline-block: (
         display: inline-block
     ),
 
     align-middle: (
         vertical-align: middle
+    ),
+
+    hide: (
+        display: none
+    ),
+
+    show-inline: (
+        display: inline-block
+    ),
+
+    text-center: (
+        text-align: center
     ),
 
     text-right: (
@@ -22,6 +38,10 @@ $utilities: (
         height: 100%
     ),
 
+    w-100: (
+        width: 100%
+    ),
+
     w-50: (
         width: 50%
     ),
@@ -35,6 +55,17 @@ $utilities: (
     ),
     
     // BACKGROUNDS & COLOURS
+    background-3: (
+        background-color: $color3
+    ),
+
+    highlight-0: (
+        color: $color0
+    ),
+    
+    highlight-3: (
+        color: $color2
+    )
 
     // TYPOGRAPHY
 
@@ -43,15 +74,42 @@ $utilities: (
 
 $utilityConfig: (
     // DISPLAY & ALIGNMENT
+    block: (
+        breakpoints: true
+    ),
+
     inline-block: (
+        breakpoints: true
+    ),
+
+    text-center: (
         breakpoints: true
     ),
 
     align-middle: (
         breakpoints: true
     ),
+
+    show-inline: (
+        breakpoints: true
+    ),
+
+    hide: (
+        breakpoints: true
+    ),
    
     text-right: (
+        breakpoints: true
+    ),
+
+    // POSITIONING
+
+    // BOX MODEL
+    w-100: (
+        breakpoints: true
+    ),
+
+    w-50: (
         breakpoints: true
     ),
 
@@ -67,12 +125,8 @@ $utilityConfig: (
         directions: true,
         dives: true,
         increments: true
-    )
+    ),
 
-    // POSITIONING
-
-    // BOX MODEL
-    
     // BACKGROUNDS & COLOURS
 
     // TYPOGRAPHY

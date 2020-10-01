@@ -3,6 +3,13 @@
         id="app"
         class="relative"
     >
+        <a
+            href="#app"
+            class="skipLink"
+        >
+            Skip to Content
+        </a>
+
         <Header />
 
         <Sidebar />

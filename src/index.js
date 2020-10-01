@@ -3,8 +3,8 @@ import App from './App/App.vue';
 import store from './js/store';
 import router from './js/router';
 
-import Card from './components/global/Card/Card.vue';
-import Icon from './components/global/Icon/Icon.vue';
+import Card from './components/Card/Card.vue';
+import Icon from './components/Icon/Icon.vue';
 
 import './scss/general.scss';
 

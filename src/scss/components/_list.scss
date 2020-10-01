@@ -1,0 +1,54 @@
+ol {
+    padding-left: $spacing * 2;
+    counter-reset: li;
+
+    li {
+        list-style: none;
+
+        &:before {
+            content: '.' counter(li);
+            counter-increment: li;
+            display: inline-block;
+            text-align: right;
+            vertical-align: middle;
+
+            width: 1rem;
+            margin-left: -1.75rem;
+            margin-right: 0.5rem;
+
+            color: $color2;
+
+            direction: rtl;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+    }
+}
+
+ul {
+    padding-left: $spacing * 2;
+
+    li {
+        list-style: none;
+
+        &:before {
+            content: '\2022';
+            display: inline-block;
+            vertical-align: middle;
+            
+            height: 100%;
+            width: 1rem;
+            margin-left: -2rem;
+            margin-right: 0.5rem;
+            
+            color: $color2;
+
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}
+
+li:not(:first-of-type) {
+    margin-top: $spacing * 0.75;
+}

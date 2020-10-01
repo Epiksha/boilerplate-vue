@@ -1,9 +1,10 @@
 .header {
-    box-sizing: content-box;
     position: fixed;
     top: 0;
     left: 0;
-
+    z-index: 10;
+    
+    box-sizing: content-box;
     height: 5rem;
     width: 100%;
     border-bottom: solid 1px $color4;
@@ -13,6 +14,8 @@
     line-height: 5rem;
 
     &__nav {
+        display: none;
+        
         ul {
             padding-left: 0;
        
@@ -27,6 +30,15 @@
     }
 
     &__logo {
+        text-align: center;
+
+        width: calc(100% - 2.5rem);
+
+        @include breakpoint($breakpoint-sm) {
+            text-align: left;
+            width: auto;
+        }
+
         &__title {
             color: $color2;
     

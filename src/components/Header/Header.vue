@@ -5,7 +5,8 @@
                 class="
                     inline-block
                     align-middle
-                    w-50
+                    w-100
+                    sm:w-50
                 "
             >
                 <button
@@ -22,14 +23,14 @@
                     aria-label="Menu Button"
                     @click="toggleSidebar"
                 >
-                    <div />
-
-                    <div class="mt-0.5" />
-
-                    <div class="mt-0.5" />
-                </button>
-
-                <router-link
+                    <div
+                        v-for="n in 3"
+                        :key="n"
+                        role="presentation"
+                    />
+                </button><!-- 
+                    Comment to remove whitespace so inline-block works
+                --><router-link
                     class="
                         header__logo
                         inline-block
@@ -42,7 +43,7 @@
                             header__logo__title
                             inline-block
                             align-middle
-                            ml
+                            sm:ml
                         "
                     >
                         Simpler
@@ -57,6 +58,8 @@
                     align-middle
                     text-right
                     w-50
+                    hide
+                    sm:show-inline
                 "
                 aria-label="Main Navigation"
             >

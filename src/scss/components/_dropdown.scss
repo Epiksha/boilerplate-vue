@@ -4,14 +4,12 @@
 
     width: 20rem;
 
-    box-shadow: 0.2rem 0.2rem 0.8rem 0.3rem transparentize($color1, 0.6);
-
+    box-shadow: 0.4rem 0.2rem 0.8rem 0.3rem transparentize($color1, 0.6);
+    
     ul {
         padding-left: 0;
 
-        list-style: none;
-        
-        > li {
+        li {
             padding: $spacing;
 
             background-color: $color3;
@@ -27,6 +25,10 @@
 
             &:hover {
                 color: darken($color0, 25%);
+            }
+
+            &:before {
+                display: none;
             }
         }
     }

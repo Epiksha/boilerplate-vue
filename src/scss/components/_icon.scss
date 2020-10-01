@@ -22,4 +22,27 @@
 
         fill: $iconFill1;
     }
+
+
+    &--play,
+    &--pause,
+    &--expand,
+    &--volume {
+        .icon {
+            width: 2.2rem;
+            min-width: 2.2rem;
+            padding-bottom: 2.2rem;
+            transition: transform 0.25s;
+
+            svg {
+                fill: $color0;
+            } 
+        }
+
+        &:hover {
+            .icon {
+                transform: scale(1.2);
+            }
+        }
+    }
 }
