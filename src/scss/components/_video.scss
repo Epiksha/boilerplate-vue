@@ -47,7 +47,7 @@
             width: 100%;
             border-radius: 1rem;
 
-            background-color: $color1;
+            background-color: #222;
 
             cursor: pointer;
         }
@@ -62,7 +62,7 @@
             width: 0;
             border-radius: 1rem;
 
-            background-color: $color0;
+            background-color: darken($color3, 10%);
 
             transition: width 0.25s;
         }
@@ -83,22 +83,35 @@
 
     &__volume {
         position: absolute;
-        top: 0;
-        transform: translateY(-110%);
+        top: -$spacing;
+        transform: translateY(-100%);
 
         overflow: hidden;
         height: 12rem;
+        max-height: 0;
         width: 100%;
         border: solid 0.2rem $color0;
         border-radius: 1rem;
         
         background-color: transparentize($color5, 0.4);
 
+        opacity: 0;
+        transition: max-height 0.5s, transform 0.5s, opacity 0.5s;
+
         &__level {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            
             height: 0;
             width: 100%;
 
             background-color: $color3;
+        }
+
+        .button--volume:hover & {
+            max-height: 12rem;
+            opacity: 1;
         }
     }
 }

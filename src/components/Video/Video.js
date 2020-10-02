@@ -58,15 +58,13 @@ export default {
         },
 
         updateVolume(event) {
-            const el = event.currentTarget;
-            this.$nextTick();
-            const { offsetTop } = el;
-            const { height } = el.getBoundingClientRect();
-            const y = event.pageY + (offsetTop + height);
+            const volumeBounds = this.$refs.volume.getBoundingClientRect();
+            const y = event.clientY - volumeBounds.top;
 
-            const percentage = (height.toFixed(2) / y.toFixed(2));
+            const volumeLevel = 1 - y / volumeBounds.height;
 
-            this.volume = percentage;
+            this.volume = volumeLevel;
+            this.$refs.video.volume = volumeLevel;
         },
 
         togglePlay() {
