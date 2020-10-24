@@ -3,6 +3,7 @@ export default {
 
     data() {
         return {
+            isOpen: false,
             links: [
                 {
                     url: '/',
@@ -16,15 +17,9 @@ export default {
         };
     },
 
-    methods: {
-        toggleSidebar() {
-            this.$store.commit('toggleSidebar');
-        },
-    },
-
-    computed: {
-        isSidebarOpen() {
-            return this.$store.state.isSidebarOpen;
-        },
+    mounted() {
+        this.$bus.$on('toggleSidebar', () => {
+            this.isOpen = !this.isOpen;
+        });
     },
 };

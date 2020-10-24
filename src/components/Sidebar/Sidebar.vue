@@ -2,15 +2,15 @@
     <aside
         id="sidebar"
         class="sidebar"
-        :class="{'active': isSidebarOpen}"
+        :class="{'active': isOpen}"
         aria-labelledby="menubutton"
-        @click.self="toggleSidebar"
+        @click.self="isOpen = false"
     >
         <nav class="sidebar__content relative">
             <button
                 class="button button--close"
-                :tabindex="isSidebarOpen ? '' : -1"
-                @click="toggleSidebar"
+                :tabindex="isOpen ? '' : -1"
+                @click="isOpen = false"
             >
                 <Icon name="icon-close" />
             </button>
@@ -27,7 +27,7 @@
                     <router-link
                         :to="link.url"
                         role="menuitem"
-                        :tabindex="isSidebarOpen ? '' : -1"
+                        :tabindex="isOpen ? '' : -1"
                         v-text="link.text"
                     />
                 </li>

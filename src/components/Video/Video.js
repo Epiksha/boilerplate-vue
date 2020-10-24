@@ -16,6 +16,7 @@ export default {
             formattedTime: '00:00',
             paused: true,
             volume: 1,
+            isMouseDown: false,
         };
     },
 
@@ -49,12 +50,19 @@ export default {
         updateProgress(event) {
             const { duration } = this.$refs.video;
             const { left, width } = this.$refs.progress.getBoundingClientRect();
-            const x = event.pageX - left;
+            const x = event.clientX - left;
+            const context = this;
 
             const newProgress = (x.toFixed(2) / width.toFixed(2)) * duration.toFixed(2);
 
-            this.currentTime = newProgress;
-            this.$refs.video.currentTime = newProgress;
+            context.currentTime = newProgress;
+            context.$refs.video.currentTime = newProgress;
+        },
+
+        debouncer(callback, delay) {
+            const debounced = this.debounce(callback, delay);
+
+            debounced();
         },
 
         updateVolume(event) {

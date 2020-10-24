@@ -5,12 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        isSidebarOpen: false,
     },
 
     mutations: {
-        toggleSidebar(state) {
-            state.isSidebarOpen = !state.isSidebarOpen;
-        },
     },
 });

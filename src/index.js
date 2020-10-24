@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App/App.vue';
 import store from './js/store';
 import router from './js/router';
+import plugins from './js/plugins';
 
 import Card from './components/Card/Card.vue';
 import Icon from './components/Icon/Icon.vue';
@@ -15,6 +16,11 @@ svgs.keys().forEach(svgs);
 // Global Component Registration
 Vue.component('Card', Card);
 Vue.component('Icon', Icon);
+
+// Setup Plugins
+plugins.forEach((plugin) => {
+    Vue.use(plugin);
+});
 
 // Vue Instance Initialisation
 new Vue({

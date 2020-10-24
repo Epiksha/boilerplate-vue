@@ -18,7 +18,7 @@ export default {
 
     methods: {
         toggleSidebar() {
-            this.$store.commit('toggleSidebar');
+            this.$bus.$emit('toggleSidebar');
         },
     },
 
