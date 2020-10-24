@@ -7,13 +7,15 @@
         @click.self="isOpen = false"
     >
         <nav class="sidebar__content relative">
-            <button
-                class="button button--close"
-                :tabindex="isOpen ? '' : -1"
-                @click="isOpen = false"
-            >
-                <Icon name="icon-close" />
-            </button>
+            <div class="sidebar__content__top">
+                <button
+                    class="button button--close"
+                    :tabindex="isOpen ? '' : -1"
+                    @click="isOpen = false"
+                >
+                    <Icon name="icon-close" />
+                </button>
+            </div>
 
             <ul
                 class="sidebar__content__nav"
