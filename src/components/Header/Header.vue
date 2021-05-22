@@ -6,7 +6,7 @@
                     header__corner
                     header__corner--left
                 "
-            />
+            ></div>
 
             <div class="header__center">
                 <span>

@@ -1,10 +1,10 @@
 export default [
     {
-        name: 'clickout',
+        name: 'clickaway',
 
         config: {
             bind(element, { expression }, { context }) {
-                element.clickOutEvent = event => {
+                element.clickAwayEvent = event => {
                     if (!(element === event.target || element.contains(event.target))) {
                         // If expression is a method in the component, execute it
                         if (expression && typeof context[expression] === 'function') {
@@ -19,16 +19,16 @@ export default [
 
                             context[key] = value;
                         } else {
-                            console.error('Invalid expression passed into v-clickout event');
+                            console.error('Invalid expression passed into v-clickaway event');
                         }
                     }
                 };
 
-                document.body.addEventListener('click', element.clickOutEvent);
+                document.body.addEventListener('click', element.clickAwayEvent);
             },
 
             unbind(element) {
-                document.body.removeEventListener('click', element.clickOutEvent);
+                document.body.removeEventListener('click', element.clickAwayEvent);
             },
         },
     },

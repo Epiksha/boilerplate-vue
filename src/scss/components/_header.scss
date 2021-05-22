@@ -54,6 +54,7 @@
 .header__bottom {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     height: 8rem;
     padding: 0 $spacing * 4;

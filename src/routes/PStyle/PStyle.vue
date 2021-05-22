@@ -39,17 +39,6 @@
                 </li>
             </ul>
         </section>
-
-        <section class="container pt-2 pr-4 pb-2 pl-4 text-center">
-            <h2 class="mb-2">
-                Video
-            </h2>
-
-            <Video
-                :sources="video.sources"
-                :controls="video.controls"
-            />
-        </section>
     </main>
 </template>
 

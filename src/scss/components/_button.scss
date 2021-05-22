@@ -28,8 +28,75 @@ button, .button {
     display: none;
 }
 
+.button.button--hamburger {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(0deg);
+
+    height: 3.2rem;
+    width: 3.2rem;
+
+    transition: transform 50ms ease-in-out;
+}
+
+.button.button--hamburger > span {
+    display: block;
+
+    position: absolute;
+    left: 0;
+    transform: rotate(0deg);
+    
+    height: 0.4rem;
+    width: 100%;
+    border-radius: 1rem;
+    
+    background: $color-0;
+    
+    opacity: 1;
+    transition: 250ms ease-in-out;
+}
+
+.button.button.button--hamburger span:first-child {
+    top: 0;
+}
+  
+.button.button.button--hamburger span:nth-child(2),
+.button.button.button--hamburger span:nth-child(3) {
+    top: $spacing * 1.35;
+}
+
+.button.button.button--hamburger span:last-child {
+    top: $spacing * 2.7;
+}
+
+.button.button.button--hamburger.active span:first-child {
+    width: 0;
+    left: 50%;
+}
+
+.button.button.button--hamburger.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.button.button.button--hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.button.button.button--hamburger.active span:last-child {
+    top: $spacing;
+    width: 0%;
+    left: 50%;
+}
+
 @media (min-width: $breakpoint-tablet) {
     .button.button--header > span {
         display: block;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .button.button--hamburger {
+        display: none;
     }
 }

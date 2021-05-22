@@ -20,6 +20,7 @@
 		"no-trailing-spaces": 0,
 		"indent": "off",
         "vue/html-indent": "off",
+        "vue/html-self-closing": "off",
         "no-param-reassign": "off",
         "consistent-return": "off",
         "dot-notation": "off",
