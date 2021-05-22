@@ -1,10 +1,2 @@
-// Add new font files
-@mixin fonter($name, $file, $weight, $style, $extension) {
-    @font-face {
-        font-family: "#{$name}";
-        font-weight: $weight;
-        font-style: $style;
-
-        src: url("../assets/fonts/#{$file}.#{$extension}");
-    }
-}
+@forward 'mixins/_font.scss' as font-*;
+@forward 'mixins/_icon.scss' as icon-*;

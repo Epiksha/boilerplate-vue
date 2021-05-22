@@ -8,7 +8,7 @@ export default [
         component: PIndex,
     },
     {
-        path: '/styleguide',
+        path: '/style',
         name: 'PStyle',
         component: PStyle,
     },

@@ -25,6 +25,8 @@
         "dot-notation": "off",
         "no-plusplus": "off",
         "no-restricted-globals": "off",
-        "no-confusing-arrow": "off"
+        "no-confusing-arrow": "off",
+        "no-console": "off",
+        "arrow-parens": "off"
 	}
 }

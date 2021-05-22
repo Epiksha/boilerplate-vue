@@ -1,19 +1,7 @@
 <template>
-    <div
-        id="app"
-        class="relative"
-    >
-        <a
-            href="#app"
-            class="skipLink"
-        >
-            Skip to Content
-        </a>
-
+    <div id="app">
         <Header />
 
-        <Sidebar />
-        
         <router-view />
 
         <Footer />

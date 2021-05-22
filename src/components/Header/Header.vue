@@ -1,80 +1,72 @@
 <template>
     <header class="header">
-        <div class="pl-2 pr-2 h-100">
+        <div class="header__top">
             <div
                 class="
-                    inline-block
-                    align-middle
-                    w-100
-                    sm:w-50
+                    header__corner
+                    header__corner--left
                 "
-            >
-                <button
-                    id="menubutton"
-                    class="
-                        button
-                        button--menu
-                        inline-block
-                        align-middle
-                    "
-                    aria-haspopup="true"
-                    aria-controls="sidebar"
-                    :aria-expanded="isSidebarOpen ? true : false"
-                    aria-label="Menu Button"
-                    @click="toggleSidebar"
-                >
-                    <div
-                        v-for="n in 3"
-                        :key="n"
-                        role="presentation"
-                    />
-                </button><!-- 
-                    Comment to remove whitespace so inline-block works
-                --><router-link
-                    class="
-                        header__logo
-                        inline-block
-                        h-100
-                    "
-                    to="/"
-                >
-                    <span
-                        class="
-                            header__logo__title
-                            inline-block
-                            align-middle
-                            sm:ml
-                        "
-                    >
-                        Simpler
-                    </span>
-                </router-link>
-            </div><!-- 
-                Remove white space to fit inline blocks on one line
-        --><nav
+            />
+
+            <div class="header__center">
+                <span>
+                    See our
+                    <router-link to="/terms-and-conditions">Terms and Conditions</router-link>
+                </span>
+            </div>
+            
+            <div
                 class="
-                    header__nav
-                    inline-block
-                    align-middle
-                    text-right
-                    w-50
-                    hide
-                    sm:show-inline
+                    header__corner
+                    header__corner--right
                 "
-                aria-label="Main Navigation"
             >
-                <ul>
-                    <router-link
-                        v-for="(link, i) in links"
-                        :key="i"
-                        :to="link.url"
-                        :class="{'ml': i}"
-                        v-text="link.text"
-                    />
-                </ul>
-            </nav>
+                <nav
+                    class="
+                        nav
+                        nav--header
+                        nav--header--top
+                    "
+                >
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <router-link to="/login">
+                                Log In
+                            </router-link>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <router-link to="/privacy-policy">
+                                Privacy Policy
+                            </router-link>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <button class="button button--header">
+                                <span>Search</span>
+                                
+                                <Icon
+                                    name="icon-search"
+                                    class="icon--search"
+                                />
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="header__bottom">
+            <router-link
+                to="/"
+                class="header__link"
+            >
+                Boilerplate
+            </router-link>
+
+            <Nav />
         </div>
     </header>
 </template>
 
-<script src="./Header.js" />
+<script src="./Header" />

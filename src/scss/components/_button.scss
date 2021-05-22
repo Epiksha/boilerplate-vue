@@ -1,121 +1,35 @@
-.button {
+@use '../_abstracts.scss' as *;
+
+button, .button {
     padding: 0;
     border: none;
-    outline: none;
 
     background-color: transparent;
+    color: $color-0;
+
+    font-size: 1.4rem;
 
     cursor: pointer;
+}
 
-    &:focus,
-    &:active,
-    &:visited {
-        background-color: transparent;
-    }
+.button.button--header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &:focus,
-    &:active {
-        outline: solid 0.1rem $color2;
-    }
+    height: 4rem;
+    padding: 0 $spacing * 1.5;
 
-    &--menu {
-        height: 100%;
-        width: 2.5rem;
-        
-        & > div {
-            height: 0.3rem;
-            margin-top: $spacing * 0.5;
+    white-space: nowrap;
+    line-height: 4rem;
+}
 
-            background-color: $color1;
+.button.button--header > span {
+    display: none;
+}
 
-            &:first-child {
-                margin-top: 0;
-            }
-        }
-
-        &:hover > div {
-            background-color: $color2;
-        }
-    }
-
-    &--close {
-        position: absolute;
-        top: $spacing * 1.5;
-        right: $spacing * 1.5;
-        transform: rotate(0);
-
-        transition: transform 0.5s;
-
-        &:hover {
-            transform: rotate(180deg);
-        }
-
-        &:hover .icon svg {
-            fill: $color3;
-        }
-
-        .icon {
-            width: 2.4rem;
-            min-width: 2.4rem;
-            padding-bottom: 2.4rem;
-            
-            svg {
-                fill: $color2;
-            }
-        }
-    }
-
-    &--primary {
-        padding: $spacing $spacing * 2;
-        border-radius: 0.75rem;
-
-        background-color: $color3;
-        color: $color0;
-
-        font-weight: bold;
-
-        &.button--thin {
-            background-color: transparent;
-            color: $color3;
-        }
-
-        &.button--border {
-            border: solid 0.2rem $color3;
-        }
-    }
-
-    &--invert {
-        padding: $spacing $spacing * 2;
-        border-radius: 0.75rem;
-
-        background-color: $color0;
-        color: $color3;
-
-        font-weight: bold;
-
-        &.button--thin {
-            background-color: transparent;
-            color: $color0;
-        }
-
-        &.button--border {
-            border: solid 0.2rem $color0;
-        }
-    }
-
-    &--play,
-    &--pause,
-    &--expand,
-    &--volume {
-        display: inline-block;
-        vertical-align: middle;
-        
-        &:focus {
-            outline: none;
-        }
-    }
-
-    &--volume {
-        position: relative;
+@media (min-width: $breakpoint-tablet) {
+    .button.button--header > span {
+        display: block;
     }
 }

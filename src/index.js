@@ -1,13 +1,15 @@
 import Vue from 'vue';
-import App from './App/App.vue';
-import store from './js/store';
-import router from './js/router';
+
+import directives from './js/directives';
 import plugins from './js/plugins';
+import router from './js/router';
+import store from './js/store';
+import App from './App/App.vue';
+import Card from './components/Global/Card/Card.vue';
+import Icon from './components/Global/Icon/Icon.vue';
 
-import Card from './components/Card/Card.vue';
-import Icon from './components/Icon/Icon.vue';
-
-import './scss/general.scss';
+// Import CSS
+import './scss/entry.scss';
 
 // Import SVGs
 const svgs = require.context('./assets/icons/', true, /\.svg$/);
@@ -17,10 +19,9 @@ svgs.keys().forEach(svgs);
 Vue.component('Card', Card);
 Vue.component('Icon', Icon);
 
-// Setup Plugins
-plugins.forEach((plugin) => {
-    Vue.use(plugin);
-});
+// Plugins & Directives
+plugins.forEach(plugin => Vue.use(plugin));
+directives.forEach(directive => Vue.directive(directive.name, directive.config));
 
 // Vue Instance Initialisation
 new Vue({

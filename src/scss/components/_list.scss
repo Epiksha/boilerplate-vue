@@ -1,54 +1,51 @@
-ol {
+@use '../_abstracts.scss' as *;
+
+.list {
     padding-left: $spacing * 2;
+}
+
+.list li {
+    list-style: none;
+
+    &:before {
+        display: inline-block;
+        vertical-align: middle;
+
+        width: 1rem;
+        margin-right: 0.5rem;
+
+        font-weight: bold;
+    }
+
+    &:not(:first-of-type) {
+        margin-top: $spacing * 0.75;
+    }
+}
+
+.list--ordered {
     counter-reset: li;
 
-    li {
-        list-style: none;
+    &:before {
+        content: '.' counter(li);
+        counter-increment: li;
+        text-align: right;
 
-        &:before {
-            content: '.' counter(li);
-            counter-increment: li;
-            display: inline-block;
-            text-align: right;
-            vertical-align: middle;
+        margin-left: -1.75rem;
 
-            width: 1rem;
-            margin-left: -1.75rem;
-            margin-right: 0.5rem;
-
-            color: $color2;
-
-            direction: rtl;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
+        direction: rtl;
+        font-size: 1.4rem;
+        font-weight: bold;
     }
 }
 
-ul {
-    padding-left: $spacing * 2;
-
-    li {
-        list-style: none;
-
-        &:before {
-            content: '\2022';
-            display: inline-block;
-            vertical-align: middle;
+.list--unordered li:before {
+    content: '\2022';
             
-            height: 100%;
-            width: 1rem;
-            margin-left: -2rem;
-            margin-right: 0.5rem;
-            
-            color: $color2;
+    height: 100%;
+    margin-left: -2rem;
+    
+    color: $color-1;
 
-            font-size: 2rem;
-            font-weight: bold;
-        }
-    }
-}
-
-li:not(:first-of-type) {
-    margin-top: $spacing * 0.75;
+    font-size: 2rem;
+    font-weight: bold;
 }

@@ -1,48 +1,35 @@
+@use '../_abstracts.scss' as *;
+@use '../_mixins.scss' as *;
+
 .icon {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
 
     position: relative;
 
-    width: $iconSize1;
-    min-width: $iconSize1;
-    padding-bottom: $iconSize1;
+    @include icon-dimensions(3.6rem);
 
-    &.active svg {
-        fill: $iconFill1--active;
-    }
+    fill: $color-1;
+}
 
-    svg {
-        position: absolute;
-        top: 0;
-        left: 0;
+.icon svg {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-        height: 100%;
-        width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
 
-        fill: $iconFill1;
-    }
+.icon.icon--search {
+    @include icon-dimensions(1.8rem);
 
+    fill: $color-0;
+}
 
-    &--play,
-    &--pause,
-    &--expand,
-    &--volume {
-        .icon {
-            width: 2rem;
-            min-width: 2rem;
-            padding-bottom: 2rem;
-            transition: transform 0.25s;
-
-            svg {
-                fill: $color0;
-            } 
-        }
-
-        &:hover {
-            .icon {
-                transform: scale(1.2);
-            }
-        }
+@media (min-width: $breakpoint-tablet) {
+    .icon.icon--search {
+        margin-left: $spacing;
     }
 }

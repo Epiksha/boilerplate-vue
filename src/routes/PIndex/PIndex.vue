@@ -1,5 +1,5 @@
 <template>
-    <main class="p-2">
+    <main>
         <h1>
             Home
         </h1>
