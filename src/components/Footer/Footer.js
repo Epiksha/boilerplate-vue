@@ -1,3 +1,7 @@
 export default {
-    name: 'Footer',
+    computed: {
+        isLoggedIn() {
+            return this.$store.state.user.token;
+        },
+    },
 };

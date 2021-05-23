@@ -1,9 +1,9 @@
 <template>
-    <main>
+    <div class="container p-2">
         <h1>
             Home
         </h1>
-    </main>
+    </div>
 </template>
 
-<script src="./PIndex.js" />
+<script src="./PIndex" />

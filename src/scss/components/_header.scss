@@ -2,6 +2,11 @@
 @use '../_abstracts.scss' as *;
 
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     background-color: $color-2;
     color: $color-0;
 }

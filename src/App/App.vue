@@ -1,10 +1,12 @@
 <template>
     <div id="app">
-        <Header />
+        <Header v-if="!isHidingNavigation" />
 
-        <router-view />
+        <main>
+            <router-view />
+        </main>
 
-        <Footer />
+        <Footer v-if="!isHidingNavigation" />
     </div>
 </template>
 

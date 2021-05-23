@@ -1,5 +1,5 @@
 <template>
-    <main class="container pt-2 pr-4 pb-2 pl-4">
+    <div class="container pt-2 pr-4 pb-2 pl-4">
         <h1>Styleguide</h1>
 
         <section>
@@ -39,7 +39,7 @@
                 </li>
             </ul>
         </section>
-    </main>
+    </div>
 </template>
 
 <script src="./PStyle.js" />

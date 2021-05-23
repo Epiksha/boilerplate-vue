@@ -1,3 +1,113 @@
+@use 'sass:color';
+@use '../_abstracts.scss' as *;
+
 .footer {
+    background-color: $color-5;
+    color: $color-0;
+}
+
+.footer__bar {
+    text-align: center;
+
+    padding: $spacing * 1.2;
     
+    background-color: color.adjust($color-2, $alpha: -0.7);
+}
+
+.footer__bar .button {
+    padding: $spacing * 0.6 $spacing * 3.2;
+
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+.footer__container {
+    padding: $spacing * 3.2 $spacing * 6.3 $spacing $spacing * 5.3;
+}
+
+.footer__top {
+    padding-bottom: $spacing * 1.5;
+    border-bottom: solid transparentize(#efefef, 0.86) 0.1rem;
+}
+
+.footer__logo {
+    display: block;
+
+    position: relative;
+
+    height: 8.1rem;
+    width: 15.7rem;
+}
+
+.footer__logo svg {
+    fill: $color-0;
+}
+
+.footer__code {
+    display: block;
+
+    margin-top: $spacing * 10.5;
+
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.019rem;
+}
+
+.footer ul {
+    padding-left: 0;
+
+    list-style: none;
+}
+
+.footer__links {
+    display: flex;
+
+    padding-left: 0;
+    
+    list-style: none;
+
+    &--loggedIn {
+        height: 17rem;
+    }
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+
+    &:last-child {
+        padding-left: $spacing * 2;
+    }
+}
+
+.footer__list > li {
+    margin-top: $spacing * 0.4;
+}
+
+.footer__list li,
+.footer__list li > a {
+    color: $color-0;
+
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.025rem;
+    text-decoration: none;
+}
+
+.footer__list li > a:hover {
+    text-decoration: underline;
+}
+
+.footer__copyright {
+    display: flex;
+    align-items: center;
+
+    padding-top: $spacing * 1.6;
+    padding-bottom: $spacing * 0.6;
+
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.019rem;
 }

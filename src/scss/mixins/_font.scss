@@ -16,6 +16,7 @@ $formattedSources: ();
         font-family: $family;
         font-style: $style;
         font-weight: $weight;
+        font-display: swap;
 
         @each $source in $sources {
             $extension: string.slice($source, string.index($source, '.') + 1);
