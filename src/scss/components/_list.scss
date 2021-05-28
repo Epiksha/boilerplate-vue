@@ -2,11 +2,11 @@
 
 .list {
     padding-left: $spacing * 2;
+
+    list-style: none;
 }
 
 .list li {
-    list-style: none;
-
     &:before {
         display: inline-block;
         vertical-align: middle;
@@ -24,15 +24,20 @@
 
 .list--ordered {
     counter-reset: li;
+}
 
+.list--ordered li {
     &:before {
-        content: '.' counter(li);
+        display: inline;
+        direction: rtl;
+        content: '' counter(li) '.';
         counter-increment: li;
         text-align: right;
 
         margin-left: -1.75rem;
 
-        direction: rtl;
+        color: $list-color;
+
         font-size: 1.4rem;
         font-weight: bold;
     }
@@ -44,8 +49,9 @@
     height: 100%;
     margin-left: -2rem;
     
-    color: $color-1;
+    color: $list-color;
 
     font-size: 2rem;
     font-weight: bold;
+    line-height: 1;
 }

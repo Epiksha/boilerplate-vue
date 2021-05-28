@@ -21,6 +21,7 @@
 		"indent": "off",
         "vue/html-indent": "off",
         "vue/html-self-closing": "off",
+        "vue/no-v-html": "off",
         "no-param-reassign": "off",
         "consistent-return": "off",
         "dot-notation": "off",
@@ -28,6 +29,7 @@
         "no-restricted-globals": "off",
         "no-confusing-arrow": "off",
         "no-console": "off",
+        "import/no-unresolved": "off",
         "arrow-parens": "off"
 	}
 }

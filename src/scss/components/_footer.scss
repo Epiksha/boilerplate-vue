@@ -27,7 +27,7 @@
 
 .footer__top {
     padding-bottom: $spacing * 1.5;
-    border-bottom: solid transparentize(#efefef, 0.86) 0.1rem;
+    border-bottom: solid 0.1rem color.scale($color-4, $alpha: -80%);
 }
 
 .footer__logo {

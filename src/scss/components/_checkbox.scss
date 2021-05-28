@@ -1,0 +1,22 @@
+@use '../_abstracts.scss' as *;
+
+.checkbox {
+    display: block;
+    
+    position: relative;
+
+    user-select: none;
+}
+
+.checkbox__text {
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-left: $spacing * 1.5;
+
+    color: $color-1;
+
+    font-size: 1.6rem;
+    line-height: 1;
+    letter-spacing: 0.025rem;
+}

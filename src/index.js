@@ -5,10 +5,15 @@ import plugins from './js/plugins';
 import router from './js/router';
 import store from './js/store';
 import App from './App/App.vue';
-import Card from './components/Global/Card/Card.vue';
-import Icon from './components/Global/Icon/Icon.vue';
 
-// Import CSS
+// Global Components
+import Card from './components/Global/Card/Card.vue';
+import Checkbox from './components/Global/Checkbox/Checkbox.vue';
+import Icon from './components/Global/Icon/Icon.vue';
+import Input from './components/Global/Input/Input.vue';
+import Radios from './components/Global/Radios/Radios.vue';
+
+// Import SASS
 import './scss/entry.scss';
 
 // Import SVGs
@@ -17,7 +22,10 @@ svgs.keys().forEach(svgs);
 
 // Global Component Registration
 Vue.component('Card', Card);
+Vue.component('Checkbox', Checkbox);
 Vue.component('Icon', Icon);
+Vue.component('Input', Input);
+Vue.component('Radios', Radios);
 
 // Plugins & Directives
 plugins.forEach(plugin => Vue.use(plugin));

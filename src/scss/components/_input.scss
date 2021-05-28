@@ -1,0 +1,94 @@
+@use 'sass:color';
+@use '../_abstracts.scss' as *;
+
+.inputWrapper {
+    position: relative;
+}
+
+input, .input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: $spacing * 1.6 $spacing * 5 $spacing * 1.6 $spacing * 1.6;
+    border: solid 0.2rem color.scale($color-4, $alpha: -60%);
+    border-radius: 0.4rem;
+    outline: none;
+
+    color: $color-4;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.025rem;
+
+    & + .icon,
+    & + .button--visible {
+        position: absolute;
+        top: 50%;
+        right: $spacing * 2;
+        transform: translateY(-50%);
+    }
+
+    & + .icon,
+    & + .button--visible > .icon {
+        fill: color.scale($color-4, $alpha: -60%);
+    }
+
+    &::placeholder {
+        color: color.scale($color-4, $alpha: -60%);
+    }
+
+    &:focus {
+        border-color: $color-2;
+
+        & + .icon,
+        & + .button--visible > .icon {
+            fill: $color-2;
+        }
+    }
+
+    &:focus::placeholder {
+        color: transparent;
+    }
+
+    .error & {
+        border: solid 0.2rem $color-2;
+
+        & + .icon,
+        & + .button--visible > .icon {
+            fill: $color-3;
+        }
+    }
+}
+
+.input.input--checkbox {
+    display: inline-block;
+    vertical-align: middle;
+
+    height: 1.8rem;
+    width: 1.8rem;
+    border: none;
+
+    opacity: 0;
+
+    &:checked + .icon--checkbox {
+        background-color: $color-2;
+        border-color: transparent;
+    }
+}
+
+input[type="radio"], .input.input--radio {
+    display: inline-block;
+    vertical-align: middle;
+
+    height: 2rem;
+    width: 2rem;
+
+    opacity: 0;
+
+    &:checked + .radio__circle {
+        border: solid 0.2rem $color-5;
+    }
+
+    &:checked + .radio__circle:after {
+        opacity: 1;
+    }
+}
