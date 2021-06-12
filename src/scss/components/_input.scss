@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use '../_abstracts.scss' as *;
+@use '../_mixins.scss' as *;
 
 .inputWrapper {
     position: relative;
@@ -90,5 +91,65 @@ input[type="radio"], .input.input--radio {
 
     &:checked + .radio__circle:after {
         opacity: 1;
+    }
+}
+
+// Range
+input[type=range] {
+    -webkit-appearance: none;
+
+    margin: 0 0 0 $spacing;
+    height: 0.2rem;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    
+    background-color: $color-4;
+    background-image: linear-gradient(to right, $color-2 100%, $color-2);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    // Track Styling
+    &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+
+        @include input-range-track;
+    }
+
+    &::-moz-range-track {
+        @include input-range-track;
+    }
+
+    &::-ms-track {
+        @include input-range-track;
+    }
+
+    &::-ms-fill-lower {
+        @include input-range-track;
+    }
+    
+    &::-ms-fill-upper {
+        @include input-range-track;
+    }
+
+    // Thumb Styling
+    &::-webkit-slider-thumb {
+        @include input-range-thumb($color-2, 1.3rem);
+
+        -webkit-appearance: none;
+        margin-top: -0.6rem; // Needed to position thumbs in Chrome
+    }
+    
+    &::-moz-range-thumb {
+        @include input-range-thumb($color-2, 1.3rem);
+    }
+    
+    &::-ms-thumb {
+        @include input-range-thumb($color-2, 1.3rem);
     }
 }

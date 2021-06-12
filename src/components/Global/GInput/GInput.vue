@@ -5,10 +5,10 @@
     >
         <label
             v-if="label"
-            :id="label.id"
+            :id="`${id}-label`"
             :for="id"
             :class="{'active': focused}"
-            v-text="label.text"
+            v-text="label"
         />
 
         <div class="inputWrapper">
@@ -28,13 +28,13 @@
                 @blur="focused = false"
             >
 
-            <Icon
+            <GIcon
                 v-if="errors && errors.length && type !== 'password'"
                 name="icon-warning"
                 class="icon--md icon--error"
             />
             
-            <Icon
+            <GIcon
                 v-else-if="type === 'email'"
                 name="icon-email"
                 class="icon--md icon--email"
@@ -43,9 +43,10 @@
             <button
                 v-if="type === 'password'"
                 class="button button--visible"
+                tabindex="-1"
                 @click.prevent="() => isShowingPassword = !isShowingPassword"
             >
-                <Icon
+                <GIcon
                     name="icon-visible"
                     class="icon--visible"
                 />
@@ -53,9 +54,9 @@
         </div>
 
         <span
-            v-for="error in errors"
+            v-for="(error, index) in errors"
             :key="error"
-            :aria-labelledby="label ? label.id : ''"
+            :aria-label="`${label} error ${index + 1}`"
             class="errorText"
             role="alert"
             v-html="error"
@@ -63,4 +64,4 @@
     </fieldset>
 </template>
 
-<script src="./Input" />
+<script src="./GInput" />

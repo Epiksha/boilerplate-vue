@@ -1,4 +1,4 @@
-<template>
+<template functional>
     <article class="card ut-padding-2">
         <header class="card__header">
             <h3>Card Header</h3>
@@ -26,4 +26,4 @@
     </article>
 </template>
 
-<script src="./Card.js" />
+<script src="./GCard" />

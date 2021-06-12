@@ -7,11 +7,13 @@ import store from './js/store';
 import App from './App/App.vue';
 
 // Global Components
-import Card from './components/Global/Card/Card.vue';
-import Checkbox from './components/Global/Checkbox/Checkbox.vue';
-import Icon from './components/Global/Icon/Icon.vue';
-import Input from './components/Global/Input/Input.vue';
-import Radios from './components/Global/Radios/Radios.vue';
+import GCard from './components/Global/GCard/GCard.vue';
+import GCheckbox from './components/Global/GCheckbox/GCheckbox.vue';
+import GIcon from './components/Global/GIcon/GIcon.vue';
+import GInput from './components/Global/GInput/GInput.vue';
+import GRadios from './components/Global/GRadios/GRadios.vue';
+import GRange from './components/Global/GRange/GRange.vue';
+import GSpinner from './components/Global/GSpinner/GSpinner.vue';
 
 // Import SASS
 import './scss/entry.scss';
@@ -21,11 +23,13 @@ const svgs = require.context('./assets/icons/', true, /\.svg$/);
 svgs.keys().forEach(svgs);
 
 // Global Component Registration
-Vue.component('Card', Card);
-Vue.component('Checkbox', Checkbox);
-Vue.component('Icon', Icon);
-Vue.component('Input', Input);
-Vue.component('Radios', Radios);
+Vue.component('GCard', GCard);
+Vue.component('GCheckbox', GCheckbox);
+Vue.component('GIcon', GIcon);
+Vue.component('GInput', GInput);
+Vue.component('GRadios', GRadios);
+Vue.component('GRange', GRange);
+Vue.component('GSpinner', GSpinner);
 
 // Plugins & Directives
 plugins.forEach(plugin => Vue.use(plugin));

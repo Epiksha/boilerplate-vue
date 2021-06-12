@@ -41,13 +41,13 @@
                 Inputs
             </h2>
 
-            <div class="flex justify-between mt-4">
+            <div class="flex justify-around mt-4">
                 <div>
                     <h3 class="mb-4 color-5">
                         Checkboxes
                     </h3>
 
-                    <Checkbox
+                    <GCheckbox
                         v-for="(checkbox, index) in checkboxes"
                         :key="index"
                         v-bind="checkbox"
@@ -60,7 +60,7 @@
                         Radios
                     </h3>
 
-                    <Radios
+                    <GRadios
                         :radios="radios"
                         group="styleguide-radios"
                     />
@@ -68,30 +68,55 @@
             </div>
 
             <div class="mt-4">
-                <Input
-                    id="styleguide-input-1"
-                    class="mt-4"
-                    type="email"
-                    placeholder="Placeholder"
-                    :label="{text: 'Email', id: 'styleguide-input-1-label'}"
+                <h3 class="mb-4 color-5">
+                    Range Slider
+                </h3>
+
+                <GRange
+                    v-model="sliderValue"
+                    :min="0"
+                    :max="100"
+                    :step="5"
                 />
+            </div>
+
+            <div class="mt-4">
+                <h3 class="mb-4 color-5">
+                    Text Boxes
+                </h3>
                 
-                <Input
-                    id="styleguide-input-2"
-                    type="password"
-                    class="mt-4"
-                    placeholder="Placeholder"
-                    :label="{text: 'Password', id: 'styleguide-input-2-label'}"
-                />
-                
-                <Input
+                <GInput
                     id="styleguide-input-3"
                     class="mt-4"
                     type="text"
                     placeholder="Placeholder"
-                    :label="{text: 'Text', id: 'styleguide-input-4-label'}"
+                    label="Text"
+                />
+
+                <GInput
+                    id="styleguide-input-1"
+                    class="mt-4"
+                    type="email"
+                    placeholder="Placeholder"
+                    label="Email"
+                />
+                
+                <GInput
+                    id="styleguide-input-2"
+                    type="password"
+                    class="mt-4"
+                    placeholder="Placeholder"
+                    label="Password"
                 />
             </div>
+        </section>
+
+        <section class="mt-6">
+            <h2 class="color-5">
+                Spinner
+            </h2>
+
+            <GSpinner class="mt-4" />
         </section>
     </div>
 </template>

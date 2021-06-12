@@ -6,7 +6,7 @@
             class="input input--checkbox"
         >
 
-        <Icon
+        <GIcon
             class="icon--checkbox"
             name="icon-tick"
         />
@@ -18,4 +18,4 @@
     </label>
 </template>
 
-<script src="./Checkbox" />
+<script src="./GCheckbox" />

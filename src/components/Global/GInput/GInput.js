@@ -1,11 +1,11 @@
-import { objectValidator, arrayValidator } from 'vue-props-validation';
+import { arrayValidator } from 'vue-props-validation';
 
 export default {
     props: {
         classes: [Array, String],
         errors: { type: Array, validator: arrayValidator(String) },
         id: [Number, String],
-        label: { type: Object, validator: objectValidator({ id: String, text: String }) },
+        label: String,
         placeholder: [Number, String],
         required: [Boolean, Number, String],
         type: { type: String, default: 'text' },

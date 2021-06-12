@@ -25,4 +25,4 @@
     </form>
 </template>
 
-<script src="./Radios" />
+<script src="./GRadios" />

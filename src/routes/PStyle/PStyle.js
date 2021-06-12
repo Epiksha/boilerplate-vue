@@ -32,5 +32,7 @@ export default {
                 isSelected: false,
             },
         ],
+
+        sliderValue: 100,
     }),
 };
