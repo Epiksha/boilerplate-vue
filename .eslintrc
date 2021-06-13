@@ -25,6 +25,8 @@
         "no-param-reassign": "off",
         "consistent-return": "off",
         "dot-notation": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off",
         "no-plusplus": "off",
         "no-restricted-globals": "off",
         "no-confusing-arrow": "off",

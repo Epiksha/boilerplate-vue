@@ -1,0 +1,57 @@
+@use '../_abstracts.scss' as *;
+
+.styleguide {
+    padding: $spacing * 6 $spacing * 4 $spacing * 4;
+}
+
+.styleguide section {
+    margin-top: $spacing * 6;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    & > h2 {
+        margin-bottom: $spacing * 4;
+    }
+
+    h4:not(.accordion__title) {
+        margin-bottom: $spacing * 2;
+    }
+}
+
+.styleguide__colors {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-left: 0;
+
+    list-style: none;
+}
+
+.styleguide__color {
+    flex:1 1 23%;
+    text-align: center;
+
+    box-sizing: border-box;
+    margin: $spacing 1%;
+    padding: $spacing * 2;
+    border-radius: 1rem;
+
+    span {
+        display: block;
+
+        color: $color-0;
+
+        letter-spacing: 0.05rem;
+
+        &:first-child {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    }
+
+    &#{&}--invert span {
+        color: $color-1;
+    }
+}

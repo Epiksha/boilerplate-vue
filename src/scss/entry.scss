@@ -1,8 +1,11 @@
 @use '_defaults.scss';
+@use '_vendors.scss';
 
 // Component Imports
+@use 'components/_accordion.scss';
 @use 'components/_animations.scss';
 @use 'components/_button.scss';
+@use 'components/_carousel.scss';
 @use 'components/_checkbox.scss';
 @use 'components/_fieldset.scss';
 @use 'components/_icon.scss';
@@ -11,7 +14,8 @@
 @use 'components/_list.scss';
 @use 'components/_radio.scss';
 @use 'components/_spinner.scss';
-
-
+@use 'components/_styleguide.scss';
 @use '_utilities.scss';
+
+// Utilitizer
 @use '_utilizer.scss';

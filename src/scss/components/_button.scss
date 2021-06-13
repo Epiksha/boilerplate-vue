@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../_abstracts.scss' as *;
 
 button, .button {
@@ -12,91 +13,30 @@ button, .button {
     cursor: pointer;
 }
 
-.button.button--header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.button.button--carousel {
+    position: relative;
 
     height: 4rem;
-    padding: 0 $spacing * 1.5;
+    width: 4rem;
+    padding: 0;
+    border-radius: 50%;
+    outline: none;
 
-    white-space: nowrap;
-    line-height: 4rem;
-}
+    background-color: $color-2;
 
-.button.button--header > span {
-    display: none;
-}
+    transition: background-color 200ms;
 
-.button.button--hamburger {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%) rotate(0deg);
-
-    height: 3.2rem;
-    width: 3.2rem;
-
-    transition: transform 50ms ease-in-out;
-}
-
-.button.button--hamburger > span {
-    display: block;
-
-    position: absolute;
-    left: 0;
-    transform: rotate(0deg);
-    
-    height: 0.4rem;
-    width: 100%;
-    border-radius: 1rem;
-    
-    background: $color-0;
-    
-    opacity: 1;
-    transition: 250ms ease-in-out;
-}
-
-.button.button.button--hamburger span:first-child {
-    top: 0;
-}
-  
-.button.button.button--hamburger span:nth-child(2),
-.button.button.button--hamburger span:nth-child(3) {
-    top: $spacing * 1.35;
-}
-
-.button.button.button--hamburger span:last-child {
-    top: $spacing * 2.7;
-}
-
-.button.button.button--hamburger.active span:first-child {
-    width: 0;
-    left: 50%;
-}
-
-.button.button.button--hamburger.active span:nth-child(2) {
-    transform: rotate(45deg);
-}
-
-.button.button.button--hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg);
-}
-
-.button.button.button--hamburger.active span:last-child {
-    top: $spacing;
-    width: 0%;
-    left: 50%;
-}
-
-@media (min-width: $breakpoint-tablet) {
-    .button.button--header > span {
-        display: block;
+    &:disabled {
+        background-color: color.adjust($color-4, $lightness: 25%);
+        cursor: not-allowed;
+        
+        &:hover {
+            background-color: color.adjust($color-4, $lightness: 25%);
+        }
     }
-}
 
-@media (min-width: $breakpoint-desktop) {
-    .button.button--hamburger {
-        display: none;
+    &:hover,
+    &:focus {
+        background-color: $color-5;
     }
 }

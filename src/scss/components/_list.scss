@@ -1,6 +1,7 @@
 @use '../_abstracts.scss' as *;
 
 .list {
+    margin: 0;
     padding-left: $spacing * 2;
 
     list-style: none;

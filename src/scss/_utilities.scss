@@ -1,4 +1,9 @@
+@use './_abstracts.scss' as *;
+
 .container {
+    display: block;
+    
     max-width: 114.2rem;
     margin: auto;
+    padding: 0 $spacing * 2;
 }

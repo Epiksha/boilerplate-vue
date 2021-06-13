@@ -7,7 +7,9 @@ import store from './js/store';
 import App from './App/App.vue';
 
 // Global Components
+import GAccordion from './components/Global/GAccordion/GAccordion.vue';
 import GCard from './components/Global/GCard/GCard.vue';
+import GCarousel from './components/Global/GCarousel/GCarousel.vue';
 import GCheckbox from './components/Global/GCheckbox/GCheckbox.vue';
 import GIcon from './components/Global/GIcon/GIcon.vue';
 import GInput from './components/Global/GInput/GInput.vue';
@@ -23,7 +25,9 @@ const svgs = require.context('./assets/icons/', true, /\.svg$/);
 svgs.keys().forEach(svgs);
 
 // Global Component Registration
+Vue.component('GAccordion', GAccordion);
 Vue.component('GCard', GCard);
+Vue.component('GCarousel', GCarousel);
 Vue.component('GCheckbox', GCheckbox);
 Vue.component('GIcon', GIcon);
 Vue.component('GInput', GInput);

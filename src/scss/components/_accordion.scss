@@ -1,0 +1,49 @@
+@use 'sass:color';
+@use '../_abstracts.scss' as *;
+
+.accordion {
+    text-align: left;
+
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 $spacing * 4 $spacing * 2;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust($color-1, $alpha: -0.8);
+    border-radius: 1rem;
+    outline: none;
+
+    opacity: 0;
+
+    transition: max-height 500ms, opacity 500ms 500ms;
+
+    &:focus {
+        background-color: $color-7;
+    }
+
+    &.visible {
+        opacity: 1;
+    }
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+
+    padding: $spacing * 2 0;
+
+    h4 {
+        padding-left: $spacing * 2;
+
+        color: $color-6;
+
+        font-size: 2.4rem;
+        font-weight: normal;
+    }
+}
+
+.accordion__content {
+    color: $color-6;
+
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
