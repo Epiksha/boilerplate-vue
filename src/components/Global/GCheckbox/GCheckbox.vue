@@ -12,6 +12,7 @@
         />
 
         <span
+            v-if="label"
             class="checkbox__text"
             v-text="label"
         />

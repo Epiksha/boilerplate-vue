@@ -98,9 +98,9 @@ input[type="radio"], .input.input--radio {
 input[type=range] {
     -webkit-appearance: none;
 
-    margin: 0;
     height: 0.2rem;
     width: 100%;
+    margin: 0;
     padding: 0;
     border: none;
     border-radius: 0;
@@ -151,5 +151,30 @@ input[type=range] {
     
     &::-ms-thumb {
         @include input-range-thumb($color-2, 1.3rem);
+    }
+}
+
+// Toggle
+.input.input--toggle {
+    overflow: hidden;
+    height: 2rem;
+    width: 4rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 2rem;
+
+    line-height: 2rem;
+    
+    opacity: 0;
+
+    &:checked {
+        & + .toggle__container:after {
+           transform: translateX(0);
+        }
+
+        & + .toggle__container > .toggle__handle {
+            transform: translate(calc(4rem - 100%), -50%);
+        }
     }
 }

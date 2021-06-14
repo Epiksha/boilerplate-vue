@@ -1,0 +1,65 @@
+@use 'sass:color';
+@use '../_abstracts.scss' as *;
+
+.toggle {
+    position: relative;
+
+    width: auto;
+}
+
+.toggle__container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 2rem;
+
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem color.adjust($color-1, $alpha: -0.8);
+
+    pointer-events: none;
+    transition: background-size 200ms;
+
+    &:after {
+        content: '';
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(calc(-100% + 1.9rem));
+
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+
+        background-color: $color-8;
+
+        transition: transform 500ms;
+    }
+}
+
+.toggle__text {
+    display: block;
+
+    margin-bottom: $spacing;
+}
+
+.toggle__handle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    height: 1.9rem;
+    width: 1.9rem;
+    border-radius: 50%;
+    border: solid 1px $color-4;
+
+    background-color: $color-0;
+
+    transition: transform 500ms;
+}

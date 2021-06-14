@@ -1,5 +1,5 @@
 <template>
-    <div class="container p-2">
+    <div class="container py-4">
         <router-link
             to="/styleguide"
         >

@@ -16,6 +16,7 @@ import GInput from './components/Global/GInput/GInput.vue';
 import GRadios from './components/Global/GRadios/GRadios.vue';
 import GRange from './components/Global/GRange/GRange.vue';
 import GSpinner from './components/Global/GSpinner/GSpinner.vue';
+import GToggle from './components/Global/GToggle/GToggle.vue';
 
 // Import SASS
 import './scss/entry.scss';
@@ -34,6 +35,7 @@ Vue.component('GInput', GInput);
 Vue.component('GRadios', GRadios);
 Vue.component('GRange', GRange);
 Vue.component('GSpinner', GSpinner);
+Vue.component('GToggle', GToggle);
 
 // Plugins & Directives
 plugins.forEach(plugin => Vue.use(plugin));

@@ -10,7 +10,7 @@
         :aria-valuemin="min"
         :aria-valuemax="max"
         :aria-valuenow="value"
-        @input="({ target }) => $emit('input', target.value)"
+        @input="({ target }) => $emit('input', +target.value)"
     >
 </template>
 

@@ -15,6 +15,8 @@ export default {
             },
         ],
 
+        isToggled: false,
+
         radios: [
             {
                 id: 'style-guide-option-1',

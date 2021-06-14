@@ -8,10 +8,10 @@
     overflow: hidden;
     width: 100%;
     padding: 0 $spacing * 4 $spacing * 2;
-    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust($color-1, $alpha: -0.8);
     border-radius: 1rem;
     outline: none;
-
+    
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust($color-1, $alpha: -0.8);
     opacity: 0;
 
     transition: max-height 500ms, opacity 500ms 500ms;

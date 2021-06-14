@@ -1,4 +1,5 @@
 @use '_defaults.scss';
+@use '_utilities.scss';
 @use '_vendors.scss';
 
 // Component Imports
@@ -15,7 +16,7 @@
 @use 'components/_radio.scss';
 @use 'components/_spinner.scss';
 @use 'components/_styleguide.scss';
-@use '_utilities.scss';
+@use 'components/_toggle.scss';
 
 // Utilitizer
 @use '_utilizer.scss';

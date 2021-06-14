@@ -13,6 +13,25 @@
 
             <section>
                 <h2>
+                    Buttons
+                </h2>
+
+                <div class="styleguide__buttons">
+                    <div>
+                        <h4>
+                            Miscellaneous
+                        </h4>
+
+                        <GToggle
+                            v-model="isToggled"
+                            label="Dark Mode"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
                     Carousel
                 </h2>
 
