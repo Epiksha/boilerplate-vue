@@ -1,14 +1,50 @@
 <template>
     <div class="styleguide">
         <div class="container">
+            <h1>Styleguide</h1>
+
             <section>
                 <h2>
-                    Accordion
+                    Accordions
                 </h2>
 
-                <GAccordion title="Click to expand">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!
-                </GAccordion>
+                <div class="grid grid--12/12 tablet:grid--1/2">
+                    <div>
+                        <GAccordion title="Click to expand">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!
+                        </GAccordion>
+                    </div>
+
+                    <div>
+                        <GAccordion
+                            title="Click to expand"
+                            icon-position="right"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!
+                        </GAccordion>
+                    </div>
+                </div>
+                
+                <div class="grid grid--12/12 tablet:grid--1/2 mt-2">
+                    <div>
+                        <GAccordion
+                            title="Click to expand"
+                            icon-type="plus"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!
+                        </GAccordion>
+                    </div>
+
+                    <div>
+                        <GAccordion
+                            title="Click to expand"
+                            icon-type="plus"
+                            icon-position="right"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!
+                        </GAccordion>
+                    </div>
+                </div>
             </section>
 
             <section>
@@ -16,17 +52,89 @@
                     Buttons
                 </h2>
 
-                <div class="styleguide__buttons">
-                    <div>
-                        <h4>
-                            Miscellaneous
-                        </h4>
+                <div>
+                    <h3>
+                        Primary Buttons
+                    </h3>
 
-                        <GToggle
-                            v-model="isToggled"
-                            label="Dark Mode"
-                        />
+                    <div class="grid grid--1/2 tablet:grid--1/3 desktop:grid--1/4">
+                        <button class="button button--primary">
+                            Click
+                        </button>
+                    
+                        <button class="button button--primary button--flat">
+                            Click
+                        </button>
+                    
+                        <button class="button button--primary button--icon">
+                            <GIcon
+                                name="icon-search"
+                            />
+
+                            <span>
+                                Click
+                            </span>
+                        </button>
+                    
+                        <button class="button button--primary button--icon">
+                            <span>
+                                Click
+                            </span>
+
+                            <GIcon
+                                name="icon-search"
+                            />
+                        </button>
+
+                        <button class="button button--primary button--outline">
+                            Click
+                        </button>
+                    
+                        <button class="button button--primary button--outline button--flat">
+                            Click
+                        </button>
+                    
+                        <button class="button button--primary button--outline button--icon">
+                            <GIcon
+                                name="icon-search"
+                            />
+
+                            <span>
+                                Click
+                            </span>
+                        </button>
+                    
+                        <button class="button button--primary button--outline button--icon">
+                            <span>
+                                Click
+                            </span>
+
+                            <GIcon
+                                name="icon-search"
+                            />
+                        </button>
                     </div>
+                </div>
+
+                <div class="mt-3">
+                    <h3>
+                        Miscellaneous Buttons
+                    </h3>
+
+                    <GToggle
+                        v-model="isToggled"
+                        label="Toggle Me"
+                    />
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Cards
+                </h2>
+
+                <div class="grid grid--1/1 tablet:grid--1/2">
+                    <GCard />
                 </div>
             </section>
 
@@ -40,74 +148,88 @@
             
             <section>
                 <h2>
-                    Colours
+                    Colors
                 </h2>
 
-                <ul class="styleguide__colors">
-                    <li class="styleguide__color styleguide__color--invert border border-solid border-color-4">
-                        <div>
-                            <span>color-0 | bg-0</span>
+                <div>
+                    <h3>
+                        Default Colors
+                    </h3>
 
-                            <span>white</span>
-                        </div>
-                    </li>
-                    
-                    <li class="styleguide__color bg-1">
-                        <div>
-                            <span>color-1 | bg-1</span>
+                    <div class="grid grid--12/12 tablet:grid--1/2 desktop:grid--1/3">
+                        <div class="styleguide__color styleguide__color--invert bg-0">
+                            <span>White</span>
 
-                            <span>black</span>
-                        </div>
-                    </li>
-                    
-                    <li class="styleguide__color bg-2">
-                        <div>
-                            <span>color-2 | bg-2</span>
+                            <span>Variable Name: <strong>color-0</strong></span>
 
-                            <span>#012542</span>
+                            <span>Hexcode: <strong>#FFFFFF</strong></span>
                         </div>
-                    </li>
-                    
-                    <li class="styleguide__color bg-3">
-                        <div>
-                            <span>color-3 | bg-3</span>
+                        
+                        <div class="styleguide__color bg-1">
+                            <span>Black</span>
 
-                            <span>#e40030</span>
-                        </div>
-                    </li>
-                    
-                    <li class="styleguide__color bg-4">
-                        <div>
-                            <span>color-4 | bg-4</span>
+                            <span>Variable Name: <strong>color-1</strong></span>
 
-                            <span>#a0a0a0</span>
+                            <span>Hexcode: <strong>#000000</strong></span>
                         </div>
-                    </li>
-                    
-                    <li class="styleguide__color bg-5">
-                        <div>
-                            <span>color-5 | bg-5</span>
+                    </div>
+                </div>
 
-                            <span>#224e72</span>
-                        </div>
-                    </li>
-                    
-                    <li class="styleguide__color bg-6">
-                        <div>
-                            <span>color-6 | bg-6</span>
+                <div class="mt-6">
+                    <h3>
+                        Primary Pallette
+                    </h3>
 
-                            <span>#444444</span>
-                        </div>
-                    </li>
-                    
-                    <li class="styleguide__color styleguide__color--invert bg-7">
-                        <div>
-                            <span>color-7 | bg-7</span>
+                    <div class="grid grid--12/12 tablet:grid--1/2 desktop:grid--1/3">
+                        <div class="styleguide__color bg-2">
+                            <span>Astronaut</span>
 
-                            <span>#f6f6f6</span>
+                            <span>Variable Name: <strong>color-2</strong></span>
+
+                            <span>Hexcode: <strong>#224e72</strong></span>
                         </div>
-                    </li>
-                </ul>
+                        
+                        <div class="styleguide__color bg-3">
+                            <span>Allports</span>
+
+                            <span>Variable Name: <strong>color-3</strong></span>
+
+                            <span>Hexcode: <strong>#007595</strong></span>
+                        </div>
+                        
+                        <div class="styleguide__color bg-4">
+                            <span>Persian Green</span>
+
+                            <span>Variable Name: <strong>color-4</strong></span>
+
+                            <span>Hexcode: <strong>#009CA2</strong></span>
+                        </div>
+                        
+                        <div class="styleguide__color bg-5">
+                            <span>Mountain Meadow</span>
+
+                            <span>Variable Name: <strong>color-5</strong></span>
+
+                            <span>Hexcode: <strong>#22C198</strong></span>
+                        </div>
+                        
+                        <div class="styleguide__color styleguide__color--invert bg-6">
+                            <span>Feijoa</span>
+
+                            <span>Variable Name: <strong>color-6</strong></span>
+
+                            <span>Hexcode: <strong>#93E180</strong></span>
+                        </div>
+                        
+                        <div class="styleguide__color styleguide__color--invert bg-7">
+                            <span>Festival</span>
+
+                            <span>Variable Name: <strong>color-7</strong></span>
+
+                            <span>Hexcode: <strong>#F9F871</strong></span>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section>
@@ -120,12 +242,14 @@
                         Checkboxes
                     </h4>
 
-                    <GCheckbox
-                        v-for="(checkbox, index) in checkboxes"
-                        :key="index"
-                        v-bind="checkbox"
-                        :class="{'mt-2.5': index}"
-                    />
+                    <div class="flex flex-column">
+                        <GCheckbox
+                            v-for="(checkbox, index) in checkboxes"
+                            :key="index"
+                            v-bind="checkbox"
+                            :class="{'mt-2.5': index}"
+                        />
+                    </div>
                 </div>
                 
                 <div class="mt-4">
@@ -159,6 +283,7 @@
                     
                     <GInput
                         id="styleguide-input-3"
+                        v-model="inputs.text"
                         class="mt-4"
                         type="text"
                         placeholder="Placeholder"
@@ -167,6 +292,7 @@
 
                     <GInput
                         id="styleguide-input-1"
+                        v-model="inputs.email"
                         class="mt-4"
                         type="email"
                         placeholder="Placeholder"
@@ -175,6 +301,7 @@
                     
                     <GInput
                         id="styleguide-input-2"
+                        v-model="inputs.password"
                         type="password"
                         class="mt-4"
                         placeholder="Placeholder"
@@ -267,6 +394,15 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magni nulla a doloribus totam tempora omnis voluptates, dolorem quo unde nobis molestias corrupti deleniti quos veritatis esse. Labore, sint sequi.
                     </p>
                 </div>
+            </section>
+
+            <section>
+                <h2>Video</h2>
+
+                <GVideo
+                    v-if="videoExample"
+                    v-bind="videoExample"
+                />
             </section>
         </div>
     </div>

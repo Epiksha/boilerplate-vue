@@ -4,12 +4,16 @@ import PStyle from '../routes/PStyle/PStyle.vue';
 export default [
     {
         path: '/',
-        name: 'PIndex',
         component: PIndex,
+        meta: {
+            theme: 'dark',
+        },
     },
     {
         path: '/styleguide',
-        name: 'PStyle',
         component: PStyle,
+        meta: {
+            theme: 'dark',
+        },
     },
 ];

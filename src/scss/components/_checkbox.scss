@@ -1,22 +1,40 @@
 @use '../_abstracts.scss' as *;
 
 .checkbox {
-    display: block;
-    
     position: relative;
 
     user-select: none;
+
+    text-transform: none;
 }
 
 .checkbox__text {
     display: inline-block;
     vertical-align: middle;
 
-    margin-left: $spacing * 1.5;
+    margin-left: $spacing;
 
-    color: $color-1;
+    color: $catskill-white;
 
     font-size: 1.6rem;
     line-height: 1;
     letter-spacing: 0.025rem;
+}
+
+.checkbox__icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    padding: $spacing * 0.2;
+    border: solid 0.1rem $radical-red;
+    border-radius: 0.2rem;
+
+    & > div {
+        position: relative;
+
+        height: 1.6rem;
+        width: 1.6rem;
+
+        transition: background-color 200ms;
+    }
 }

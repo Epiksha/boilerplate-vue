@@ -12,7 +12,7 @@
     outline: none;
 
     &:focus {
-        border: solid 0.2rem $color-5;
+        border: solid 0.2rem $radical-red;
     }
 }
 
@@ -21,13 +21,13 @@
 
     background-repeat: no-repeat;
     background-size: cover;
-    color: $color-0;
+    color: $catskill-white;
 }
 
 .carousel__index {
     margin: 0 $spacing * 1.5;
 
-    color: $color-2;
+    color: $catskill-white;
 
     font-weight: bold;
 }

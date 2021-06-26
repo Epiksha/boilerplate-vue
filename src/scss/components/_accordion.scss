@@ -5,45 +5,50 @@
     text-align: left;
 
     box-sizing: border-box;
+    background-color: $pickled-bluewood;
     overflow: hidden;
     width: 100%;
-    padding: 0 $spacing * 4 $spacing * 2;
     border-radius: 1rem;
     outline: none;
     
-    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust($color-1, $alpha: -0.8);
-    opacity: 0;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust(black, $alpha: -0.8);
 
-    transition: max-height 500ms, opacity 500ms 500ms;
+    cursor: pointer;
+    transition: background-color 200ms;
 
-    &:focus {
-        background-color: $color-7;
+    &:hover, &:focus, &:active {
+        background-color: $rhino;
     }
 
-    &.visible {
-        opacity: 1;
+    &__title {
+        display: flex;
+        align-items: center;
+        
+        padding: $spacing * 2;
+        
+        &__text {
+            display: block;
+
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1;
+            letter-spacing: 0.1rem;
+
+            @at-root .accordion.accordion--right .accordion__title__text {
+                flex-grow: 1;
+            }
+
+            .icon + &,
+            .plus + & {
+                margin-left: $spacing;
+            }
+        }
     }
-}
 
-.accordion__header {
-    display: flex;
-    align-items: center;
+    &__content {
+        padding: 0 $spacing * 2 $spacing * 2;
 
-    padding: $spacing * 2 0;
-
-    h4 {
-        padding-left: $spacing * 2;
-
-        color: $color-6;
-
-        font-size: 2.4rem;
-        font-weight: normal;
+        font-size: 1.8rem;
+        line-height: 1.5;
     }
-}
-
-.accordion__content {
-    color: $color-6;
-
-    font-size: 1.8rem;
-    line-height: 1.5;
 }

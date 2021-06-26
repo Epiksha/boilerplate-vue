@@ -3,7 +3,7 @@ export default {
         label: String,
         value: {
             type: Boolean,
-            required: true,
+            required: false,
         },
     },
 

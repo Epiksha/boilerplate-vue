@@ -10,6 +10,8 @@
             type="checkbox"
             :checked="value"
             class="input input--toggle"
+            :aria-checked="value"
+            role="switch"
             @click="$emit('input', !value)"
         >
 

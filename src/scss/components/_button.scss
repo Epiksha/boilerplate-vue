@@ -1,42 +1,132 @@
 @use 'sass:color';
 @use '../_abstracts.scss' as *;
+@use '../_mixins.scss' as *;
 
-button, .button {
+.button {
     padding: 0;
     border: none;
 
     background-color: transparent;
-    color: $color-0;
+    color: $catskill-white;
 
     font-size: 1.4rem;
 
     cursor: pointer;
-}
+    transition: background-color 200ms, border 200ms;
 
-.button.button--carousel {
-    position: relative;
+    &--primary {
+        padding: $spacing * 1.5 $spacing * 2;
+        border: solid 0.1rem transparent;
+        border-radius: 2rem;
 
-    height: 4rem;
-    width: 4rem;
-    padding: 0;
-    border-radius: 50%;
-    outline: none;
+        background-color: $radical-red;
 
-    background-color: $color-2;
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: 0.025rem;
 
-    transition: background-color 200ms;
+        &:hover,
+        &:focus {
+            background-color: $radical-re;
+        }
 
-    &:disabled {
-        background-color: color.adjust($color-4, $lightness: 25%);
-        cursor: not-allowed;
-        
-        &:hover {
-            background-color: color.adjust($color-4, $lightness: 25%);
+        &.button--outline {
+            border: solid 0.1rem $radical-red;
+
+            background-color: transparent;
+
+            &:hover {
+                background-color: $radical-re;
+                border: solid 0.1rem $catskill-white;
+            }
         }
     }
 
-    &:hover,
-    &:focus {
-        background-color: $color-5;
+    &--flat {
+        border-radius: 0;
+    }
+
+    &#{&}--carousel {
+        position: relative;
+
+        height: 4rem;
+        width: 4rem;
+        padding: 0;
+        border-radius: 50%;
+        outline: none;
+    
+        background-color: $radical-red;
+    
+        transition: background-color 200ms;
+    
+        &:disabled {
+            background-color: color.adjust($radical-red, $lightness: 25%);
+            cursor: not-allowed;
+            
+            &:hover {
+                background-color: color.adjust($radical-red, $lightness: 25%);
+            }
+        }
+    
+        &:hover,
+        &:focus {
+            background-color: $radical-red;
+        }
+    }
+
+    &#{&}--visible {
+        background-color: transparent;
+    }
+
+    &#{&}--icon {
+        display: flex;
+        align-items: center;
+        text-align: left;
+
+        .icon {
+            @include icon-dimensions(1.8rem);
+
+            & + * {
+                margin-left: $spacing;
+            }
+        }
+
+        & > span {
+            flex-grow: 1;
+        }
+    }
+
+    &--media {
+        line-height: 1.8rem;
+
+        &:hover .icon {
+            fill: $radical-red;
+
+            transform: scale(1.2);
+        }
+    }
+
+    &--center-play {
+        position: relative;
+
+        height: 6rem;
+        width: 6rem;
+        padding: 0;
+        border: solid 0.5rem $catskill-white;
+        border-radius: 50%;
+
+        transition: border-color 500ms;
+
+        &:hover {
+            border-color: $radical-red;
+
+            .icon {
+                fill: $radical-red;
+            }
+        }
+    }
+
+    &--adjust {
+        margin: 0 $spacing * 2;
     }
 }

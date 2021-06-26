@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 export default new VueRouter({
     linkExactActiveClass: 'active',
     routes,
-    scrollBehavior() {
+    /* scrollBehavior() {
         return { x: 0, y: 0 };
-    },
+    }, */
 });

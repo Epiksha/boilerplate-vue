@@ -2,9 +2,16 @@
 @use '../_abstracts.scss' as *;
 
 .toggle {
+    display: flex;
+    flex-direction: column;
+
     position: relative;
 
-    width: auto;
+    max-width: 10rem;
+
+    color: $catskill-white;
+
+    text-transform: none;
 }
 
 .toggle__container {
@@ -17,7 +24,7 @@
     width: 4rem;
     border-radius: 2rem;
 
-    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem color.adjust($color-1, $alpha: -0.8);
+    background-color: $pickled-bluewood;
 
     pointer-events: none;
     transition: background-size 200ms;
@@ -35,15 +42,14 @@
         width: 100%;
         border-radius: 2rem;
 
-        background-color: $color-8;
+        background-color: $radical-red;
 
         transition: transform 500ms;
     }
 }
 
 .toggle__text {
-    display: block;
-
+    display: inline-block;
     margin-bottom: $spacing;
 }
 
@@ -57,9 +63,9 @@
     height: 1.9rem;
     width: 1.9rem;
     border-radius: 50%;
-    border: solid 1px $color-4;
+    border: solid 1px white;
 
-    background-color: $color-0;
+    background-color: $radical-red;
 
     transition: transform 500ms;
 }

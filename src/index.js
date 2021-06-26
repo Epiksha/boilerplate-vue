@@ -13,10 +13,13 @@ import GCarousel from './components/Global/GCarousel/GCarousel.vue';
 import GCheckbox from './components/Global/GCheckbox/GCheckbox.vue';
 import GIcon from './components/Global/GIcon/GIcon.vue';
 import GInput from './components/Global/GInput/GInput.vue';
+import GPlus from './components/Global/GPlus/GPlus.vue';
 import GRadios from './components/Global/GRadios/GRadios.vue';
 import GRange from './components/Global/GRange/GRange.vue';
 import GSpinner from './components/Global/GSpinner/GSpinner.vue';
 import GToggle from './components/Global/GToggle/GToggle.vue';
+import GVideo from './components/Global/GVideo/GVideo.vue';
+import GVolume from './components/Global/GVolume/GVolume.vue';
 
 // Import SASS
 import './scss/entry.scss';
@@ -32,10 +35,13 @@ Vue.component('GCarousel', GCarousel);
 Vue.component('GCheckbox', GCheckbox);
 Vue.component('GIcon', GIcon);
 Vue.component('GInput', GInput);
+Vue.component('GPlus', GPlus);
 Vue.component('GRadios', GRadios);
 Vue.component('GRange', GRange);
 Vue.component('GSpinner', GSpinner);
 Vue.component('GToggle', GToggle);
+Vue.component('GVideo', GVideo);
+Vue.component('GVolume', GVolume);
 
 // Plugins & Directives
 plugins.forEach(plugin => Vue.use(plugin));

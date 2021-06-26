@@ -1,30 +1,42 @@
 <template>
-    <button
-        ref="accordion"
+    <details
         class="accordion"
-        :class="[{'active': isActive}, {'visible': isVisible}]"
-        :style="{maxHeight: maxHeight}"
-        @click="() => isActive = !isActive"
+        :class="[
+            {'accordion--plus': iconType === 'plus' },
+            {'accordion--right': iconPosition === 'right' }
+        ]"
     >
-        <header
-            ref="header"
-            class="accordion__header"
-        >
-            <GIcon
-                class="icon--accordion"
-                name="icon-arrow-expand"
-            />
+        <summary class="accordion__title">
+            <template v-if="iconPosition === 'left'">
+                <GPlus v-if="iconType === 'plus'" />
 
-            <h4
-                class="accordion__title"
+                <GIcon
+                    v-else
+                    name="icon-arrow-expand"
+                    class="icon--accordion"
+                />
+            </template>
+
+            <span
+                class="accordion__title__text"
                 v-text="title"
             />
-        </header>
+
+            <template v-if="iconPosition === 'right'">
+                <GPlus v-if="iconType === 'plus'" />
+
+                <GIcon
+                    v-else
+                    name="icon-arrow-expand"
+                    class="icon--accordion"
+                />
+            </template>
+        </summary>
 
         <div class="accordion__content">
             <slot />
         </div>
-    </button>
+    </details>
 </template>
 
 <script src="./GAccordion" />

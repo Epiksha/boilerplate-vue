@@ -6,10 +6,14 @@
             class="input input--checkbox"
         >
 
-        <GIcon
-            class="icon--checkbox"
-            name="icon-tick"
-        />
+        <div class="checkbox__icon">
+            <div>
+                <GIcon
+                    class="icon--checkbox"
+                    name="icon-tick"
+                />
+            </div>
+        </div>
 
         <span
             v-if="label"

@@ -1,0 +1,10 @@
+@use '../_abstracts.scss' as *;
+
+.theme {
+    min-height: 100vh;
+}
+
+.theme.theme--dark {
+    background-color: $firefly;
+    color: #ecf2f7;
+}
