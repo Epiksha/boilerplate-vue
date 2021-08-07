@@ -5,4 +5,13 @@
     border-radius: 0.5rem;
 
     background-color: $pickled-bluewood;
+
+    & > a {
+        color: $catskill-white;
+        text-decoration: none;
+    }
+
+    &__footer {
+        padding-top: $spacing;
+    }
 }

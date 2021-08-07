@@ -11,7 +11,7 @@
                 class="carousel__slide"
                 :style="{
                     backgroundColor: slide.backgroundColor,
-                    backgroundImage: backgroundImages[index]
+                    backgroundImage: `images/man-laptop.jpg`
                 }"
             >
                 <h4 v-text="slide.title" />

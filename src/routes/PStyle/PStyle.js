@@ -1,5 +1,31 @@
 export default {
     data: () => ({
+        cards: {
+            basic: [
+                {
+                    title: 'Card Header',
+                },
+                {
+                    link: {
+                        text: 'Read More',
+                        url: '/styleguide',
+                    },
+                    title: 'Card Header',
+                },
+                {
+                    image: {
+                        url: './dist/assets/images/mountains.jpg',
+                        alt: 'Mountains',
+                    },
+                    link: {
+                        text: 'Read More',
+                        url: '/styleguide',
+                    },
+                    title: 'Card Header',
+                },
+            ],
+        },
+
         checkboxes: [
             {
                 label: 'Checkbox Option 1',

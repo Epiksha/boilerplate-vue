@@ -3,6 +3,8 @@
 @use '../_mixins.scss' as *;
 
 .button {
+    text-align: center;
+
     padding: 0;
     border: none;
 
@@ -128,5 +130,16 @@
 
     &--adjust {
         margin: 0 $spacing * 2;
+    }
+
+    &--card-link {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+        max-width: 20rem;
+        padding: $spacing $spacing * 4;
+
+        text-decoration: none;
     }
 }

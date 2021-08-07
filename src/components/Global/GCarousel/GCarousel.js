@@ -57,18 +57,6 @@ export default {
         }
     },
 
-    computed: {
-        backgroundImages() {
-            if (this.slides && this.slides.length) {
-                return this.slides.map(slide => {
-                    if (slide.backgroundImage) {
-                        return `url(${require('../../../assets/images/' + slide.backgroundImage)})`;
-                    }
-                });
-            }
-        },
-    },
-
     mounted() {
         this.$refs.carousel.$el.addEventListener('mouseup', this.updateIndex);
     },

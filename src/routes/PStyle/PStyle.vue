@@ -3,6 +3,7 @@
         <div class="container">
             <h1>Styleguide</h1>
 
+            <!-- Accordions -->
             <section>
                 <h2>
                     Accordions
@@ -47,6 +48,7 @@
                 </div>
             </section>
 
+            <!-- Buttons -->
             <section>
                 <h2>
                     Buttons
@@ -62,61 +64,69 @@
                             Click
                         </button>
                     
+                        <button class="button button--primary button--icon">
+                            <GIcon
+                                name="icon-search"
+                            />
+
+                            <span>
+                                Click
+                            </span>
+                        </button>
+                    
+                        <button class="button button--primary button--icon">
+                            <span>
+                                Click
+                            </span>
+
+                            <GIcon
+                                name="icon-search"
+                            />
+                        </button>
+                    
                         <button class="button button--primary button--flat">
                             Click
                         </button>
-                    
-                        <button class="button button--primary button--icon">
-                            <GIcon
-                                name="icon-search"
-                            />
+                    </div>
+                </div>
 
-                            <span>
-                                Click
-                            </span>
-                        </button>
-                    
-                        <button class="button button--primary button--icon">
-                            <span>
-                                Click
-                            </span>
+                <div class="mt-6">
+                    <h3>
+                        Primary Buttons (Outlined)
+                    </h3>
 
-                            <GIcon
-                                name="icon-search"
-                            />
-                        </button>
-
+                    <div class="grid grid--1/2 tablet:grid--1/3 desktop:grid--1/4">
                         <button class="button button--primary button--outline">
                             Click
+                        </button>
+                    
+                        <button class="button button--primary button--outline button--icon">
+                            <GIcon
+                                name="icon-search"
+                            />
+
+                            <span>
+                                Click
+                            </span>
+                        </button>
+                    
+                        <button class="button button--primary button--outline button--icon">
+                            <span>
+                                Click
+                            </span>
+
+                            <GIcon
+                                name="icon-search"
+                            />
                         </button>
                     
                         <button class="button button--primary button--outline button--flat">
                             Click
                         </button>
-                    
-                        <button class="button button--primary button--outline button--icon">
-                            <GIcon
-                                name="icon-search"
-                            />
-
-                            <span>
-                                Click
-                            </span>
-                        </button>
-                    
-                        <button class="button button--primary button--outline button--icon">
-                            <span>
-                                Click
-                            </span>
-
-                            <GIcon
-                                name="icon-search"
-                            />
-                        </button>
                     </div>
                 </div>
 
-                <div class="mt-3">
+                <div class="mt-6">
                     <h3>
                         Miscellaneous Buttons
                     </h3>
@@ -128,16 +138,46 @@
                 </div>
             </section>
 
+            <!-- Cards -->
             <section>
                 <h2>
                     Cards
                 </h2>
 
-                <div class="grid grid--1/1 tablet:grid--1/2">
-                    <GCard />
+                <div>
+                    <h3>
+                        Basic Card
+                    </h3>
+
+                    <div class="grid grid--1/1 tablet:grid--1/2">
+                        <GCard>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                            </p>
+                        </GCard>
+
+                        <GCard v-bind="cards.basic[0]">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                            </p>
+                        </GCard>
+
+                        <GCard v-bind="cards.basic[1]">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                            </p>
+                        </GCard>
+                        
+                        <GCard v-bind="cards.basic[2]">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                            </p>
+                        </GCard>
+                    </div>
                 </div>
             </section>
 
+            <!-- Carousel -->
             <section>
                 <h2>
                     Carousel
@@ -146,6 +186,7 @@
                 <GCarousel :slides="slides" />
             </section>
             
+            <!-- Colors -->
             <section>
                 <h2>
                     Colors
@@ -232,6 +273,7 @@
                 </div>
             </section>
 
+            <!-- Inputs -->
             <section>
                 <h2>
                     Inputs
@@ -310,6 +352,20 @@
                 </div>
             </section>
 
+            <!-- Loading -->
+            <section>
+                <h2>Loading</h2>
+
+                <div>
+                    <h3>
+                        Spinner
+                    </h3>
+
+                    <GSpinner />
+                </div>
+            </section>
+
+            <!-- Lists -->
             <section>
                 <h2>
                     Lists
@@ -342,14 +398,7 @@
                 </div>
             </section>
 
-            <section>
-                <h2>
-                    Spinner
-                </h2>
-
-                <GSpinner />
-            </section>
-
+            <!-- Typography -->
             <section>
                 <h2>
                     Typography
@@ -396,6 +445,7 @@
                 </div>
             </section>
 
+            <!-- Video -->
             <section>
                 <h2>Video</h2>
 
