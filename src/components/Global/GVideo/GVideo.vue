@@ -2,9 +2,7 @@
     <div
         class="video"
         :class="[
-            {
-                'paused': isPaused,
-            },
+            { 'paused': isPaused },
         ]"
     >
         <div class="video__wrapper">
@@ -101,7 +99,7 @@
 
                 <div class="video__track">
                     <GRange
-                        v-model="progress"
+                        :value="progress"
                         :min="0"
                         :max="100"
                         :step="0.1"

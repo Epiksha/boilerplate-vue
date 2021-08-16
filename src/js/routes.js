@@ -5,15 +5,9 @@ export default [
     {
         path: '/',
         component: PIndex,
-        meta: {
-            theme: 'dark',
-        },
     },
     {
         path: '/styleguide',
         component: PStyle,
-        meta: {
-            theme: 'dark',
-        },
     },
 ];

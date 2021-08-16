@@ -1,12 +1,9 @@
 <template>
     <div id="app">
         <main>
-            <router-view
-                class="theme"
-                :class="$route.meta.theme ? `theme--${$route.meta.theme}` : ''"
-            />
+            <router-view />
         </main>
     </div>
 </template>
 
-<script src="./App.js" />
+<script src='./App' />

@@ -22,13 +22,13 @@ export const htmlToText = html => {
 };
 
 export default {
-    install(Vue) {
+    install(app) {
         const utility = {
             copyToClipboard,
             htmlToText,
         };
 
-        Vue.utility = utility;
-        Vue.prototype.utility = utility;
+        app.utility = utility;
+        app.prototype.utility = utility;
     },
 };

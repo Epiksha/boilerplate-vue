@@ -176,15 +176,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Carousel -->
-            <section>
-                <h2>
-                    Carousel
-                </h2>
-
-                <GCarousel :slides="slides" />
-            </section>
             
             <!-- Colors -->
             <section>
@@ -311,10 +302,11 @@
                     </h4>
 
                     <GRange
-                        v-model="sliderValue"
+                        :value="sliderValue"
                         :min="0"
                         :max="100"
                         :step="1"
+                        @input="value => sliderValue = value"
                     />
                 </div>
 

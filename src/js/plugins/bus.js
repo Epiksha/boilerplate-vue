@@ -1,3 +1,10 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 
-export default new Vue();
+export default {
+    install(app) {
+        const bus = createApp();
+
+        app.bus = bus;
+        app.prototype.bus = bus;
+    },
+};

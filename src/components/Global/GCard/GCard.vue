@@ -42,7 +42,6 @@
                 <button
                     v-if="link"
                     class="button button--primary button--card-link"
-                    v-text="link.text"
                 >
                     <span v-text="link.text" />
                 </button>
@@ -65,7 +64,6 @@
                 <button
                     v-if="link"
                     class="button button--primary button--card-link"
-                    v-text="link.text"
                 >
                     <span v-text="link.text" />
                 </button>

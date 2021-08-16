@@ -2,7 +2,7 @@ import axios from 'axios';
 import store from '../store';
 
 export default {
-    install(Vue) {
+    install(app) {
         axios.interceptors.request.use(request => {
             if (store.state.user.token) {
                 request.headers.authorization = `Bearer ${store.state.user.token}`;
@@ -11,7 +11,7 @@ export default {
             return request;
         });
         
-        Vue.axios = axios;
-        Vue.prototype.axios = axios;
+        app.axios = axios;
+        app.prototype.axios = axios;
     },
 };

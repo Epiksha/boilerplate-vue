@@ -29,8 +29,11 @@
         "import/no-dynamic-require": "off",
         "no-plusplus": "off",
         "no-restricted-globals": "off",
+        "no-unused-vars": "off",
         "no-confusing-arrow": "off",
         "no-console": "off",
+        "object-shorthand": "off",
+        "object-curly-newline": "off",
         "import/no-unresolved": "off",
         "arrow-parens": "off"
 	}
