@@ -1,11 +1,21 @@
 <template>
-    <div class="styleguide">
+    <div class="styleguide container py-4">
+        <!-- Styleguide navigation -->
         <aside class="styleguide__sidebar">
             <nav class="styleguide__nav">
                 <ul
                     v-if="componentLabels"
                     class="list list--clear"
                 >
+                    <li class="text-center block w-100 py-2">
+                        <router-link
+                            to="/"
+                            class="button weight-600 color-2"
+                        >
+                            Back to home
+                        </router-link>
+                    </li>
+
                     <li
                         v-for="componentLabel in componentLabels"
                         :key="componentLabel"

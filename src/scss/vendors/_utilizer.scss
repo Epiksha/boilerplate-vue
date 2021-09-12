@@ -1382,65 +1382,73 @@ $bpConfig: (
 );
 
 // Setup Color Utilities
-@for $i from 0 to list.length($colors) {
+@for $index from 0 to list.length($colors) {
     $utilities: list.join(
         $utilities,
         ((
-            color-#{$i}: (
-                styles: ( color: list.nth($colors, $i + 1) ),
+            color-#{$index}: (
+                styles: ( color: list.nth($colors, $index + 1) ),
                 dives: false,
                 breakpoints: false,
                 pseudos: (hover, visited, focus, active)
             ),
 
-            fill-#{$i}: (
-                styles: ( fill: list.nth($colors, $i + 1) ),
+            fill-#{$index}: (
+                styles: ( fill: list.nth($colors, $index + 1) ),
                 dives: false,
                 breakpoints: false,
                 pseudos: (hover, focus, active)
             ),
 
-            bg-#{$i}: (
-                styles: ( background-color: list.nth($colors, $i + 1) ),
+            bg-#{$index}: (
+                styles: ( background-color: list.nth($colors, $index + 1) ),
                 dives: false,
                 breakpoints: false,
                 pseudos: (hover, focus, active)
             ),
 
-            border-color-#{$i}: (
-                styles: ( border-color: list.nth($colors, $i + 1) )
+            border-color-#{$index}: (
+                styles: ( border-color: list.nth($colors, $index + 1) )
             ),
 
-            border-t-color-#{$i}: (
-                styles: ( border-top-color: list.nth($colors, $i + 1) )
+            border-t-color-#{$index}: (
+                styles: ( border-top-color: list.nth($colors, $index + 1) )
             ),
 
-            border-b-color-#{$i}: (
-                styles: ( border-bottom-color: list.nth($colors, $i + 1) )
+            border-b-color-#{$index}: (
+                styles: ( border-bottom-color: list.nth($colors, $index + 1) )
             ),
 
-            border-l-color-#{$i}: (
-                styles: ( border-left-color: list.nth($colors, $i + 1) )
+            border-l-color-#{$index}: (
+                styles: ( border-left-color: list.nth($colors, $index + 1) )
             ),
 
-            border-r-color-#{$i}: (
-                styles: ( border-right-color: list.nth($colors, $i + 1) )
+            border-r-color-#{$index}: (
+                styles: ( border-right-color: list.nth($colors, $index + 1) )
             )
         ))
     );
 }
 
-@for $i from 1 through 9 {
+@for $index from 1 through 9 {
     $utilities: list.join(
         $utilities,
-        (font-#{$i * 100}: ( styles: ( font-weight: $i * 100 ) ))
+        ((
+            weight-#{$index * 100}: (
+                styles: ( font-weight: $index * 100 )
+            )
+        ))
     );
 }
 
-@for $i from 1 through 9 {
+@for $index from 1 through 9 {
     $utilities: list.join(
         $utilities,
-        (tracking-0\.0#{$i}: ( styles: ( letter-spacing: #{$i * 0.01}em ) ))
+        ((
+            tracking-0\.0#{$index}: (
+                styles: ( letter-spacing: #{$index * 0.01}em ) 
+            )
+        ))
     );
 }
 

@@ -43,11 +43,17 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpg|jpeg|gif)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 type: 'asset/resource',
+                include: [
+                    resolve(__dirname, 'src/assets/images'),
+                ],
             },
             {
                 test: /\.svg$/,
+                include: [
+                    resolve(__dirname, 'src/assets/icons'),
+                ],
                 use: [
                     'svg-sprite-loader',
                     'svgo-loader'

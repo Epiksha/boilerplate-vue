@@ -19,10 +19,6 @@
     
             font-weight: bold;
         }
-    
-        &:not(:first-of-type) {
-            margin-top: 0.75rem;
-        }
     }
 
     // Specific
@@ -47,18 +43,40 @@
         
                 font-size: 1.4rem;
                 font-weight: bold;
+    
+                &:not(:first-of-type) {
+                    margin-top: 0.75rem;
+                }
+            }
+        }
+    }
+
+    &--unordered {
+        li {
+            &:not(:first-of-type) {
+                margin-top: 0.75rem;
+            }
+
+            &:before {
+                content: '\2022';
+                        
+                height: 100%;
+                margin-left: -2rem;
+                
+                font-size: 2rem;
+                font-weight: bold;
+                line-height: 1;
             }
         }
     }
     
-    &--unordered li:before {
-        content: '\2022';
-                
-        height: 100%;
-        margin-left: -2rem;
-        
-        font-size: 2rem;
-        font-weight: bold;
-        line-height: 1;
+    &--nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: $tablet) {
+            flex-direction: row;
+        }
     }
 }

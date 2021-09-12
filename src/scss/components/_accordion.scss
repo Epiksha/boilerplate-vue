@@ -17,8 +17,7 @@
     transition: background-color $timing-1, color $timing-1;
 
     &:hover, &:focus, &:active {
-        background-color: $color2;
-        color: $color0;
+        background-color: $color5;
     }
 
     &__title {

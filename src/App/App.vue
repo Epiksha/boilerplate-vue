@@ -1,5 +1,7 @@
 <template>
     <div id="app">
+        <VHeader />
+
         <main>
             <router-view />
         </main>

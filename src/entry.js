@@ -32,5 +32,5 @@ globals.forEach(global => {
 // Mount the app to DOM
 app.mount('#app');
 
-// Remove nojs class if JS is active
+// Remove nojs class since JS is active
 document.querySelector('.nojs').classList.remove('nojs');

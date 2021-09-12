@@ -41,8 +41,7 @@
             color: $color1;
 
             &:hover {
-                background-color: $color3;
-                border: solid 0.1rem $color0;
+                background-color: $color5;
             }
 
             svg {
@@ -65,32 +64,74 @@
         border-radius: 0;
     }
 
-    &--carousel {
-        height: 4rem;
-        width: 4rem;
-        padding: 0;
-        border-radius: 50%;
-        outline: none;
+    &--hamburger {
+        position: relative;
+        height: 3.2rem;
+        width: 3.2rem;
     
-        background-color: $color2;
-    
-        transition: background-color $timing-1;
-    
-        &:disabled {
-            background-color: color.adjust($color2, $lightness: 25%);
-            cursor: not-allowed;
-            
-            &:hover {
-                background-color: color.adjust($color2, $lightness: 25%);
-            }
-        }
-    
-        &:hover,
-        &:focus {
+        transition: transform 50ms ease-in-out;
+
+        &:hover span, &:focus span {
             background-color: $color2;
         }
-    }
 
+        > span {
+            display: block;
+    
+            position: absolute;
+            left: 0;
+            transform: rotate(0deg);
+            
+            height: 0.4rem;
+            width: 100%;
+            border-radius: 1rem;
+            
+            background: $color3;
+            
+            opacity: 1;
+            transition: $timing-2 ease-in-out;
+
+            &:first-child {
+                top: 0;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 1.35rem;
+            }
+
+            &:last-child {
+                top: 2.7rem;
+            }
+        }
+
+        &.active span {
+            &:first-child {
+                top: 1rem;
+                left: 50%;
+                width: 0;
+            }
+            
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+            
+            &:last-child {
+                top: 1rem;
+                width: 0%;
+                left: 50%;
+            }
+        }
+
+        @media (min-width: $tablet) {
+            display: none;
+        }
+    }
+    
     &--visible {
         background-color: transparent;
     }

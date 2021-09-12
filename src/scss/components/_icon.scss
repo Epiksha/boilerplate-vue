@@ -29,11 +29,19 @@
     }
 
     // Specific Styling
-    &--search {
-        @include icon-dimensions(1.8rem);
+    &--accordion {
+        transform: rotate(0deg);
 
-        @media (min-width: $tablet) {
-            margin-left: 1rem;
+        @include icon-dimensions(2.4rem);
+
+        transition: transform $timing-1, fill $timing-1;
+        
+        .accordion[open] & {
+            transform: rotate(180deg);
+        }
+
+        svg {
+            fill: $color2;
         }
     }
 
@@ -50,65 +58,6 @@
         &--left {
             transform: translate(calc(-50% - 0.1rem), -50%) rotate(180deg);
         }
-    }
-
-    &--checkbox {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        box-sizing: border-box;
-        @include icon-dimensions(1.2rem);
-
-        line-height: 1;
-
-        pointer-events: none;
-
-        svg {
-            fill: transparent;
-
-            transition: fill $timing-1;
-        }
-    }
-
-    &--email {
-        @include icon-dimensions(2rem);
-    }
-    
-    &--visible {
-        @include icon-dimensions(2rem);
-    }
-
-    &--spinner svg {
-        fill: $color2;
-    }
-
-    &--accordion {
-        transform: rotate(0deg);
-
-        @include icon-dimensions(2.4rem);
-
-        transition: transform $timing-1, fill $timing-1;
-        
-        .accordion[open] & {
-            transform: rotate(180deg);
-        }
-
-        svg {
-            fill: $color2;
-            
-            .accordion:hover & {
-                fill: $color0;
-            }
-        }
-
-    }
-
-    &--media {
-        @include icon-dimensions(1.8rem);
-
-        transition: transform $timing-1, fill $timing-1;
     }
 
     &--center-play {
@@ -137,7 +86,53 @@
         }
     }
 
+    &--checkbox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        box-sizing: border-box;
+        @include icon-dimensions(1.2rem);
+
+        line-height: 1;
+
+        pointer-events: none;
+
+        svg {
+            fill: transparent;
+
+            transition: fill $timing-1;
+        }
+    }
+
+    &--email {
+        @include icon-dimensions(2rem);
+    }
+
     &--large {
         @include icon-dimensions(3.6rem);
+    }
+
+    &--media {
+        @include icon-dimensions(1.8rem);
+
+        transition: transform $timing-1, fill $timing-1;
+    }
+    
+    &--search {
+        @include icon-dimensions(1.8rem);
+
+        @media (min-width: $tablet) {
+            margin-left: 1rem;
+        }
+    }
+
+    &--spinner svg {
+        fill: $color2;
+    }
+    
+    &--visible {
+        @include icon-dimensions(2rem);
     }
 }

@@ -18,10 +18,6 @@ $lineWidth: 0.4rem;
         background-color: $color2;
 
         transition: background-color $timing-1;
-
-        .accordion:hover & {
-            background-color: $color0;
-        }
     }
 
     &__line--horizontal {
