@@ -16,11 +16,10 @@
                     {'card__header--image': image && image.url},
                 ]"
             >
-                <img
+                <GImage
                     v-if="image"
-                    :src="image.url"
-                    :alt="image.alt ? image.alt : ''"
-                >
+                    v-bind="image"
+                />
 
                 <h3
                     v-else

@@ -20,4 +20,19 @@ module.exports = merge(common, {
             new CssMinimizerPlugin(),
         ]
     },
+
+    module: {
+        rules: [
+            {
+                test: /\.(sass|s?css)$/,
+                exclude: /node_modules/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ],
+            },
+        ],
+    },
 });

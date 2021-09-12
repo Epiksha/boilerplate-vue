@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-
 const { VueLoaderPlugin } = require('vue-loader');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -29,6 +28,7 @@ module.exports = {
         rules: [
             {
                 test: /\.m?js/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -43,10 +43,8 @@ module.exports = {
                 ]
             },
             {
-                enforce: 'pre',
-                test: /\.(vue|js)/,
-                loader: 'eslint-loader',
-                exclude: /node_modules/
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
             {
                 test: /\.svg$/,
@@ -54,16 +52,6 @@ module.exports = {
                     'svg-sprite-loader',
                     'svgo-loader'
                 ]
-            },
-            {
-                test: /\.(sass|s?css)$/,
-                exclude: /node_modules/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
-                ],
             },
         ],
     },

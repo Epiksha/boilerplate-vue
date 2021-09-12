@@ -9,7 +9,7 @@
 
     max-width: 10rem;
 
-    color: $catskill-white;
+    color: $color1;
 
     text-transform: none;
 }
@@ -24,10 +24,10 @@
     width: 4rem;
     border-radius: 2rem;
 
-    background-color: $pickled-bluewood;
+    background-color: $color7;
 
     pointer-events: none;
-    transition: background-size 200ms;
+    transition: background-size $timing-1;
 
     &:after {
         content: '';
@@ -42,15 +42,15 @@
         width: 100%;
         border-radius: 2rem;
 
-        background-color: $radical-red;
+        background-color: $color3;
 
-        transition: transform 500ms;
+        transition: transform $timing-1;
     }
 }
 
 .toggle__text {
     display: inline-block;
-    margin-bottom: $spacing;
+    margin-bottom: 1rem;
 }
 
 .toggle__handle {
@@ -60,12 +60,13 @@
     transform: translateY(-50%);
     z-index: 1;
 
-    height: 1.9rem;
-    width: 1.9rem;
+    box-sizing: border-box;
+    height: 2rem;
+    width: 2rem;
+    border: solid $color2 0.1rem;
     border-radius: 50%;
-    border: solid 1px white;
 
-    background-color: $radical-red;
+    background-color: $color2;
 
-    transition: transform 500ms;
+    transition: transform $timing-1, background-color $timing-1;
 }

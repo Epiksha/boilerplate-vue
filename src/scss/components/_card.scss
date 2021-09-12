@@ -1,17 +1,17 @@
 @use '../_abstracts.scss' as *;
 
 .card {
-    padding: $spacing * 2;
+    padding: 2rem;
     border-radius: 0.5rem;
 
-    background-color: $pickled-bluewood;
+    box-shadow: $box-shadow-1;
 
     & > a {
-        color: $catskill-white;
+        color: $color0;
         text-decoration: none;
     }
 
     &__footer {
-        padding-top: $spacing;
+        padding-top: 1rem;
     }
 }

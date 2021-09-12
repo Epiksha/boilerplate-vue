@@ -12,22 +12,22 @@
     outline: none;
 
     &:focus {
-        border: solid 0.2rem $radical-red;
+        border: solid 0.2rem $color2;
     }
 }
 
 .carousel__slide {
-    padding: $spacing * 2;
+    padding: 2rem;
 
     background-repeat: no-repeat;
     background-size: cover;
-    color: $catskill-white;
+    color: $color0;
 }
 
 .carousel__index {
-    margin: 0 $spacing * 1.5;
+    margin: 0 1.5rem;
 
-    color: $catskill-white;
+    color: $color0;
 
     font-weight: bold;
 }
@@ -38,5 +38,5 @@
     align-items: center;
     text-align: center;
 
-    margin-top: $spacing * 2;
+    margin-top: 2rem;
 }

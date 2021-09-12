@@ -5,7 +5,7 @@
 
     position: relative;
 
-    margin-top: $spacing * 2.5;
+    margin-top: 2.5rem;
 
     cursor: pointer;
 }
@@ -17,7 +17,7 @@
     position: relative;
 
     padding: 0.9rem;
-    border: solid 0.2rem $radical-red;
+    border: solid 0.2rem $color2;
     border-radius: 50%;
 
     &:after {
@@ -32,10 +32,10 @@
         padding: 0.6rem;
         border-radius: 50%;
 
-        background-color: $radical-red;
+        background-color: $color2;
         
         opacity: 0;
-        transition: opacity 300ms;
+        transition: opacity $timing-2;
     }
 }
 
@@ -43,9 +43,9 @@
     display: inline-block;
     vertical-align: middle;
     
-    margin-left: $spacing;
+    margin-left: 1rem;
 
-    color: $catskill-white;
+    color: $color1;
 
     font-size: 1.6rem;
     text-transform: none;

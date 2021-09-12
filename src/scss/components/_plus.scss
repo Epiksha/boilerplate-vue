@@ -5,7 +5,7 @@ $lineWidth: 0.4rem;
 .plus {
     position: relative;
 
-    padding: $spacing * 1.2;
+    padding: 1.2rem;
 
     &__line {
         position: absolute;
@@ -15,7 +15,13 @@ $lineWidth: 0.4rem;
 
         border-radius: 0.5rem;
 
-        background-color: $radical-red;
+        background-color: $color2;
+
+        transition: background-color $timing-1;
+
+        .accordion:hover & {
+            background-color: $color0;
+        }
     }
 
     &__line--horizontal {
@@ -27,7 +33,7 @@ $lineWidth: 0.4rem;
         height: calc(100% - 0.4rem);
         width: $lineWidth;
 
-        transition: transform 200ms, opacity 200ms;
+        transition: transform $timing-1, opacity $timing-1, background-color $timing-1;
 
         .accordion[open] & {
             transform: translate(-50%, -50%) rotate(90deg);

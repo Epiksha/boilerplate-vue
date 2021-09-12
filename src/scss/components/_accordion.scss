@@ -1,30 +1,31 @@
 @use 'sass:color';
-@use '../_abstracts.scss' as *;
+@use '../abstracts' as *;
 
 .accordion {
     text-align: left;
 
     box-sizing: border-box;
-    background-color: $pickled-bluewood;
     overflow: hidden;
     width: 100%;
     border-radius: 1rem;
     outline: none;
     
-    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust(black, $alpha: -0.8);
+    background-color: $color0;
+    box-shadow: $box-shadow-1;
 
     cursor: pointer;
-    transition: background-color 200ms;
+    transition: background-color $timing-1, color $timing-1;
 
     &:hover, &:focus, &:active {
-        background-color: $rhino;
+        background-color: $color2;
+        color: $color0;
     }
 
     &__title {
         display: flex;
         align-items: center;
         
-        padding: $spacing * 2;
+        padding: 2rem;
         
         &__text {
             display: block;
@@ -40,13 +41,13 @@
 
             .icon + &,
             .plus + & {
-                margin-left: $spacing;
+                margin-left: 1rem;
             }
         }
     }
 
     &__content {
-        padding: 0 $spacing * 2 $spacing * 2;
+        padding: 0 2rem 2rem;
 
         font-size: 1.8rem;
         line-height: 1.5;

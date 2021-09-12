@@ -14,8 +14,8 @@ export default {
                 },
                 {
                     image: {
-                        url: './dist/assets/images/mountains.jpg',
                         alt: 'Mountains',
+                        name: 'mountains.jpg',
                     },
                     link: {
                         text: 'Read More',
@@ -40,6 +40,8 @@ export default {
                 isSelected: false,
             },
         ],
+
+        componentLabels: [],
 
         inputs: {
             text: '',
@@ -106,4 +108,19 @@ export default {
             ],
         },
     }),
+
+    methods: {
+        scrollTo(refName) {
+            const section = this.$refs[refName];
+            
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        },
+    },
+
+    mounted() {
+        this.componentLabels = Object.keys(this.$refs);
+    },
 };

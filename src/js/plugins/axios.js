@@ -11,7 +11,6 @@ export default {
             return request;
         });
         
-        app.axios = axios;
-        app.prototype.axios = axios;
+        app.config.globalProperties.axios = axios;
     },
 };

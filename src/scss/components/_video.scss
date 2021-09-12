@@ -7,7 +7,7 @@
     overflow: hidden;
     padding-bottom: 56.25%;    
 
-    background-color: $pickled-bluewood;
+    background-color: $color0;
 
     &__wrapper {
         position: absolute;
@@ -34,10 +34,10 @@
         height: 100%;
         width: 100%;
 
-        background-color: color.adjust($dark-grey, $alpha: -0.4);
+        background-color: color.adjust($color1, $alpha: -0.4);
 
         opacity: 0;
-        transition: opacity 500ms;
+        transition: opacity $timing-1;
 
         .video:hover &,
         .video.paused & {
@@ -78,7 +78,7 @@
     
         box-sizing: border-box;
         width: 100%;
-        padding: 0 $spacing * 2 $spacing;
+        padding: 0 2rem 1rem;
     }
 
     &__track {
@@ -86,6 +86,6 @@
         display: flex;
         align-items: center;
 
-        padding: 0 $spacing * 2;
+        padding: 0 2rem;
     }
 }

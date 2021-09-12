@@ -1,8 +1,5 @@
-@use '../_abstracts.scss' as *;
+@use '../abstracts' as *;
 
 body {
     min-height: 100vh;
-
-    background-color: $firefly;
-    color: #ecf2f7;
 }

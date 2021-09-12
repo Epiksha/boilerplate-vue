@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { objectValidator } from 'vue-props-validation';
 
 export default {
@@ -21,7 +19,14 @@ export default {
                     type: String,
                     required: false,
                 },
-                url: String,
+                name: {
+                    type: String,
+                    required: true,
+                },
+                external: {
+                    type: Boolean,
+                    default: false,
+                },
             }),
         },
         type: {

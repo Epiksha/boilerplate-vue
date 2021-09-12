@@ -5,23 +5,25 @@
 .button {
     text-align: center;
 
+    position: relative;
+
     padding: 0;
     border: none;
 
     background-color: transparent;
-    color: $catskill-white;
 
     font-size: 1.4rem;
 
     cursor: pointer;
-    transition: background-color 200ms, border 200ms;
+    transition: background-color $timing-1, border $timing-1;
 
     &--primary {
-        padding: $spacing * 1.5 $spacing * 2;
+        padding: 1.5rem 2rem;
         border: solid 0.1rem transparent;
-        border-radius: 2rem;
+        border-radius: 1rem;
 
-        background-color: $radical-red;
+        background-color: $color3;
+        color: $color0;
 
         font-size: 1.6rem;
         font-weight: bold;
@@ -29,18 +31,33 @@
 
         &:hover,
         &:focus {
-            background-color: $radical-re;
+            background-color: color.adjust($color3, $lightness: 10%);
         }
 
         &.button--outline {
-            border: solid 0.1rem $radical-red;
+            border: solid 0.1rem $color3;
 
             background-color: transparent;
+            color: $color1;
 
             &:hover {
-                background-color: $radical-re;
-                border: solid 0.1rem $catskill-white;
+                background-color: $color3;
+                border: solid 0.1rem $color0;
             }
+
+            svg {
+                fill: $color3;
+            }
+        }
+    }
+
+    &--secondary {
+        background-color: $color2;
+        color: $color0;
+
+        &:hover,
+        &:focus {
+            background-color: color.adjust($color2, $lightness: 10%);
         }
     }
 
@@ -48,39 +65,37 @@
         border-radius: 0;
     }
 
-    &#{&}--carousel {
-        position: relative;
-
+    &--carousel {
         height: 4rem;
         width: 4rem;
         padding: 0;
         border-radius: 50%;
         outline: none;
     
-        background-color: $radical-red;
+        background-color: $color2;
     
-        transition: background-color 200ms;
+        transition: background-color $timing-1;
     
         &:disabled {
-            background-color: color.adjust($radical-red, $lightness: 25%);
+            background-color: color.adjust($color2, $lightness: 25%);
             cursor: not-allowed;
             
             &:hover {
-                background-color: color.adjust($radical-red, $lightness: 25%);
+                background-color: color.adjust($color2, $lightness: 25%);
             }
         }
     
         &:hover,
         &:focus {
-            background-color: $radical-red;
+            background-color: $color2;
         }
     }
 
-    &#{&}--visible {
+    &--visible {
         background-color: transparent;
     }
 
-    &#{&}--icon {
+    &--icon {
         display: flex;
         align-items: center;
         text-align: left;
@@ -89,7 +104,7 @@
             @include icon-dimensions(1.8rem);
 
             & + * {
-                margin-left: $spacing;
+                margin-left: 1rem;
             }
         }
 
@@ -102,34 +117,32 @@
         line-height: 1.8rem;
 
         &:hover .icon {
-            fill: $radical-red;
+            fill: $color2;
 
             transform: scale(1.2);
         }
     }
 
     &--center-play {
-        position: relative;
-
         height: 6rem;
         width: 6rem;
         padding: 0;
-        border: solid 0.5rem $catskill-white;
+        border: solid 0.5rem $color0;
         border-radius: 50%;
 
-        transition: border-color 500ms;
+        transition: border-color $timing-1;
 
         &:hover {
-            border-color: $radical-red;
+            border-color: $color2;
 
             .icon {
-                fill: $radical-red;
+                fill: $color2;
             }
         }
     }
 
     &--adjust {
-        margin: 0 $spacing * 2;
+        margin: 0 2rem;
     }
 
     &--card-link {
@@ -138,8 +151,18 @@
 
         width: 100%;
         max-width: 20rem;
-        padding: $spacing $spacing * 4;
+        padding: 1rem 4rem;
 
         text-decoration: none;
+    }
+
+    &--styleguide {
+        width: 100%;
+        padding: 2rem 0;
+        border-radius: 0;
+
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
     }
 }

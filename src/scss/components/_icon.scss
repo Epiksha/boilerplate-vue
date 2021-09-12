@@ -1,16 +1,14 @@
-@use 'sass:color';
-@use '../_abstracts.scss' as *;
-@use '../_mixins.scss' as *;
+@use '../abstracts' as *;
+@use '../mixins' as *;
 
 .icon {
+    // Global Styling
     display: inline-block;
     vertical-align: middle;
 
     position: relative;
 
     @include icon-dimensions(3.6rem);
-    
-    fill: white;
 
     svg {
         position: absolute;
@@ -18,15 +16,24 @@
         left: 0;
 
         box-sizing: border-box;
-        height: 100%;
         width: 100%;
+        height: 100%;
+
+        fill: $color1;
+
+        transition: fill $timing-1;
+
+        .button--primary & {
+            fill: $color0;
+        }
     }
 
+    // Specific Styling
     &--search {
         @include icon-dimensions(1.8rem);
 
         @media (min-width: $tablet) {
-            margin-left: $spacing;
+            margin-left: 1rem;
         }
     }
 
@@ -34,14 +41,14 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(calc(-50% + #{$spacing * 0.1}), -50%);
+        transform: translate(calc(-50% + 0.1rem), -50%);
 
         @include icon-dimensions(2rem);
 
         fill: white;
 
         &--left {
-            transform: translate(calc(-50% - #{$spacing * 0.1}), -50%) rotate(180deg);
+            transform: translate(calc(-50% - 0.1rem), -50%) rotate(180deg);
         }
     }
 
@@ -61,7 +68,7 @@
         svg {
             fill: transparent;
 
-            transition: fill 200ms;
+            transition: fill $timing-1;
         }
     }
 
@@ -73,8 +80,8 @@
         @include icon-dimensions(2rem);
     }
 
-    &--spinner {
-        fill: $radical-red;
+    &--spinner svg {
+        fill: $color2;
     }
 
     &--accordion {
@@ -82,19 +89,26 @@
 
         @include icon-dimensions(2.4rem);
 
-        fill: $radical-red;
-
-        transition: transform 500ms, fill 500ms;
+        transition: transform $timing-1, fill $timing-1;
         
         .accordion[open] & {
             transform: rotate(180deg);
         }
+
+        svg {
+            fill: $color2;
+            
+            .accordion:hover & {
+                fill: $color0;
+            }
+        }
+
     }
 
     &--media {
         @include icon-dimensions(1.8rem);
 
-        transition: transform 500ms, fill 500ms;
+        transition: transform $timing-1, fill $timing-1;
     }
 
     &--center-play {
@@ -105,7 +119,9 @@
         
         @include icon-dimensions(2.4rem);
 
-        transition: fill 500ms;
+        svg {
+            transition: fill $timing-1;
+        }
     }
     
     &--center-pause {
@@ -116,7 +132,9 @@
         
         @include icon-dimensions(2.4rem);
 
-        transition: fill 500ms;
+        svg {
+            transition: fill $timing-1;
+        }
     }
 
     &--large {

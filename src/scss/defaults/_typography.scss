@@ -1,5 +1,5 @@
-@use '../_mixins.scss';
-@use '../_abstracts.scss' as *;
+@use '../mixins';
+@use '../abstracts' as *;
 
 @include mixins.font-import('Roboto', 'Roboto-Regular.ttf', normal, normal);
 @include mixins.font-import('Roboto', 'Roboto-Italic.ttf', normal, italic);
@@ -56,7 +56,7 @@ h6 {
 }
 
 a {
-    color: $radical-red;
+    color: $color2;
     
     text-decoration: none;
 

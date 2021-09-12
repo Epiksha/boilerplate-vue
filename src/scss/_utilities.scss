@@ -1,9 +1,9 @@
-@use './_abstracts.scss' as *;
+@use './abstracts' as *;
 
 .container {
     display: block;
     
     max-width: 114.2rem;
     margin: auto;
-    padding: 0 $spacing * 2;
+    padding: 0 2rem;
 }

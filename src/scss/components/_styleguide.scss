@@ -2,55 +2,94 @@
 @use '../_abstracts.scss' as *;
 
 .styleguide {
-    padding: $spacing * 6 $spacing * 4 $spacing * 4;
-}
-
-.styleguide section {
-    margin-top: $spacing * 6;
-
-    &:first-child {
-        margin-top: 0;
-    }
-
-    & > h2 {
-        margin-bottom: $spacing * 4;
-    }
-
-    h3 {
-        margin-bottom: $spacing * 3;
-    }
-
-    h4:not(.accordion__title) {
-        margin-bottom: $spacing * 2;
-    }
-}
-
-.styleguide__color {
-    display: block;
+    padding: 6rem 4rem 4rem;
     
-    box-sizing: border-box;
-    width: 100%;
-    padding: $spacing * 2;
-    border-radius: 1rem;
+    @media (min-width: $tablet) {
+        display: flex;
+        align-items: flex-start;
+    }
 
-    color: $catskill-white;
-    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust(black, $alpha: -0.8);
-
-    & > span {
-        display: block;
-
-        color: $catskill-white;
-
-        letter-spacing: 0.1rem;
+    section {
+        margin-top: 2rem;
+        padding-top: 4rem;
 
         &:first-child {
-            margin-bottom: $spacing;
-
-            font-weight: bold;
+            margin-top: 0;
+        }
+    
+        & > h2 {
+            margin-bottom: 4rem;
+        }
+    
+        h3 {
+            margin-bottom: 3rem;
+        }
+    
+        h4:not(.accordion__title) {
+            margin-bottom: 2rem;
         }
     }
 
-    &#{&}--invert span {
-        color: black;
+    &__sidebar {
+        flex: 1;
+
+        @media (min-width: $tablet) {
+            position: sticky;
+            top: 4rem;
+    
+            height: calc(100vh - 12rem);
+            padding-right: 2rem;
+    
+            ul {
+                position: absolute;
+                top: 0;
+                left: 0;
+    
+                overflow-y: auto;
+                overflow-x: hidden;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__nav {
+        position: relative;
+
+        height: 100%;
+    }
+
+    &__content {
+        flex: 4;
+    }
+
+    &__color {
+        display: block;
+    
+        box-sizing: border-box;
+        width: 100%;
+        padding: 2rem;
+        border-radius: 1rem;
+
+        color: $color0;
+        box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust($color1, $alpha: -0.8);
+
+        & > span {
+            display: block;
+
+            color: $color0;
+
+            letter-spacing: 0.1rem;
+
+            &:first-child {
+                margin-bottom: 1rem;
+
+                font-weight: bold;
+            }
+        }
+
+        &#{&}--invert span {
+            color: $color1;
+        }
     }
 }

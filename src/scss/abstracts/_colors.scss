@@ -1,34 +1,12 @@
-@use 'sass:list';
+@use 'sass:color';
 
-$colors: (white, black);
+$color0: #ffffff;
+$color1: #000000;
+$color2: #192e42;
+$color3: #5ac079;
+$color4: #7cc6fe;
+$color5: #f4faff;
+$color6: #8789c0;
+$color7: #cac8c8;
 
-// Primary Pallette
-$radical-red: #ff4463;
-$allports: #00a1ce;
-$persian-green: #337f96;
-$mountain-meadow: #22C198;
-$feijoa: #93E180;
-$festival: #F9F871;
-$firefly: #08080a;
-$pickled-bluewood: #1b242e;
-$rhino: #2a4058;
-$catskill-white: #ecf2f7;
-$concrete: #f3f3f3;
-$radical-re: #a03446;
-$dark-grey: #0f0f0f;
-
-$colors: list.join(
-    $colors,
-    (
-        $radical-red,
-        $allports,
-        $persian-green,
-        $mountain-meadow,
-        $feijoa,
-        $festival,
-        $pickled-bluewood,
-        $catskill-white,
-        $concrete
-    ),
-    $separator: comma
-);
+$box-shadow-1: 0.2rem 0.2rem 0.5rem 0.2rem color.adjust($color1, $alpha: -0.9);
