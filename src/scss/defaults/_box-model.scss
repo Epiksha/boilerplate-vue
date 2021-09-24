@@ -1,4 +1,4 @@
-@use '../_abstracts.scss' as *;
+@use '../abstracts' as *;
 
 body,
 ul,
@@ -12,6 +12,5 @@ h6 {
 }
 
 main {
-    min-height: calc(100vh - 44.4rem);
-    margin-top: $spacing * 12;
+    min-height: 100vh;
 }

@@ -1,3 +1,5 @@
+export const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join('');
+
 export const copyToClipboard = text => {
     const element = document.createElement('textarea');
 
@@ -22,13 +24,13 @@ export const htmlToText = html => {
 };
 
 export default {
-    install(Vue) {
+    install(app) {
         const utility = {
+            capitalize,
             copyToClipboard,
             htmlToText,
         };
 
-        Vue.utility = utility;
-        Vue.prototype.utility = utility;
+        app.config.globalProperties.$utility = utility;
     },
 };

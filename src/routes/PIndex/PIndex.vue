@@ -1,8 +1,12 @@
 <template>
-    <div class="container p-2">
-        <h1>
-            Home
-        </h1>
+    <div>
+        <div class="container py-4">
+            <router-link
+                to="/styleguide"
+            >
+                Styleguide
+            </router-link>
+        </div>
     </div>
 </template>
 

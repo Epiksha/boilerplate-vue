@@ -1,17 +1,14 @@
-@use '_defaults.scss';
+// Default Imports
+@use 'defaults';
+
+// Vendor Imports
+@use 'vendors';
+
+// Animation Imports
+@use 'animations';
 
 // Component Imports
-@use 'components/_button.scss';
-@use 'components/_checkbox.scss';
-@use 'components/_fieldset.scss';
-@use 'components/_footer.scss';
-@use 'components/_header.scss';
-@use 'components/_icon.scss';
-@use 'components/_input.scss';
-@use 'components/_label.scss';
-@use 'components/_list.scss';
-@use 'components/_nav.scss';
-@use 'components/_radio.scss';
+@use 'components';
 
-@use '_utilities.scss';
-@use '_utilizer.scss';
+// Custom Utility Imports
+@use 'utilities';

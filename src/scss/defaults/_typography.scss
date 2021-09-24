@@ -1,5 +1,5 @@
-@use '../_mixins.scss';
-@use '../_abstracts.scss' as *;
+@use '../mixins';
+@use '../abstracts' as *;
 
 @include mixins.font-import('Roboto', 'Roboto-Regular.ttf', normal, normal);
 @include mixins.font-import('Roboto', 'Roboto-Italic.ttf', normal, italic);
@@ -34,11 +34,13 @@ h1 {
 }
 
 h2 {
+    // color: $color-2;
+
     font-size: 4.2rem;
 }
 
 h3 {
-    font-size: 3.6rem;
+    font-size: 3.2rem;
 }
 
 h4 {
@@ -51,4 +53,14 @@ h5 {
 
 h6 {
     font-size: 2rem;
+}
+
+a {
+    color: $color2;
+    
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

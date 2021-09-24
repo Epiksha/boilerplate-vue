@@ -1,24 +1,40 @@
+const { resolve } = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: [
         '@babel/polyfill',
-        './src/index.js',
+        './src/entry.js',
     ],
+
+    output: {
+        clean: true,
+        filename: '[name].bundle.[contenthash].js',
+        path: resolve(__dirname, 'dist'),
+    },
 
     plugins: [
         new VueLoaderPlugin(),
-        new SpriteLoaderPlugin()
+        new SpriteLoaderPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].min.css',
+            chunkFilename: '[id].css',
+        }),
     ],
 
     module: {
         rules: [
             {
-                test: /\.js/,
-                use: [
-                    'babel-loader'
-                ]
+                test: /\.m?js/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
             },
             {
                 test: /\.vue/,
@@ -27,32 +43,22 @@ module.exports = {
                 ]
             },
             {
-                enforce: 'pre',
-                test: /\.(vue|js)/,
-                loader: 'eslint-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.html$/,
-                loader: 'html-loader'
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset/resource',
+                include: [
+                    resolve(__dirname, 'src/assets/images'),
+                ],
             },
             {
                 test: /\.svg$/,
+                include: [
+                    resolve(__dirname, 'src/assets/icons'),
+                ],
                 use: [
                     'svg-sprite-loader',
                     'svgo-loader'
                 ]
             },
-            {
-                test: /\.(woff|ttf|eot|jpe?g|png)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: "[name].[hash].[ext]",
-                        outputPath: 'assets/'
-                    }
-                }
-            }
-        ]
-    }
+        ],
+    },
 };

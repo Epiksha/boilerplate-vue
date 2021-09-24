@@ -6,3 +6,6 @@ node_modules
 _Output/
 dist/
 .env
+.yarn
+.yarnrc.yml
+.pnp.cjs

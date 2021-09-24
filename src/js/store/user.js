@@ -11,7 +11,6 @@ export default {
         async set(state, { property, value }) {
             state[property] = value;
         },
-
         
         async remove(state) {
             state.email = '';

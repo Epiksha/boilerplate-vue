@@ -1,13 +1,11 @@
 <template>
     <div id="app">
-        <Header v-if="!isHidingNavigation" />
+        <VHeader />
 
         <main>
             <router-view />
         </main>
-
-        <Footer v-if="!isHidingNavigation" />
     </div>
 </template>
 
-<script src="./App.js" />
+<script src='./App' />

@@ -1,3 +1,7 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 
-export default new Vue();
+export default {
+    install(app) {
+        app.config.globalProperties.$bus = createApp();
+    },
+};

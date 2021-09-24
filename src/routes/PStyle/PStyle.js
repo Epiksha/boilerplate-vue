@@ -1,5 +1,31 @@
 export default {
     data: () => ({
+        cards: {
+            basic: [
+                {
+                    title: 'Card Header',
+                },
+                {
+                    link: {
+                        text: 'Read More',
+                        url: '/styleguide',
+                    },
+                    title: 'Card Header',
+                },
+                {
+                    image: {
+                        alt: 'Mountains',
+                        name: 'mountains.jpg',
+                    },
+                    link: {
+                        text: 'Read More',
+                        url: '/styleguide',
+                    },
+                    title: 'Card Header',
+                },
+            ],
+        },
+
         checkboxes: [
             {
                 label: 'Checkbox Option 1',
@@ -14,6 +40,16 @@ export default {
                 isSelected: false,
             },
         ],
+
+        componentLabels: [],
+
+        inputs: {
+            text: '',
+            email: '',
+            password: '',
+        },
+
+        isToggled: false,
 
         radios: [
             {
@@ -32,5 +68,59 @@ export default {
                 isSelected: false,
             },
         ],
+
+        sliderValue: 100,
+
+        slides: [
+            {
+                title: 'Slide 1',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!',
+                backgroundImage: 'man-laptop.jpg',
+            },
+            {
+                title: 'Slide 2',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!',
+                backgroundImage: 'mountains.jpg',
+            },
+            {
+                title: 'Slide 3',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!',
+                backgroundImage: 'man-laptop.jpg',
+            },
+            {
+                title: 'Slide 4',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero et unde cum totam quisquam, distinctio laudantium dolorum minima vitae consequuntur fugiat, vero harum labore dolorem, velit officiis eos! Qui, libero!',
+                backgroundImage: 'mountains.jpg',
+            },
+        ],
+
+        videoExample: {
+            controls: true,
+            sources: [
+                {
+                    url: 'https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8',
+                    type: 'application/x-mpegURL',
+                },
+                {
+                    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                    type: 'video/mp4',
+                },
+            ],
+        },
     }),
+
+    methods: {
+        scrollTo(refName) {
+            const section = this.$refs[refName];
+            
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        },
+    },
+
+    mounted() {
+        this.componentLabels = Object.keys(this.$refs);
+    },
 };
