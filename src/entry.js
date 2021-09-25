@@ -23,7 +23,7 @@ plugins.forEach(plugin => app.use(plugin));
 directives.forEach(directive => app.directive(directive.name, directive.config));
 
 // Register global components
-const globals = ['GAccordion', 'GCard', 'GCheckbox', 'GIcon', 'GImage', 'GInput', 'GPlus', 'GRadios', 'GRange', 'GSpinner', 'GToggle', 'GVideo', 'GVolume'];
+const globals = ['GAccordion', 'GCard', 'GCheckbox', 'GIcon', 'GImage', 'GInput', 'GPlus', 'GRadios', 'GRange', 'GSpinner', 'GToggle', 'GVolume'];
 
 globals.forEach(global => {
     app.component(global, require(`./components/Global/${global}/${global}.vue`).default);

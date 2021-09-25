@@ -1,13 +1,9 @@
 const { resolve } = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: [
-        '@babel/polyfill',
-        './src/entry.js',
-    ],
+    entry: ['./src/entry.js'],
 
     output: {
         clean: true,
@@ -18,10 +14,6 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new SpriteLoaderPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].min.css',
-            chunkFilename: '[id].css',
-        }),
     ],
 
     module: {
